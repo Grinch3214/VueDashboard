@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Иван Иванов"
+    },
+    {
+        "id": 2,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Мария Приходько"
+    },
+    {
+        "id": 3,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Николай Пашик"
+    },
+    {
+        "id": 4,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Павел Дурной"
+    },
+    {
+        "id": 5,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Алексей Герщенко"
+    },
+    {
+        "id": 6,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Дмитрий Коновалов"
+    },
+    {
+        "id": 7,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Саша Грей"
+    },
+    {
+        "id": 8,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Саша Негрей"
+    },
+    {
+        "id": 9,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Саша Погрей"
+    },
+    {
+        "id": 10,
+        "idName": 12345678,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Саша Погрела"
+    },
+    {
+        "id": 11,
+        "idName": 34513121,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Саша Пока"
+    },
+    {
+        "id": 12,
+        "idName": 98653452,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Валик Коновалик"
+    },
+    {
+        "id": 13,
+        "idName": 21087562,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Алексей Кушнарёв"
+    },
+    {
+        "id": 14,
+        "idName": 96546254,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Роман Романович"
+    },
+    {
+        "id": 15,
+        "idName": 76452105,
+        "waiting": "12.07.2021",
+        "login": "mailcastomer@mail.com",
+        "fullName": "Владимир Роковавич"
+    }
+]

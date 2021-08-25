@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "fullName": "Рома Романов",
+        "date": "2021-06-25",
+        "company": "EPAM",
+        "spend": "200",
+        "activity": 1
+    },
+    {
+        "id": 2,
+        "fullName": "Сергей Лацков",
+        "date": "2021-06-25",
+        "company": "SpaceX",
+        "spend": "100",
+        "activity": 2
+    },{
+        "id": 3,
+        "fullName": "Анастасия Горбаченко",
+        "date": "2021-06-25",
+        "company": "EPAM",
+        "spend": "200",
+        "activity": 1
+    },{
+        "id": 4,
+        "fullName": "Алексей Пузич",
+        "date": "2021-06-25",
+        "company": "SpaceX",
+        "spend": "300",
+        "activity": 1
+    },
+    {
+        "id": 5,
+        "fullName": "Алёна Гаврик",
+        "date": "2021-06-25",
+        "company": "SpaceX",
+        "spend": "500",
+        "activity": 1
+    },
+    {
+        "id": 6,
+        "fullName": "Евгения Онил",
+        "date": "2021-06-25",
+        "company": "SoftServe",
+        "spend": "400",
+        "activity": 1
+    },
+    {
+        "id": 7,
+        "fullName": "Роман Фулстакович",
+        "date": "2021-06-25",
+        "company": "EPAM",
+        "spend": "500",
+        "activity": 1
+    },
+    {
+        "id": 8,
+        "fullName": "Евгений Андрасович",
+        "date": "2021-06-25",
+        "company": "GlobalLogic",
+        "spend": "200",
+        "activity": 1
+    },
+    {
+        "id": 9,
+        "fullName": "Анастасия Демидова",
+        "date": "2021-06-25",
+        "company": "GlobalLogic",
+        "spend": "100",
+        "activity": 2
+    },
+    {
+        "id": 10,
+        "fullName": "Никита Евалиев",
+        "date": "2021-06-25",
+        "company": "NIX",
+        "spend": "100",
+        "activity": 1
+    }
+]

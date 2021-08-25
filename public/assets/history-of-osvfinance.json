@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "dateTime": "27.08.2021 в 19:23:56",
+        "typeToken": "Покупка ТОКЕН",
+        "howManyToken": "45",
+        "howManyTokenPrice": "134$",
+        "balanceToken": "45",
+        "balanceTokenPrice": "154$",
+        "initiator": "ORDER 1343545",
+        "initiatorHr": "HR 1343545",
+        "statusFinance": 1
+    },
+    {
+        "id": 2,
+        "dateTime": "27.08.2021 в 19:23:56",
+        "typeToken": "Покупка ТОКЕН",
+        "howManyToken": "45",
+        "howManyTokenPrice": "134$",
+        "balanceToken": "45",
+        "balanceTokenPrice": "154$",
+        "initiator": "ORDER 1343545",
+        "initiatorHr": "HR 1343545",
+        "statusFinance": 2
+    },
+    {
+        "id": 3,
+        "dateTime": "27.08.2021 в 19:23:56",
+        "typeToken": "Покупка ТОКЕН",
+        "howManyToken": "45",
+        "howManyTokenPrice": "134$",
+        "balanceToken": "45",
+        "balanceTokenPrice": "154$",
+        "initiator": "ORDER 1343545",
+        "initiatorHr": "HR 1343545",
+        "statusFinance": 1
+    },
+    {
+        "id": 4,
+        "dateTime": "27.08.2021 в 19:23:56",
+        "typeToken": "Покупка ТОКЕН",
+        "howManyToken": "45",
+        "howManyTokenPrice": "134$",
+        "balanceToken": "45",
+        "balanceTokenPrice": "154$",
+        "initiator": "ORDER 1343545",
+        "initiatorHr": "HR 1343545",
+        "statusFinance": 2
+    }
+]

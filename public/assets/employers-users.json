@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "fullName": "Рома Романов",
+        "date": "2021-06-25",
+        "office": "Харьков",
+        "personal": "0-100",
+        "status": "Создан",
+        "activity": 1
+    },
+    {
+        "id": 2,
+        "fullName": "Сергей Лацков",
+        "date": "2021-06-25",
+        "office": "Киев",
+        "personal": "100-500",
+        "status": "Нейтрален",
+        "activity": 2
+    },{
+        "id": 3,
+        "fullName": "Анастасия Горбаченко",
+        "date": "2021-06-25",
+        "office": "Львов",
+        "personal": "100-500",
+        "status": "В рейтинге",
+        "activity": 1
+    },{
+        "id": 4,
+        "fullName": "Алексей Пузич",
+        "date": "2021-06-25",
+        "office": "Львов",
+        "personal": "0-100",
+        "status": "Ожидает",
+        "activity": 1
+    },
+    {
+        "id": 5,
+        "fullName": "Алёна Гаврик",
+        "date": "2021-06-25",
+        "office": "Киев",
+        "personal": "500-1000",
+        "status": "Нейтрален",
+        "activity": 1
+    },
+    {
+        "id": 6,
+        "fullName": "Евгения Онил",
+        "date": "2021-06-25",
+        "office": "Киев",
+        "personal": "500-1000",
+        "status": "Ожидает",
+        "activity": 1
+    },
+    {
+        "id": 7,
+        "fullName": "Роман Фулстакович",
+        "date": "2021-06-25",
+        "office": "Харьков",
+        "personal": "0-100",
+        "status": "В рейтинге",
+        "activity": 1
+    },
+    {
+        "id": 8,
+        "fullName": "Евгений Андрасович",
+        "date": "2021-06-25",
+        "office": "Харьков",
+        "personal": "100-500",
+        "status": "В рейтинге",
+        "activity": 1
+    },
+    {
+        "id": 9,
+        "fullName": "Анастасия Демидова",
+        "date": "2021-06-25",
+        "office": "Харьков",
+        "personal": "100-500",
+        "status": "В рейтинге",
+        "activity": 2
+    },
+    {
+        "id": 10,
+        "fullName": "Никита Евалиев",
+        "date": "2021-06-25",
+        "office": "Киев",
+        "personal": "0-100",
+        "status": "В рейтинге",
+        "activity": 1
+    }
+]

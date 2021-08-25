@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "date": "14.07.2021",
+        "position": "Junior FrontEnd Developer",
+        "companyName": "Epam"
+    },
+    {
+        "id": 2,
+        "date": "14.07.2021",
+        "position": "Middle FrontEnd Developer",
+        "companyName": "Global"
+    },
+    {
+        "id": 3,
+        "date": "14.07.2021",
+        "position": "Junior BackEnd Developer",
+        "companyName": "NIX"
+    },
+    {
+        "id": 4,
+        "date": "14.07.2021",
+        "position": "Junior Java Developer",
+        "companyName": "NIX"
+    },
+    {
+        "id": 5,
+        "date": "14.07.2021",
+        "position": "Middle PHP Developer",
+        "companyName": "NIX"
+    }
+]

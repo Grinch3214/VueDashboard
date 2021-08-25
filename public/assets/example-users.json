@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "fullName": "Nikollas Kage",
+        "email": "test@test.com",
+        "startDate": "2021-06-21 15:23:00",
+        "salary": "Админ",
+        "status": 1
+    },
+    {
+        "id": 2,
+        "fullName": "Sasha Grey",
+        "email": "test@test.com",
+        "startDate": "2021-06-21 15:27:00",
+        "salary": "Админ",
+        "status": 2
+    },
+    {
+        "id": 3,
+        "fullName": "Sara Connor",
+        "email": "test@test.com",
+        "startDate": "2021-06-21 15:29:50",
+        "salary": "Злой админ",
+        "status": 2
+    },
+    {
+        "id": 4,
+        "fullName": "Tom Cruise",
+        "email": "cruiset@test.com",
+        "startDate": "2021-06-22 09:23:00",
+        "salary": "Модератор",
+        "status": 1
+    },
+    {
+        "id": 5,
+        "fullName": "Ronan the Accuser",
+        "email": "ronan@test.com",
+        "startDate": "2021-06-22 12:23:00",
+        "salary": "Модератор",
+        "status": 1
+    },
+    {
+        "id": 6,
+        "fullName": "Tony Stark",
+        "email": "stark@test.com",
+        "startDate": "2021-06-22 13:26:00",
+        "salary": "Модератор",
+        "status": 1
+    },
+    {
+        "id": 7,
+        "fullName": "Elon Musk",
+        "email": "musk@test.com",
+        "startDate": "2021-06-22 15:23:00",
+        "salary": "Модератор",
+        "status": 1
+    },
+    {
+        "id": 8,
+        "fullName": "Ilya Klimov",
+        "email": "klimov@test.com",
+        "startDate": "2021-06-22 15:23:00",
+        "salary": "Модератор",
+        "status": 2
+    },
+    {
+        "id": 9,
+        "fullName": "Alexey Puzich",
+        "email": "puzich@test.com",
+        "startDate": "2021-06-22 15:23:00",
+        "salary": "Модератор",
+        "status": 3
+    },
+    {
+        "id": 10,
+        "fullName": "Alexey Ivanov",
+        "email": "ivanovh@test.com",
+        "startDate": "2021-06-25 15:23:00",
+        "salary": "Модератор",
+        "status": 2
+    },
+    {
+        "id": 11,
+        "fullName": "Dmitriy Korolev",
+        "email": "korolev@test.com",
+        "startDate": "2021-06-25 15:23:00",
+        "salary": "Админ",
+        "status": 1
+    },
+    {
+        "id": 12,
+        "fullName": "Djone Connor",
+        "email": "connordj@test.com",
+        "startDate": "2021-06-25 15:23:00",
+        "salary": "Админ",
+        "status": 3
+    },
+    {
+        "id": 13,
+        "fullName": "Artem Homenko",
+        "email": "homenko@test.com",
+        "startDate": "2021-06-25 15:23:00",
+        "salary": "Модератор",
+        "status": 1
+    },
+    {
+        "id": 14,
+        "fullName": "Sergey Latskov",
+        "email": "latskov@test.com",
+        "startDate": "2021-06-25 15:23:00",
+        "salary": "Злой админ",
+        "status": 1
+    },
+    {
+        "id": 15,
+        "fullName": "Roma Romanov",
+        "email": "romanov@test.com",
+        "startDate": "2021-06-25 15:23:00",
+        "salary": "Модератор",
+        "status": 2
+    }
+]

@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "employerName": "EPAM",
+        "startPeriod": "70",
+        "startPeriodMoney": "240$",
+        "comingToken": "45",
+        "comingTokenMoney": "134$",
+        "rateToken": "45",
+        "rateTokenMoney": "154$",
+        "lastPeriod": "45",
+        "lastPeriodMoney": "175$",
+        "lastDate": "27.08.2021"
+    },
+    {
+        "id": 2,
+        "employerName": "GloAcademy",
+        "startPeriod": "70",
+        "startPeriodMoney": "240$",
+        "comingToken": "45",
+        "comingTokenMoney": "134$",
+        "rateToken": "45",
+        "rateTokenMoney": "154$",
+        "lastPeriod": "45",
+        "lastPeriodMoney": "175$",
+        "lastDate": "27.08.2021"
+    },
+    {
+        "id": 3,
+        "employerName": "ITUSc",
+        "startPeriod": "70",
+        "startPeriodMoney": "321$",
+        "comingToken": "45",
+        "comingTokenMoney": "765$",
+        "rateToken": "45",
+        "rateTokenMoney": "22$",
+        "lastPeriod": "45",
+        "lastPeriodMoney": "56$",
+        "lastDate": "27.08.2021"
+    },
+    {
+        "id": 4,
+        "employerName": "Global",
+        "startPeriod": "70",
+        "startPeriodMoney": "240$",
+        "comingToken": "45",
+        "comingTokenMoney": "134$",
+        "rateToken": "45",
+        "rateTokenMoney": "154$",
+        "lastPeriod": "45",
+        "lastPeriodMoney": "175$",
+        "lastDate": "27.08.2021"
+    },
+    {
+        "id": 5,
+        "employerName": "TeslaIT",
+        "startPeriod": "70",
+        "startPeriodMoney": "240$",
+        "comingToken": "45",
+        "comingTokenMoney": "134$",
+        "rateToken": "45",
+        "rateTokenMoney": "154$",
+        "lastPeriod": "45",
+        "lastPeriodMoney": "175$",
+        "lastDate": "27.08.2021"
+    },
+    {
+        "id": 6,
+        "employerName": "Lemon",
+        "startPeriod": "70",
+        "startPeriodMoney": "240$",
+        "comingToken": "45",
+        "comingTokenMoney": "134$",
+        "rateToken": "45",
+        "rateTokenMoney": "154$",
+        "lastPeriod": "45",
+        "lastPeriodMoney": "175$",
+        "lastDate": "27.08.2021"
+    },
+    {
+        "id": 7,
+        "employerName": "NIX Solution",
+        "startPeriod": "70",
+        "startPeriodMoney": "240$",
+        "comingToken": "45",
+        "comingTokenMoney": "134$",
+        "rateToken": "45",
+        "rateTokenMoney": "154$",
+        "lastPeriod": "45",
+        "lastPeriodMoney": "175$",
+        "lastDate": "27.08.2021"
+    }
+]

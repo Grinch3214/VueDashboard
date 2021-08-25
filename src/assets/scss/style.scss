@@ -1,0 +1,64 @@
+/*================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+[dir] .main-menu .navbar-header .navbar-brand {
+    margin-top: 0;
+}
+
+.main-menu .navbar-header .navbar-brand .brand-logo img {
+    max-width: 100px;
+}
+@media screen and (max-width: 425px) {
+  html[dir] [data-col="1-column"].horizontal-layout .app-content {
+    padding: calc(4.45rem + calc(2rem - 0.8rem)) calc(2rem - 0.8rem) 0 calc(2rem - 0.8rem) !important;
+  }
+}
+
+.admins{
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  align-items: center;
+  color: #fff;
+  background: linear-gradient(118deg, #528be6, rgba(82, 139, 230, 0.7));
+  box-shadow: 0 0 10px 1px rgb(82 139 230 / 70%);
+  p{
+    margin: 12px 0;
+  }
+}
+.admins__btn{
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  color: #fff;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-bottom: 2px solid #fff;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: -5px;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-right: 2px solid #fff;
+  }
+  &:hover, &:focus{
+    color: #fff;
+  }
+}
+.pointer{
+  cursor: pointer;
+}
