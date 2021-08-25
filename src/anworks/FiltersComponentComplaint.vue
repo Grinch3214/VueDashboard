@@ -5,7 +5,7 @@
       class="admins pointer arrow-static"
       @click="isActive = !isActive"
     >
-      <p class="text-uppercase">Фильтры
+      <p class="text-uppercase pl-1">Фильтры
       </p>
     </div>
 

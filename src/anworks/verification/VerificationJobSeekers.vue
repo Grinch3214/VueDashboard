@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="admins">
-      <p class="text-uppercase">
+      <p class="text-uppercase pl-1">
         Соискатели</p>
     </div>
 

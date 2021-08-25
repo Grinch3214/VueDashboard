@@ -1,7 +1,7 @@
 <template>
   <div class="col-xl-8">
     <div class="admins">
-      <p class="text-uppercase">Работодатели
+      <p class="text-uppercase pl-1">Работодатели
       </p>
     </div>
 

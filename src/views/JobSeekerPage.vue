@@ -6,9 +6,6 @@
 </template>
 
 <script>
-// import {
-// BAvatar,
-// } from 'bootstrap-vue'
 import FiltersComponent from '@/anworks/FiltersComponent.vue'
 import JobSeekersTable from '@/anworks/tables/JobSeekersTable.vue'
 

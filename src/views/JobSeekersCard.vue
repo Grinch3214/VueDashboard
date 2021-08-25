@@ -145,24 +145,6 @@
 
             <testing-page-user />
 
-            <!-- buttons -->
-            <div class="mt-4">
-              <b-button
-                v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                type="submit"
-                variant="primary"
-                class="mr-1"
-              >
-                Сохранить
-              </b-button>
-              <b-button
-                v-ripple.400="'rgba(186, 191, 199, 0.15)'"
-                type="reset"
-                variant="outline-primary"
-              >
-                Отмена
-              </b-button>
-            </div>
           </b-card-text>
         </b-tab>
 
@@ -196,18 +178,6 @@
           </b-card-text>
         </b-tab>
 
-        <b-tab>
-          <template #title>
-            <feather-icon
-              icon="ThumbsDownIcon"
-              class="mr-50"
-            />
-            <span class="d-none d-sm-inline">Жалобы</span>
-          </template>
-          <b-card-text>
-            <complaints-for-tab />
-          </b-card-text>
-        </b-tab>
       </b-tabs>
 
     </div>
@@ -220,13 +190,12 @@ import {
 } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import InfoJobSeekerUser from '@/anworks/jobSeekers/InfoJobSeekerUser.vue'
-import ComplaintsForTab from '@/anworks/components/ComplaintsForTab.vue'
 import SkillWork from '@/anworks/jobSeekers/SkillWork.vue'
 import EducationUser from '@/anworks/jobSeekers/EducationUser.vue'
 import SkillsUserComponent from '@/anworks/jobSeekers/SkillsUserComponent.vue'
 import LocationUser from '@/anworks/jobSeekers/LocationUser.vue'
-import AboutUser from '@/anworks/jobSeekers/AboutUser.vue'
 import TestingPageUser from '@/anworks/jobSeekers/TestingPageUser.vue'
+import AboutUser from '@/anworks/jobSeekers/AboutUser.vue'
 
 export default {
   components: {
@@ -237,7 +206,6 @@ export default {
     BTabs,
     BAvatar,
     InfoJobSeekerUser,
-    ComplaintsForTab,
     SkillWork,
     EducationUser,
     SkillsUserComponent,

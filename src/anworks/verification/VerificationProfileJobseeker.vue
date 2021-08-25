@@ -274,25 +274,8 @@
         <div class="col-sm-12 col-md-3 h5">
           Язык:
         </div>
-        <div class="col-sm-12 col-md-4">
-          <b-form-select
-            v-model="language"
-            :options="languageOptions"
-            size="md"
-            class="mt-1"
-          />
-        </div>
-      </div>
-
-      <div class="row align-items-center mt-2 mb-2 border-bottom pb-4">
-        <div class="col-sm-12 col-md-3 h5"></div>
-        <div class="col-sm-12 col-md-4">
-          <b-form-select
-            v-model="languageSkill"
-            :options="languageSkillOptions"
-            size="md"
-            class="mt-1"
-          />
+        <div class="col-sm-12 col-md-9">
+          <add-language-component />
         </div>
       </div>
 
@@ -325,6 +308,7 @@ import { ref } from '@vue/composition-api'
 import vSelect from 'vue-select'
 import Ripple from 'vue-ripple-directive'
 import AvatarSelector from '../components/AvatarSelector.vue'
+import AddLanguageComponent from '../components/AddLanguageComponent.vue'
 
 export default {
   components: {
@@ -337,6 +321,7 @@ export default {
     BButton,
     BFormRadio,
     flatPickr,
+    AddLanguageComponent,
   },
   directives: {
     Ripple,
@@ -367,24 +352,6 @@ export default {
 
       secondSkill: [{ title: 'Node.js' }, { title: 'Vue.js' }],
       secondSkillOption: [{ title: 'Node.js' }, { title: 'React' }, { title: 'Angular' }, { title: 'Vue.js' }, { title: 'JQuery' }, { title: 'Backbone.js' }, { title: 'Ember.js' }, { title: 'Meteor' }, { title: 'Polymer' }, { title: 'Aurelia' }],
-
-      language: 'en',
-      languageOptions: [
-        { value: 'en', text: 'Английский' },
-        { value: 'ge', text: 'Немецкий' },
-        { value: 'pu', text: 'Португальский' },
-        { value: 'fr', text: 'Французкий' },
-        { value: 'pl', text: 'Польский' },
-      ],
-
-      languageSkill: 'preinte',
-      languageSkillOptions: [
-        { value: 'elementary', text: 'Elementary' },
-        { value: 'preinte', text: 'Pre-Inretmediate' },
-        { value: 'inte', text: 'Inretmediate' },
-        { value: 'upper', text: 'Upper Inretmediate' },
-        { value: 'advanced', text: 'Advanced' },
-      ],
     }
   },
   setup() {

@@ -1,7 +1,7 @@
 <template>
   <div class="col-xl-8">
     <div class="admins">
-      <p class="text-uppercase">Жалобы
+      <p class="text-uppercase pl-1">Жалобы
       </p>
     </div>
 
@@ -288,39 +288,4 @@ export default {
 
 <style lang="scss">
   @import '@core/scss/vue/libs/vue-good-table.scss';
-</style>
-
-<style lang="scss">
-  .admins__btn{
-    position: relative;
-    padding-left: 20px;
-    cursor: pointer;
-    color: #fff;
-    &::before{
-      content: '';
-      position: absolute;
-      top: 6px;
-      left: 0;
-      width: 12px;
-      height: 12px;
-      background: transparent;
-      border-bottom: 2px solid #fff;
-    }
-    &::after{
-      content: '';
-      position: absolute;
-      top: 11px;
-      left: -5px;
-      width: 12px;
-      height: 12px;
-      background: transparent;
-      border-right: 2px solid #fff;
-    }
-    &:hover, &:focus{
-      color: #fff;
-    }
-  }
-  .pointer{
-    cursor: pointer;
-  }
 </style>

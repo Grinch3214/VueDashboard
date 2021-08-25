@@ -17,16 +17,20 @@
         <div id="chart">
           <vue-apex-charts
             type="radialBar"
-            width="60"
-            height="50"
+            width="50"
+            height="100"
             :options="chartOptions"
             :series="series"
           />
         </div>
       </template>
 
-      <template #cell(status)="data">
+      <template #cell(public)="data">
         <span class="text-success">{{ data.value }}</span>
+        <b-form-checkbox
+          v-model="selected"
+          value=""
+        />
       </template>
     </b-table>
 
@@ -34,28 +38,31 @@
 </template>
 
 <script>
-import { BTable } from 'bootstrap-vue'
+import { BTable, BFormCheckbox } from 'bootstrap-vue'
 import VueApexCharts from 'vue-apexcharts'
 
 export default {
   components: {
     BTable,
     VueApexCharts,
+    BFormCheckbox,
   },
   data() {
     return {
 
-      series: [45],
+      selected: [],
+
+      series: [69],
       chartOptions: {
         chart: {
-          height: 40,
+          height: 120,
           type: 'radialBar',
         },
-        colors: ['#28C56F'],
+        colors: ['#00cfe8'],
         plotOptions: {
           radialBar: {
             hollow: {
-              size: '100%',
+              size: '30%',
             },
           },
         },
