@@ -1081,6 +1081,118 @@
           <b-td variant="bg-yellow" />
         </b-tr>
 
+        <!-- Группа: Лидген -->
+        <b-tr>
+          <b-td
+            variant="an-title"
+            colspan="3"
+            class="align-middle text-nowrap text-white pt-2 pb-2"
+          >Лидген</b-td>
+          <b-td colspan="18" />
+        </b-tr>
+
+        <b-tr class="font-weight-bold text-dark">
+          <b-td>Заявка на онлайн презентацию</b-td>
+          <b-td class="text-nowrap">
+            Количество заявок</b-td>
+          <b-td class="text-nowrap">
+            120</b-td>
+          <b-td />
+          <b-td variant="bg-green" />
+          <b-td variant="bg-green" />
+          <b-td class="text-nowrap" />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td variant="bg-blue" />
+          <b-td variant="bg-blue" />
+          <b-td variant="bg-orange" />
+          <b-td variant="bg-orange" />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td variant="bg-yellow" />
+        </b-tr>
+
+        <b-tr class="font-weight-bold text-dark">
+          <b-td />
+          <b-td class="text-nowrap">
+            Заинтересовались</b-td>
+          <b-td>76</b-td>
+          <b-td />
+          <b-td variant="bg-green" />
+          <b-td variant="bg-green" />
+          <b-td class="text-nowrap" />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td variant="bg-blue" />
+          <b-td variant="bg-blue" />
+          <b-td variant="bg-orange" />
+          <b-td variant="bg-orange" />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td variant="bg-yellow" />
+        </b-tr>
+
+        <b-tr class="font-weight-bold text-dark">
+          <b-td>Холодные звонки</b-td>
+          <b-td class="text-nowrap">
+            Количество обзвонённых</b-td>
+          <b-td class="text-nowrap">
+            1 625</b-td>
+          <b-td />
+          <b-td variant="bg-green" />
+          <b-td variant="bg-green" />
+          <b-td class="text-nowrap" />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td variant="bg-blue" />
+          <b-td variant="bg-blue" />
+          <b-td variant="bg-orange" />
+          <b-td variant="bg-orange" />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td variant="bg-yellow" />
+        </b-tr>
+
+        <b-tr class="font-weight-bold text-dark">
+          <b-td />
+          <b-td class="text-nowrap">
+            Заинтересовались</b-td>
+          <b-td>124</b-td>
+          <b-td />
+          <b-td variant="bg-green" />
+          <b-td variant="bg-green" />
+          <b-td class="text-nowrap" />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td variant="bg-blue" />
+          <b-td variant="bg-blue" />
+          <b-td variant="bg-orange" />
+          <b-td variant="bg-orange" />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td />
+          <b-td variant="bg-yellow" />
+        </b-tr>
+
       </b-tbody>
     </b-table-simple>
   </div>
@@ -1100,11 +1212,6 @@ export default {
     BTd,
     BTbody,
   },
-  // data: () => ({
-  //   anWorks: 150,
-  //   socialAuthorization: 170,
-  //   activeUsersBot: 520,
-  // }),
   data() {
     return {
       anWorks: 150,

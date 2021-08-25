@@ -62,7 +62,7 @@
           </b-button>
         </template>
 
-        <b-dropdown-item :to="{ name: 'apps-todo' }">
+        <b-dropdown-item> <!-- :to="{ name: 'apps-todo' }" -->
           <feather-icon
             icon="CheckSquareIcon"
             size="16"
@@ -70,7 +70,7 @@
           <span class="align-middle ml-50">Todo</span>
         </b-dropdown-item>
 
-        <b-dropdown-item :to="{ name: 'apps-chat' }">
+        <b-dropdown-item> <!-- :to="{ name: 'apps-chat' }" -->
           <feather-icon
             icon="MessageSquareIcon"
             size="16"
@@ -78,7 +78,7 @@
           <span class="align-middle ml-50">Chat</span>
         </b-dropdown-item>
 
-        <b-dropdown-item :to="{ name: 'apps-email' }">
+        <b-dropdown-item> <!-- :to="{ name: 'apps-email' }" -->
           <feather-icon
             icon="MailIcon"
             size="16"
@@ -86,7 +86,7 @@
           <span class="align-middle ml-50">Email</span>
         </b-dropdown-item>
 
-        <b-dropdown-item :to="{ name: 'apps-calendar' }">
+        <b-dropdown-item> <!-- :to="{ name: 'apps-calendar' }" -->
           <feather-icon
             icon="CalendarIcon"
             size="16"

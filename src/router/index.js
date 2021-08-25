@@ -305,6 +305,20 @@ const router = new VueRouter({
       },
     },
     {
+      path: '/analitics-page-employers',
+      name: 'analitics-employers',
+      component: () => import('@/views/AnaliticsEmployerPage.vue'),
+      meta: {
+        pageTitle: 'Аналитика',
+        breadcrumb: [
+          {
+            text: 'Сквозная аналитика работодатели',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/Login.vue'),

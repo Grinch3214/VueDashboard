@@ -101,6 +101,11 @@ export default [
         route: 'analitics',
         icon: 'TrendingUpIcon',
       },
+      {
+        title: 'Сквозная аналитика работодатели',
+        route: 'analitics-employers',
+        icon: 'TrendingUpIcon',
+      },
     ],
   },
 ]

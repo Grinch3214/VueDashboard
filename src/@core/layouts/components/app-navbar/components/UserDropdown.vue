@@ -39,9 +39,8 @@
       <span>Profile</span>
     </b-dropdown-item>
     <b-dropdown-item
-      :to="{ name: 'apps-email' }"
       link-class="d-flex align-items-center"
-    >
+    > <!-- :to="{ name: 'apps-email' }" -->
       <feather-icon
         size="16"
         icon="MailIcon"
@@ -50,9 +49,8 @@
       <span>Inbox</span>
     </b-dropdown-item>
     <b-dropdown-item
-      :to="{ name: 'apps-todo' }"
       link-class="d-flex align-items-center"
-    >
+    > <!-- :to="{ name: 'apps-todo' }" -->
       <feather-icon
         size="16"
         icon="CheckSquareIcon"
@@ -61,9 +59,8 @@
       <span>Task</span>
     </b-dropdown-item>
     <b-dropdown-item
-      :to="{ name: 'apps-chat' }"
       link-class="d-flex align-items-center"
-    >
+    > <!-- :to="{ name: 'apps-chat' }" -->
       <feather-icon
         size="16"
         icon="MessageSquareIcon"

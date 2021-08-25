@@ -12,20 +12,20 @@
         />
       </label>
     </b-form-group>
-    <analitics-second-table />
+    <analitics-table-employers />
   </div>
 </template>
 
 <script>
 import { BFormGroup } from 'bootstrap-vue'
 import flatPickr from 'vue-flatpickr-component'
-import AnaliticsSecondTable from '@/anworks/analitics/AnaliticsSecondTable.vue'
+import AnaliticsTableEmployers from '@/anworks/analitics/AnaliticsTableEmployers.vue'
 
 export default {
   components: {
     flatPickr,
     BFormGroup,
-    AnaliticsSecondTable,
+    AnaliticsTableEmployers,
   },
   data() {
     return {
