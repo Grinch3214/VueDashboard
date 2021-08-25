@@ -136,7 +136,7 @@
         <b-tab>
           <template #title>
             <feather-icon
-              icon="PhoneIcon"
+              icon="FolderIcon"
               class="mr-50"
             />
             <span class="d-none d-sm-inline">Тестирование</span>
@@ -166,7 +166,7 @@
         <b-tab>
           <template #title>
             <feather-icon
-              icon="MapPinIcon"
+              icon="UserCheckIcon"
               class="mr-50"
             />
             <span class="d-none d-sm-inline">О себе</span>
