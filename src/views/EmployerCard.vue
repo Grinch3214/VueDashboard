@@ -1,13 +1,17 @@
 <template>
-  <div class="card bg-white p-2 p-lg-5">
-    <b-tabs pills>
+  <div class="card bg-white p-2 p-lg-5 castom-tab">
+    <b-tabs
+      pills
+      vertical
+      class="flex-nowrap for-overflow"
+    >
       <b-tab
         active
       >
         <template #title>
           <feather-icon
             icon="UserIcon"
-            class="mr-50 d-inline d-sm-none"
+            class="mr-50 d-inline"
           />
           <span class="d-none d-sm-inline">Основная информация</span>
         </template>
@@ -23,6 +27,73 @@
           <info-employer-user />
         </b-card-text>
       </b-tab>
+
+      <b-tab>
+        <template #title>
+          <feather-icon
+            icon="BriefcaseIcon"
+            class="mr-50"
+          />
+          <span class="d-none d-sm-inline">Ведущий рекрутер</span>
+        </template>
+        <b-card-text>
+
+          <!-- buttons -->
+          <div class="mt-2">
+            <b-button
+              v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+              type="submit"
+              variant="primary"
+              class="mr-1 mb-1"
+            >
+              Сохранить
+            </b-button>
+            <b-button
+              v-ripple.400="'rgba(186, 191, 199, 0.15)'"
+              type="reset"
+              variant="outline-primary"
+              class="mb-1"
+            >
+              Отмена
+            </b-button>
+          </div>
+
+        </b-card-text>
+      </b-tab>
+
+      <b-tab>
+        <template #title>
+          <feather-icon
+            icon="BookIcon"
+            class="mr-50"
+          />
+          <span class="d-none d-sm-inline">История наймов</span>
+        </template>
+        <b-card-text>
+
+          <!-- buttons -->
+          <div class="mt-2">
+            <b-button
+              v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+              type="submit"
+              variant="primary"
+              class="mr-1 mb-1"
+            >
+              Сохранить
+            </b-button>
+            <b-button
+              v-ripple.400="'rgba(186, 191, 199, 0.15)'"
+              type="reset"
+              variant="outline-primary"
+              class="mb-1"
+            >
+              Отмена
+            </b-button>
+          </div>
+
+        </b-card-text>
+      </b-tab>
+
       <b-tab>
         <template #title>
           <feather-icon
@@ -62,8 +133,6 @@
           <feather-icon
             icon="ThumbsDownIcon"
             class="mr-50"
-            badge="2"
-            badge-classes="badge-danger badge-glow"
           />
           <span class="d-none d-sm-inline">Жалобы</span>
         </template>
@@ -114,16 +183,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-[dir=ltr] .badge.badge-up {
-    right: -90px;
-}
-.badge.badge-up {
-    top: -21px;
-}
-@media screen and (max-width: 575px) {
-  [dir=ltr] .badge.badge-up {
-    right: -30px;
+<style lang="scss">
+  .castom-tab {
+    .nav-pills {
+    align-items: flex-start;
+    }
   }
-}
+  .for-overflow > .tab-content {
+    overflow: hidden;
+  }
 </style>

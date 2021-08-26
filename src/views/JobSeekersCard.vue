@@ -194,8 +194,8 @@ import SkillWork from '@/anworks/jobSeekers/SkillWork.vue'
 import EducationUser from '@/anworks/jobSeekers/EducationUser.vue'
 import SkillsUserComponent from '@/anworks/jobSeekers/SkillsUserComponent.vue'
 import LocationUser from '@/anworks/jobSeekers/LocationUser.vue'
-import TestingPageUser from '@/anworks/jobSeekers/TestingPageUser.vue'
 import AboutUser from '@/anworks/jobSeekers/AboutUser.vue'
+import TestingPageUser from '@/anworks/jobSeekers/TestingPageUser.vue'
 
 export default {
   components: {
@@ -228,11 +228,6 @@ export default {
       .then(() => { this.model = this.users.find(o => o.id === +this.$route.query.id) })
       // eslint-disable-next-line no-alert
       .then(() => (this.model.fullName))
-  },
-  methods: {
-    // RemoveField() {
-    //   this.items.pop()
-    // },
   },
 }
 </script>

@@ -4,19 +4,114 @@
       class="mt-3"
       @submit.prevent
     >
-      <b-row class="mb-1">
-        <b-col md="4">
+      <b-row class="mb-1 align-items-center">
+
+        <b-col lg="3">
+          <p class="h5 mb-1">
+            Дата регистрации:</p>
+        </b-col>
+        <b-col lg="7">
           <b-form-group
-            label="Название компании"
+            label-for="startDateEmployer"
+          >
+            <b-form-input
+              id="startDateEmployer"
+              v-model="employerInfo.startDateEmployer"
+              placeholder="startDateEmployer"
+            />
+          </b-form-group>
+        </b-col>
+
+        <b-col lg="3">
+          <p class="h5 mb-1">
+            Почта:
+          </p>
+        </b-col>
+        <b-col lg="7">
+          <b-form-group
+            label-for="post"
+          >
+            <b-form-input
+              id="post"
+              v-model="employerInfo.post"
+              placeholder="Email"
+            />
+          </b-form-group>
+        </b-col>
+
+        <b-col lg="3">
+          <p class="h5 mb-1">
+            Статус:</p>
+        </b-col>
+        <b-col lg="7">
+          <b-form-group>
+            <v-select
+              v-model="userStatus"
+              multiple
+              :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
+              label="title"
+              :options="userStatusOption"
+            />
+          </b-form-group>
+        </b-col>
+
+        <b-col lg="3">
+          <p class="h5 mb-1">
+            Канал привлечения:</p>
+        </b-col>
+        <b-col lg="7">
+          <b-form-group>
+            <v-select
+              v-model="attraction"
+              placeholder="Способ привлечения"
+              multiple
+              :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
+              label="title"
+              :options="attractionOption"
+            />
+          </b-form-group>
+        </b-col>
+
+        <b-col lg="3">
+          <p class="h5 mb-1">
+            Название компании:</p>
+        </b-col>
+        <b-col lg="7">
+          <b-form-group
             label-for="nameCompany"
           >
             <b-form-input
-              id="nameCompany"
+              id="startDate"
               v-model="employerInfo.nameCompany"
               placeholder="Имя компании"
             />
           </b-form-group>
         </b-col>
+
+        <b-col lg="3">
+          <p class="h5 mb-1">
+            Сайт работодателя:</p>
+        </b-col>
+        <b-col lg="7">
+          <b-form-group
+            label-for="mainSite"
+          >
+            <b-form-input
+              id="mainSite"
+              v-model="employerInfo.mainSite"
+              placeholder="Сайт"
+            />
+          </b-form-group>
+        </b-col>
+
+        <b-col lg="3">
+          <p class="h5 mb-1">
+            Доп. домены:</p>
+        </b-col>
+        <b-col lg="7">
+          <input-repeat />
+        </b-col>
+
         <b-col
           md="4"
           offset-md="1"
@@ -120,24 +215,6 @@
           </b-form-group>
         </b-col>
 
-        <b-col
-          md="4"
-          offset-md="1"
-        >
-          <span class="input__text">Канал Привлечения
-          </span>
-          <b-form-group>
-            <v-select
-              v-model="attraction"
-              placeholder="Способ привлечения"
-              multiple
-              :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
-              label="title"
-              :options="attractionOption"
-            />
-          </b-form-group>
-        </b-col>
-
       </b-row>
       <!-- submit and reset -->
       <div class="mt-2 mt-lg-5 d-flex justify-content-sm-between justify-content-center flex-wrap col-lg-9 pl-0">
@@ -200,6 +277,7 @@ import {
 import Ripple from 'vue-ripple-directive'
 import vSelect from 'vue-select'
 import { ref } from '@vue/composition-api'
+import InputRepeat from '../components/InputRepeat.vue'
 
 export default {
   components: {
@@ -213,6 +291,7 @@ export default {
     BButton,
     BModal,
     BCardText,
+    InputRepeat,
   },
   directives: {
     Ripple,
@@ -220,6 +299,9 @@ export default {
   },
   data() {
     return {
+      testInput: 'secondsite.com',
+      userStatus: [{ title: 'Подтверждён' }, { title: 'На модерации' }],
+      userStatusOption: [{ title: 'На модерации' }, { title: 'Подтверждён' }, { title: 'В рейтинге' }, { title: 'Нанят' }, { title: 'Не нанят' }, { title: 'Нанят не через сервис' }],
 
       Selected: 'true-user-activity',
 
@@ -233,7 +315,10 @@ export default {
   },
   setup() {
     const employerInfo = ref({
+      startDateEmployer: '17.06.2021',
+      post: 'castomermail@mail.com',
       nameCompany: 'Epam',
+      mainSite: 'castomer.com',
       dop: '1997.08.06',
       idUser: '1654997654567',
       office: 'Харьков, Украина',
