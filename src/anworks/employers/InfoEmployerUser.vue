@@ -104,118 +104,127 @@
           </b-form-group>
         </b-col>
 
-        <b-col lg="3">
-          <p class="h5 mb-1">
-            Доп. домены:</p>
+        <b-col
+          lg="3"
+          class="mb-auto"
+        ><p class="h5 mt-50">
+          Доп. домены:</p>
         </b-col>
         <b-col lg="7">
           <input-repeat />
         </b-col>
 
+        <b-col lg="3">
+          <p class="h5 mb-1 mt-50">
+            Страна:</p>
+        </b-col>
         <b-col
-          md="4"
-          offset-md="1"
+          lg="7"
+          class="mt-50"
         >
           <b-form-group
-            label="Дата рождения"
-            label-for="mc-date"
+            label-for="countryJob"
           >
             <b-form-input
-              id="mc-date"
-              v-model="employerInfo.dop"
-              placeholder="dop"
+              id="countryJob"
+              v-model="employerInfo.countryJob"
+              placeholder="Страна"
             />
           </b-form-group>
         </b-col>
 
+        <b-col lg="3">
+          <p class="h5 mb-1 mt-50">
+            Главный офис:</p>
+        </b-col>
         <b-col
-          md="4"
+          lg="7"
+          class="mt-50"
         >
           <b-form-group
-            label="ID пользователя"
-            label-for="idUser"
-          >
-            <b-form-input
-              id="idUser"
-              v-model="employerInfo.idUser"
-              placeholder="idUser"
-              disabled
-            />
-          </b-form-group>
-        </b-col>
-
-        <b-col
-          md="4"
-          offset-md="1"
-        >
-          <b-form-group>
-            <p>Активность</p>
-            <b-form-radio
-              v-model="Selected"
-              name="activity-user"
-              value="true-user-activity"
-              class="d-inline-block mr-2"
-            >
-              Активен
-            </b-form-radio>
-            <b-form-radio
-              v-model="Selected"
-              name="activity-user"
-              value="false-user-activity"
-              class="d-inline-block"
-            >
-              Неактивен
-            </b-form-radio>
-          </b-form-group>
-        </b-col>
-
-      </b-row>
-
-      <b-row>
-        <b-col md="4">
-          <b-form-group
-            label="Главный офис"
             label-for="office"
           >
             <b-form-input
               id="office"
               v-model="employerInfo.office"
-              placeholder="Город, Страна"
+              placeholder="Город"
             />
           </b-form-group>
         </b-col>
 
+        <b-col lg="3">
+          <p class="h5 mb-1 mt-50">
+            Количество персонала:</p>
+        </b-col>
         <b-col
-          md="4"
-          offset-md="1"
+          lg="7"
+          class="mt-50"
         >
+          <vue-slider
+            v-model="personal"
+            :direction="direction"
+            :min="min"
+            :max="max"
+            class="mb-2"
+          />
+        </b-col>
+
+        <b-col
+          lg="3"
+          class="mb-auto"
+        >
+          <p class="h5 mb-1 mt-50">
+            О работодателе:</p>
+        </b-col>
+        <b-col
+          lg="9"
+          class="mt-50"
+        >
+          <b-form-textarea
+            id="textarea-about-mployer"
+            :value="aboutEmployer"
+            rows="4"
+          />
+        </b-col>
+
+        <b-col lg="3">
+          <p class="h5 mb-1 mt-1">
+            Бонусы:</p>
+        </b-col>
+        <b-col lg="9">
           <b-form-group>
-            <span class="input__text">Статус</span>
             <v-select
-              v-model="selectedStatus"
+              v-model="bonus"
+              placeholder="Бонус"
+              multiple
               :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
               label="title"
-              :options="optionStatus"
+              :options="bonusOption"
+              class="mt-1"
             />
           </b-form-group>
         </b-col>
 
         <b-col
-          md="4"
+          lg="3"
+          class="mb-auto"
         >
-          <b-form-group
-            label="Количество персонала"
-            label-for="staff"
-          >
-            <b-form-input
-              id="staff"
-              v-model="employerInfo.staff"
-              placeholder=""
-            />
-          </b-form-group>
+          <p class="h5 mb-1 mt-50">
+            Доп. бонусы:</p>
+        </b-col>
+        <b-col
+          lg="9"
+          class="mt-50"
+        >
+          <b-form-textarea
+            id="textarea-about-second-bonus"
+            :value="secondBonus"
+            rows="4"
+          />
         </b-col>
 
       </b-row>
+
       <!-- submit and reset -->
       <div class="mt-2 mt-lg-5 d-flex justify-content-sm-between justify-content-center flex-wrap col-lg-9 pl-0">
         <div class="mb-1">
@@ -225,7 +234,7 @@
             variant="primary"
             class="mr-1"
           >
-            Сохранить
+            Сохранить изменения
           </b-button>
           <b-button
             v-ripple.400="'rgba(186, 191, 199, 0.15)'"
@@ -235,7 +244,7 @@
             Отмена
           </b-button>
         </div>
-        <div>
+        <!-- <div>
           <b-button
             v-ripple.400="'rgba(255, 255, 255, 0.15)'"
             v-b-modal.modal-danger
@@ -263,7 +272,7 @@
               Вы уверены, что хотите удалить соискателя?
             </b-card-text>
           </b-modal>
-        </div>
+        </div> -->
       </div>
 
     </b-form>
@@ -272,11 +281,13 @@
 
 <script>
 import {
-  BRow, BCol, BFormGroup, BFormInput, BFormRadio, BForm, BButton, BModal, VBModal, BCardText,
+  BRow, BCol, BFormGroup, BFormInput, BForm, BButton, BFormTextarea,
 } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import vSelect from 'vue-select'
 import { ref } from '@vue/composition-api'
+import VueSlider from 'vue-slider-component'
+import store from '@/store/index'
 import InputRepeat from '../components/InputRepeat.vue'
 
 export default {
@@ -285,17 +296,18 @@ export default {
     BCol,
     BFormGroup,
     BFormInput,
-    BFormRadio,
     BForm,
     vSelect,
     BButton,
-    BModal,
-    BCardText,
+    // BModal,
+    // BCardText,
     InputRepeat,
+    VueSlider,
+    BFormTextarea,
   },
   directives: {
     Ripple,
-    'b-modal': VBModal,
+    // 'b-modal': VBModal,
   },
   data() {
     return {
@@ -311,6 +323,18 @@ export default {
       attraction: { title: 'Instagram' },
       attractionOption: [{ title: 'Instagram' }, { title: 'Google' }, { title: 'Linkedin' }, { title: 'An.Works' }, { title: 'Telegram' }],
 
+      personal: [40, 235],
+      min: 0,
+      max: 500,
+      dir: 'ltr',
+
+      aboutEmployer: 'EPAM Systems — американская ИТ-компания, основанная в 1993 году. Крупнейший мировой производитель заказного программного обеспечения, специалист по консалтингу, резидент Белорусского парка высоких технологий. Штаб-квартира компании расположена в Ньютауне, штат Пенсильвания, а её отделения представлены более чем в 30 странах мира',
+
+      bonus: [{ title: 'Спортзал' }, { title: 'Гибкий график' }, { title: 'Уточка' }],
+      bonusOption: [{ title: 'Спортзал' }, { title: 'Гибкий график' }, { title: 'Зона отдыха' }, { title: 'Столовая' }, { title: 'Игровой зал' }, { title: 'Корпаративы' }, { title: 'Уточка' }],
+
+      secondBonus: 'EPAM Systems — американская ИТ-компания, основанная в 1993 году. Крупнейший мировой производитель заказного программного обеспечения, специалист по консалтингу, резидент Белорусского парка высоких технологий. Штаб-квартира компании расположена в Ньютауне, штат Пенсильвания, а её отделения представлены более чем в 30 странах мира',
+
     }
   },
   setup() {
@@ -319,20 +343,31 @@ export default {
       post: 'castomermail@mail.com',
       nameCompany: 'Epam',
       mainSite: 'castomer.com',
-      dop: '1997.08.06',
-      idUser: '1654997654567',
-      office: 'Харьков, Украина',
-      staff: '50-100',
+      countryJob: 'Украина',
+      office: 'Харьков',
     })
     return {
       employerInfo,
     }
+  },
+  computed: {
+    direction() {
+      if (store.state.appConfig.isRTL) {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        this.dir = 'rtl'
+        return this.dir
+      }
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+      this.dir = 'ltr'
+      return this.dir
+    },
   },
 }
 </script>
 
 <style lang="scss">
     @import '@core/scss/vue/libs/vue-select.scss';
+    @import '@core/scss/vue/libs/vue-slider.scss';
 </style>
 
 <style lang="scss" scoped>

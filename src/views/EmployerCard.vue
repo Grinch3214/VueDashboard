@@ -37,6 +37,15 @@
           <span class="d-none d-sm-inline">Ведущий рекрутер</span>
         </template>
         <b-card-text>
+          <p class="h4">
+            {{ 'name' }}</p>
+          <b-avatar
+            rounded="sm"
+            variant="light-primary"
+            size="104px"
+            :src="require('@/assets/images/avatars/epam.png')"
+          />
+          <main-recruter />
 
           <!-- buttons -->
           <div class="mt-2">
@@ -46,7 +55,7 @@
               variant="primary"
               class="mr-1 mb-1"
             >
-              Сохранить
+              Сохранить изменения
             </b-button>
             <b-button
               v-ripple.400="'rgba(186, 191, 199, 0.15)'"
@@ -104,7 +113,7 @@
         </template>
         <b-card-text>
 
-          <contact-tab-user />
+          <!-- <contact-tab-user /> -->
 
           <!-- buttons -->
           <div class="mt-2">
@@ -114,7 +123,7 @@
               variant="primary"
               class="mr-1 mb-1"
             >
-              Сохранить
+              Сохранить изменения
             </b-button>
             <b-button
               v-ripple.400="'rgba(186, 191, 199, 0.15)'"
@@ -150,7 +159,8 @@ import {
   BCardText, BTab, BTabs, BAvatar, BButton,
 } from 'bootstrap-vue'
 import InfoEmployerUser from '@/anworks/employers/InfoEmployerUser.vue'
-import ContactTabUser from '@/anworks/components/ContactTabUser.vue'
+import MainRecruter from '@/anworks/employers/MainRecruter.vue'
+// import ContactTabUser from '@/anworks/components/ContactTabUser.vue'
 import ComplaintsForTab from '@/anworks/components/ComplaintsForTab.vue'
 import Ripple from 'vue-ripple-directive'
 
@@ -161,7 +171,8 @@ export default {
     BTabs,
     BAvatar,
     InfoEmployerUser,
-    ContactTabUser,
+    MainRecruter,
+    // ContactTabUser,
     ComplaintsForTab,
     BButton,
   },

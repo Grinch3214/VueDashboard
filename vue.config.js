@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   publicPath: '/',
-  // publicPath: process.env.NODE_ENV === 'production' ? '/VuePage' : '/',
+  // publicPath: process.env.NODE_ENV === 'production' ? '/seecv.an.works' : '/',
   css: {
     loaderOptions: {
       sass: {
