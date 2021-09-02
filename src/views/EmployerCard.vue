@@ -90,44 +90,10 @@
             icon="PhoneIcon"
             class="mr-50"
           />
-          <span class="d-none d-sm-inline">Контакты</span>
+          <span class="d-none d-sm-inline">Журнал действий</span>
         </template>
         <b-card-text>
-
-          <!-- <contact-tab-user /> -->
-
-          <!-- buttons -->
-          <div class="mt-2">
-            <b-button
-              v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-              type="submit"
-              variant="primary"
-              class="mr-1 mb-1"
-            >
-              Сохранить изменения
-            </b-button>
-            <b-button
-              v-ripple.400="'rgba(186, 191, 199, 0.15)'"
-              type="reset"
-              variant="outline-primary"
-              class="mb-1"
-            >
-              Отмена
-            </b-button>
-          </div>
-
-        </b-card-text>
-      </b-tab>
-      <b-tab>
-        <template #title>
-          <feather-icon
-            icon="ThumbsDownIcon"
-            class="mr-50"
-          />
-          <span class="d-none d-sm-inline">Жалобы</span>
-        </template>
-        <b-card-text>
-          <complaints-for-tab />
+          <activity-log />
         </b-card-text>
       </b-tab>
     </b-tabs>
@@ -142,8 +108,7 @@ import {
 import InfoEmployerUser from '@/anworks/employers/InfoEmployerUser.vue'
 import MainRecruter from '@/anworks/employers/MainRecruter.vue'
 import HistoryHiring from '@/anworks/employers/HistoryHiring.vue'
-// import ContactTabUser from '@/anworks/components/ContactTabUser.vue'
-import ComplaintsForTab from '@/anworks/components/ComplaintsForTab.vue'
+import ActivityLog from '@/anworks/employers/ActivityLog.vue'
 import Ripple from 'vue-ripple-directive'
 
 export default {
@@ -155,8 +120,7 @@ export default {
     InfoEmployerUser,
     MainRecruter,
     HistoryHiring,
-    // ContactTabUser,
-    ComplaintsForTab,
+    ActivityLog,
     BButton,
   },
   directives: {
