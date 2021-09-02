@@ -79,26 +79,7 @@
           <span class="d-none d-sm-inline">История наймов</span>
         </template>
         <b-card-text>
-
-          <!-- buttons -->
-          <div class="mt-2">
-            <b-button
-              v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-              type="submit"
-              variant="primary"
-              class="mr-1 mb-1"
-            >
-              Сохранить
-            </b-button>
-            <b-button
-              v-ripple.400="'rgba(186, 191, 199, 0.15)'"
-              type="reset"
-              variant="outline-primary"
-              class="mb-1"
-            >
-              Отмена
-            </b-button>
-          </div>
+          <history-hiring />
 
         </b-card-text>
       </b-tab>
@@ -160,6 +141,7 @@ import {
 } from 'bootstrap-vue'
 import InfoEmployerUser from '@/anworks/employers/InfoEmployerUser.vue'
 import MainRecruter from '@/anworks/employers/MainRecruter.vue'
+import HistoryHiring from '@/anworks/employers/HistoryHiring.vue'
 // import ContactTabUser from '@/anworks/components/ContactTabUser.vue'
 import ComplaintsForTab from '@/anworks/components/ComplaintsForTab.vue'
 import Ripple from 'vue-ripple-directive'
@@ -172,6 +154,7 @@ export default {
     BAvatar,
     InfoEmployerUser,
     MainRecruter,
+    HistoryHiring,
     // ContactTabUser,
     ComplaintsForTab,
     BButton,

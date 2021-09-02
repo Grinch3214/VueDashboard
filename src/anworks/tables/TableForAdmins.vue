@@ -32,7 +32,8 @@
       class="mt-2"
     />
     <div class="pl-2 pr-2 mt-2 d-flex justify-content-between align-items-center flex-wrap">
-      <p class="text-black-50">Действий <span>5 из 47</span></p>
+      <p class="text-black-50">
+        Действий <span>5 из 47</span></p>
       <b-pagination
         v-model="currentPage"
         :total-rows="totalRows"

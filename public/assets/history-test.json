@@ -1,0 +1,110 @@
+[
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Мария", "lastName": "Иванова", "idRecruter": 111111 },
+        "jobseeker": { "name": "Иван Иванов", "idJobSeeker": 763213 },
+        "position": "Junior Frontend Developer",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Нанят", "variant": "success" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Иван", "lastName": "Дурак", "idRecruter": 111112 },
+        "jobseeker": { "name": "Леся Кудрявая", "idJobSeeker": 763214 },
+        "position": "Middle Frontend Developer",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Не нанят", "variant": "secondary" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Надежда", "lastName": "Ушла", "idRecruter": 111113 },
+        "jobseeker": { "name": "Вера Пропала", "idJobSeeker": 763215 },
+        "position": "Web UI",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Обсуждение", "variant": "primary" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Олег", "lastName": "Такилов", "idRecruter": 111114 },
+        "jobseeker": { "name": "Леся Кудрявая", "idJobSeeker": 763214 },
+        "position": "Middle Frontend Developer",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Не нанят", "variant": "secondary" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Анастасия", "lastName": "Дюйнова", "idRecruter": 111115 },
+        "jobseeker": { "name": "Игорь Иииигорь", "idJobSeeker": 763217 },
+        "position": "QA",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Нанят", "variant": "success" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Вероника", "lastName": "Изиго", "idRecruter": 111115 },
+        "jobseeker": { "name": "Рома Фулстакович", "idJobSeeker": 763224 },
+        "position": "Fullstack Developer",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Нанят", "variant": "success" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Валерий", "lastName": "Оликсеенко", "idRecruter": 111116 },
+        "jobseeker": { "name": "Сергей Лацков", "idJobSeeker": 763253 },
+        "position": "Педиатр",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Не нанят", "variant": "secondary" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Ярослав", "lastName": "Зюзь", "idRecruter": 111117 },
+        "jobseeker": { "name": "Виталий Стаховский", "idJobSeeker": 763816 },
+        "position": "Web Designer",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Обсуждение", "variant": "primary" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Андрей", "lastName": "Богословский", "idRecruter": 111119 },
+        "jobseeker": { "name": "Виталий Стаховский", "idJobSeeker": 763816 },
+        "position": "Web Designer",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Обсуждение", "variant": "primary" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Валерий", "lastName": "Олексеенко", "idRecruter": 111120 },
+        "jobseeker": { "name": "Сергей Лацков", "idJobSeeker": 763253 },
+        "position": "Педиатр",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Не нанят", "variant": "secondary" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Ронан", "lastName": "Завоеватель", "idRecruter": 111121 },
+        "jobseeker": { "name": "Сергей Лацков", "idJobSeeker": 763253 },
+        "position": "Педиатр",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Не нанят", "variant": "secondary" }
+    },
+    {
+        "date": "13.08.2021",
+        "recruter": { "name": "Джеймс", "lastName": "Реймс", "idRecruter": 111122 },
+        "jobseeker": { "name": "Сергей Лацков", "idJobSeeker": 763253 },
+        "position": "Педиатр",
+        "contacts": { "phone": "+38 063 562 8743", "email": "castomermail@mail.com" },
+        "price": "100 токен",
+        "status": { "statusEP": "Нанят", "variant": "success" }
+    }
+]
