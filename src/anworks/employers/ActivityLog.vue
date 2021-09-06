@@ -14,8 +14,7 @@
       :per-page="perPage"
     />
 
-    <div class="d-flex justify-content-between align-items-center">
-      <span class="text-muted">Контактов {{ perPage }} из {{ totalRows }}</span>
+    <div class="d-flex justify-content-center align-items-center">
       <b-pagination
         v-model="currentPage"
         :total-rows="totalRows"

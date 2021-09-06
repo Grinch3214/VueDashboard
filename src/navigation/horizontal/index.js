@@ -77,6 +77,13 @@ export default [
         route: 'complaint-page',
         title: 'Жалобы',
       },
+
+      {
+        header: 'Маркетинг по пользователям',
+        icon: 'TriangleIcon',
+        route: 'marketing-by-user',
+        title: 'Каналы связи работодателя',
+      },
     ],
   },
 

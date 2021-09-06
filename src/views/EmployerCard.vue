@@ -87,7 +87,7 @@
       <b-tab>
         <template #title>
           <feather-icon
-            icon="PhoneIcon"
+            icon="LockIcon"
             class="mr-50"
           />
           <span class="d-none d-sm-inline">Журнал действий</span>

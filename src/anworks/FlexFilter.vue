@@ -1,5 +1,5 @@
 <template>
-  <div class="col-xl-4">
+  <div>
 
     <div
       class="admins pointer arrow-static"
@@ -13,23 +13,45 @@
       class="card p-1 toggle__filters"
       :class="{active: isActive}"
     >
+      <div>
+        <h5 class="mt-1">
+          Расширенный поиск:</h5>
+        <b-form-select
+          v-model="selected"
+          :options="options"
+          size="md"
+          class="mt-1"
+        />
+
+        <b-form-select
+          v-model="selectOperators"
+          :options="operator"
+          size="md"
+          class="mt-1"
+        />
+
+        <b-form-input
+          id="helperInput"
+          placeholder="Поиск"
+          size="md"
+          class="mt-1"
+        />
+      </div>
 
       <filters-activity>
         <template v-slot:radioButtons>
           <p class="h6 mt-1 mb-2">
-            Активность</p>
+            Пользователь</p>
         </template>
         <template v-slot:radioButtons-1>
           <span>
-            Активен</span>
+            Работодатель</span>
         </template>
         <template v-slot:radioButtons-2>
           <span>
-            Заблокирован</span>
+            Соискатель</span>
         </template>
       </filters-activity>
-
-      <filters-employers-name />
 
       <div class="text-center pb-3 mt-2">
         <b-button
@@ -51,16 +73,16 @@
 </template>
 
 <script>
-import { BButton } from 'bootstrap-vue'
+import { BButton, BFormSelect, BFormInput } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import FiltersActivity from './filtersComponents/FiltersActivity.vue'
-import FiltersEmployersName from './filtersComponents/FiltersEmployersName.vue'
 
 export default {
   components: {
     BButton,
     FiltersActivity,
-    FiltersEmployersName,
+    BFormSelect,
+    BFormInput,
   },
   directives: {
     Ripple,
@@ -68,6 +90,29 @@ export default {
   data() {
     return {
       isActive: false,
+
+      checkFilter: ['A'],
+
+      selected: null,
+      options: [
+        { text: 'Имя' },
+        { text: 'Дата регистрации' },
+        { text: 'Дата рождения' },
+        { text: 'Роль' },
+        { text: 'Статус' },
+        { text: 'IP' },
+      ],
+
+      selectOperators: null,
+      operator: [
+        { text: '=' },
+        { text: '!=' },
+        { text: '<' },
+        { text: '>' },
+        { text: '<=' },
+        { text: '>=' },
+        { text: 'LIKE %%' },
+      ],
     }
   },
 }

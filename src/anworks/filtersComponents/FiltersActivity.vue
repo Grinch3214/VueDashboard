@@ -1,14 +1,13 @@
 <template>
   <div class="mt-1 pb-1 border-bottom">
-    <p class="h6 mt-1 mb-2">
-      Активность</p>
+    <slot name="radioButtons" />
     <b-form-radio
       v-model="Selected"
       name="activity"
       value="A"
       class="mb-1"
     >
-      Активен
+      <slot name="radioButtons-1" />
     </b-form-radio>
     <b-form-radio
       v-model="Selected"
@@ -16,7 +15,7 @@
       value="B"
       class="mb-1"
     >
-      Заблокирован
+      <slot name="radioButtons-2" />
     </b-form-radio>
   </div>
 </template>

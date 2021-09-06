@@ -319,6 +319,20 @@ const router = new VueRouter({
       },
     },
     {
+      path: '/marketing-by-users',
+      name: 'marketing-by-user',
+      component: () => import('@/views/MarketingByUser.vue'),
+      meta: {
+        pageTitle: 'Маркетинг по пользователям',
+        breadcrumb: [
+          {
+            text: 'Каналы связи работодателя',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/Login.vue'),

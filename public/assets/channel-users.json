@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "fullName": "Рома Романов",
+        "chatBot": 1,
+        "lastLetter": "Открыто",
+        "post": "Epam.p@mail.com",
+        "gmail": "Epam.p@gmail.com",
+        "media": "https://cdn.vuetifyjs.com/images/john.png"
+    },
+    {
+        "id": 2,
+        "fullName": "Лена Довбань",
+        "chatBot": 2,
+        "lastLetter": "Не открыто",
+        "post": "Epam.p@mail.com",
+        "gmail": "Epam.p@gmail.com"
+    },
+    {
+        "id": 3,
+        "fullName": "Иван Иванович",
+        "chatBot": 2,
+        "lastLetter": "Открыто",
+        "post": "Epam.p@mail.com",
+        "gmail": "Epam.p@gmail.com"
+    },
+    {
+        "id": 4,
+        "fullName": "Олег Олегович",
+        "chatBot": 1,
+        "lastLetter": "Открыто",
+        "post": "Epam.p@mail.com",
+        "gmail": "Epam.p@gmail.com"
+    },
+    {
+        "id": 5,
+        "fullName": "Роман Романович",
+        "chatBot": 2,
+        "lastLetter": "Не открыто",
+        "post": "Epam.p@mail.com",
+        "gmail": "Epam.p@gmail.com"
+    },
+    {
+        "id": 6,
+        "fullName": "Анастасия Иванова",
+        "chatBot": 1,
+        "lastLetter": "Открыто",
+        "post": "Epam.p@mail.com",
+        "gmail": "Epam.p@gmail.com"
+    },
+    {
+        "id": 7,
+        "fullName": "Виктория Викторовна",
+        "chatBot": 2,
+        "lastLetter": "Не открыто",
+        "post": "Epam.p@mail.com",
+        "gmail": "Epam.p@gmail.com"
+    },
+    {
+        "id": 8,
+        "fullName": "Татьяна Табушкина",
+        "chatBot": 1,
+        "lastLetter": "Открыто",
+        "post": "Epam.p@mail.com",
+        "gmail": "Epam.p@gmail.com"
+    }
+]
