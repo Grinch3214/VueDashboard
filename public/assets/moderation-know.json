@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "tehnology": "JavaScript",
+        "fraemworks": "Vue.js",
+        "status": 2
+    },
+    {
+        "id": 2,
+        "tehnology": "JavaScript",
+        "fraemworks": "React.js",
+        "status": 1
+    },
+    {
+        "id": 3,
+        "tehnology": "JavaScript",
+        "fraemworks": "Vue.js",
+        "status": 4
+    },
+    {
+        "id": 4,
+        "tehnology": "JavaScript",
+        "fraemworks": "Vue.js",
+        "status": 3
+    },
+    {
+        "id": 5,
+        "tehnology": "JavaScript",
+        "fraemworks": "React.js",
+        "status": 4
+    },
+    {
+        "id": 6,
+        "tehnology": "JavaScript",
+        "fraemworks": "Vue.js",
+        "status": 3
+    },
+    {
+        "id": 7,
+        "tehnology": "JavaScript",
+        "fraemworks": "Angular.js",
+        "status": 1
+    },
+    {
+        "id": 8,
+        "tehnology": "JavaScript",
+        "fraemworks": "React.js",
+        "status": 1
+    },
+    {
+        "id": 9,
+        "tehnology": "JavaScript",
+        "fraemworks": "Vue.js",
+        "status": 3
+    },
+    {
+        "id": 10,
+        "tehnology": "JavaScript",
+        "fraemworks": "React.js",
+        "status": 4
+    }
+]

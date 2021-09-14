@@ -319,6 +319,20 @@ const router = new VueRouter({
       },
     },
     {
+      path: '/analitics-diagrams-general',
+      name: 'analitics-diagrams-general',
+      component: () => import('@/anworks/analitics/AnaliticsDiagrams.vue'),
+      meta: {
+        pageTitle: 'Аналитика',
+        breadcrumb: [
+          {
+            text: 'Статистика',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
       path: '/marketing-by-users',
       name: 'marketing-by-user',
       component: () => import('@/views/MarketingByUser.vue'),
@@ -327,6 +341,20 @@ const router = new VueRouter({
         breadcrumb: [
           {
             text: 'Каналы связи работодателя',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
+      path: '/moderation',
+      name: 'moderation',
+      component: () => import('@/views/Moderation.vue'),
+      meta: {
+        pageTitle: 'Модерация',
+        breadcrumb: [
+          {
+            text: 'Справочник',
             active: true,
           },
         ],

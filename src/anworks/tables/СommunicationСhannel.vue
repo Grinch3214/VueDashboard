@@ -55,16 +55,16 @@
         </span>
 
         <!-- Column: Media -->
-        <!-- <span v-else-if="props.column.field === 'media'">
+        <span v-else-if="props.column.field === 'media'">
           <span>
             <feather-icon
               icon="CheckIcon"
               size="23"
               class="text-success"
             />
-            <img src="@/assets/images/svg/check.svg">
+            <!-- <img src="@/assets/images/svg/check.svg"> -->
           </span>
-        </span> -->
+        </span>
 
         <!-- Column: Action -->
         <span v-else-if="props.column.field === 'action'">

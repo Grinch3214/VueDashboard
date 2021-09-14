@@ -84,6 +84,13 @@ export default [
         route: 'marketing-by-user',
         title: 'Каналы связи работодателя',
       },
+
+      {
+        header: 'Модерация',
+        icon: 'BookOpenIcon',
+        route: 'moderation',
+        title: 'Справочник',
+      },
     ],
   },
 
@@ -111,6 +118,11 @@ export default [
       {
         title: 'Сквозная аналитика работодатели',
         route: 'analitics-employers',
+        icon: 'TrendingUpIcon',
+      },
+      {
+        title: 'Статистика',
+        route: 'analitics-diagrams-general',
         icon: 'TrendingUpIcon',
       },
     ],
