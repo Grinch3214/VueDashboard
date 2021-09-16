@@ -316,17 +316,147 @@
             </template>
           </cards-static-line>
         </div>
+
+        <div class="col-md-6 col-lg-4 my-2 d-flex flex-wrap">
+          <div class="card p-1">
+            <distributed-columns />
+            <div class="row">
+              <div class="col-6">
+                Английский: {{ series[0].data[0] }}
+                <b-progress
+                  value="99"
+                  max="700"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                Немецкий: {{ series[0].data[1] }}
+                <b-progress
+                  value="199"
+                  max="700"
+                  variant="success"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                Испанский: {{ series[0].data[2] }}
+                <b-progress
+                  value="299"
+                  max="700"
+                  variant="warning"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                Китайский: {{ series[0].data[3] }}
+                <b-progress
+                  value="399"
+                  max="700"
+                  variant="danger"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                Польский: {{ series[0].data[4] }}
+                <b-progress
+                  value="499"
+                  max="700"
+                  variant="info"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                Другие: {{ series[0].data[5] }}
+                <b-progress
+                  value="260"
+                  max="700"
+                  height="0.5rem"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 my-2 d-flex flex-wrap">
+          <div class="card p-1">
+            <distributed-columns />
+            <div class="row">
+              <div class="col-6">
+                JavaScript: {{ series[0].data[0] }}
+                <b-progress
+                  value="99"
+                  max="700"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                PHP: {{ series[0].data[1] }}
+                <b-progress
+                  value="199"
+                  max="700"
+                  variant="success"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                C++: {{ series[0].data[2] }}
+                <b-progress
+                  value="299"
+                  max="700"
+                  variant="warning"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                C#: {{ series[0].data[3] }}
+                <b-progress
+                  value="399"
+                  max="700"
+                  variant="danger"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                HTML: {{ series[0].data[4] }}
+                <b-progress
+                  value="499"
+                  max="700"
+                  variant="info"
+                  height="0.5rem"
+                />
+              </div>
+              <div class="col-6">
+                Другие: {{ series[0].data[5] }}
+                <b-progress
+                  value="260"
+                  max="700"
+                  height="0.5rem"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 my-2 d-flex flex-wrap">
+          <analitics-hard-skills />
+        </div>
       </div>
     </b-tab>
   </b-tabs>
 </template>
 
 <script>
-import { BButton, BTab, BTabs } from 'bootstrap-vue'
+import {
+  BButton, BTab, BTabs, BProgress,
+} from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import PieCharts from './PieCharts.vue'
 import RadarCharts from './RadarCharts.vue'
 import CardsStaticLine from './CardsStaticLine.vue'
+import DistributedColumns from './DistributedColumns.vue'
+import AnaliticsHardSkills from './AnaliticsHardSkills.vue'
 
 export default {
   components: {
@@ -336,12 +466,20 @@ export default {
     BTabs,
     RadarCharts,
     CardsStaticLine,
+    DistributedColumns,
+    BProgress,
+    AnaliticsHardSkills,
   },
   directives: {
     Ripple,
   },
   data() {
     return {
+      series: [{
+        name: 'Иностранный язык',
+        data: [99, 199, 299, 399, 499, 260],
+      }],
+
       items: [
         {
           channel: 'Instagram',
