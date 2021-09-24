@@ -10,16 +10,16 @@
       >
         <div class="d-sm-flex justify-content-between align-items-center mb-3">
           <h4 class="card-title mb-50 mb-sm-0">
-            Revenue Report
+            Тест Hard Skills
           </h4>
           <div class="d-flex align-items-center">
             <div class="d-flex align-items-center mr-2">
               <span class="bullet bullet-primary svg-font-small-3 mr-50 cursor-pointer" />
-              <span>Earning</span>
+              <span>Сдали</span>
             </div>
             <div class="d-flex align-items-center">
               <span class="bullet bullet-warning svg-font-small-3 mr-50 cursor-pointer" />
-              <span>Expense</span>
+              <span>Не сдали</span>
             </div>
           </div>
         </div>
@@ -39,35 +39,31 @@
         class="budget-wrapper"
       >
         <b-dropdown
-          text="2021"
+          text="Сентябрь 2021"
           size="sm"
           class="budget-dropdown"
           variant="outline-primary"
         >
           <b-dropdown-item
             v-for="year in revenueReport.years"
-            :key="year"
+            :key="year.name"
           >
-            {{ year }}
+            {{ year.name }}
           </b-dropdown-item>
         </b-dropdown>
 
-        <select>
-            <option v-for="test in revenueReport.tests"
-            :key="test">{{ test }}</option>
-        </select>
-
         <h2 class="mb-25">
-          ${{ revenueReport.price }}
+          {{ revenueReport.price }}
         </h2>
         <div class="d-flex justify-content-center">
-          <span class="font-weight-bolder mr-25">Budget:</span>
+          <span class="font-weight-bolder mr-25">Всего:</span>
           <span>{{ revenueReport.budget }}</span>
         </div>
         <vue-apex-charts
           id="budget-chart"
           type="line"
-          height="80"
+          width="100"
+          height="90"
           :options="budgetChart.options"
           :series="budgetChart.series"
         />
@@ -101,18 +97,19 @@ export default {
     return {
       revenue_report: {},
       revenueReport: {
-        tests: ['2021', '2020', '2019', '2018'],
-        years: ['2021', '2020', '2019', '2018'],
-        price: '25,852',
-        budget: '56,800',
+        years: [
+          { name: 'Январь 2021' }, { name: 'Февраль 2021' }, { name: 'Март 2021' }, { name: 'Апрель 2021' }, { name: 'Май 2021' }, { name: 'Июнь 2021' }, { name: 'Июль 2021' }, { name: 'Август 2021' }, { name: 'Сентябрь 2021' }, { name: 'Октябрь 2021' }, { name: 'Ноябрь 2021' }, { name: 'Декабрь 2021' },
+        ],
+        price: '1,232',
+        budget: '2,800',
         series: [
           {
             name: 'Earning',
-            data: [95, 177, 284, 256, 105, 63, 168, 218, 72],
+            data: [95, 177, 284, 256],
           },
           {
             name: 'Expense',
-            data: [-145, -80, -60, -180, -100, -60, -85, -75, -100],
+            data: [-145, -80, -60, -180],
           },
         ],
         chartOptions: {
@@ -131,7 +128,7 @@ export default {
             },
           },
           xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+            categories: ['JavaScript', 'Java', 'C++', 'QA'],
             labels: {
               style: {
                 colors: '#b9b9c3',

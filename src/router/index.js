@@ -361,6 +361,78 @@ const router = new VueRouter({
       },
     },
     {
+      path: '/tests',
+      name: 'tests',
+      component: () => import('@/views/TestsPage.vue'),
+      meta: {
+        pageTitle: '',
+        breadcrumb: [
+          {
+            text: 'Тесты',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
+      path: '/tests-test',
+      name: 'tests-test',
+      component: () => import('@/anworks/tests/TestsTable.vue'),
+      meta: {
+        pageTitle: '',
+        breadcrumb: [
+          {
+            text: 'Тесты > Тесты по технологиям',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
+      path: '/tests-test-base',
+      name: 'tests-test-base',
+      component: () => import('@/anworks/tests/BaseInfoTest.vue'),
+      meta: {
+        pageTitle: '',
+        breadcrumb: [
+          {
+            text: 'Тесты',
+            active: true,
+          },
+          {
+            text: 'Тесты по технологиям',
+            active: true,
+          },
+          {
+            text: 'Добавить тест',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
+      path: '/tests-test-base-edit',
+      name: 'tests-test-base-edit',
+      component: () => import('@/anworks/tests/EditBaseInfoTest.vue'),
+      meta: {
+        pageTitle: '',
+        breadcrumb: [
+          {
+            text: 'Тесты',
+            active: true,
+          },
+          {
+            text: 'Тесты по технологиям',
+            active: true,
+          },
+          {
+            text: 'Добавить тест',
+            active: true,
+          },
+        ],
+      },
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/Login.vue'),

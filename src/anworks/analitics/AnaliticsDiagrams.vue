@@ -317,7 +317,7 @@
           </cards-static-line>
         </div>
 
-        <div class="col-md-6 col-lg-4 my-2 d-flex flex-wrap">
+        <div class="col-md-6 my-2 d-flex flex-wrap">
           <div class="card p-1">
             <distributed-columns />
             <div class="row">
@@ -378,7 +378,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 my-2 d-flex flex-wrap">
+        <div class="col-md-6 my-2 d-flex flex-wrap">
           <div class="card p-1">
             <distributed-columns />
             <div class="row">
@@ -439,8 +439,12 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 my-2 d-flex flex-wrap">
+        <div class="col-md-8 my-2 d-flex flex-wrap">
           <analitics-hard-skills />
+        </div>
+
+        <div class="col-md-8 my-2 d-flex flex-wrap">
+          <diagram-for-token />
         </div>
       </div>
     </b-tab>
@@ -457,6 +461,7 @@ import RadarCharts from './RadarCharts.vue'
 import CardsStaticLine from './CardsStaticLine.vue'
 import DistributedColumns from './DistributedColumns.vue'
 import AnaliticsHardSkills from './AnaliticsHardSkills.vue'
+import DiagramForToken from './DiagramForToken.vue'
 
 export default {
   components: {
@@ -469,6 +474,7 @@ export default {
     DistributedColumns,
     BProgress,
     AnaliticsHardSkills,
+    DiagramForToken,
   },
   directives: {
     Ripple,

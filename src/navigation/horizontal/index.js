@@ -91,6 +91,13 @@ export default [
         route: 'moderation',
         title: 'Справочник',
       },
+
+      {
+        header: 'Тесты',
+        icon: 'FolderIcon',
+        route: 'tests',
+        title: 'Тесты',
+      },
     ],
   },
 
