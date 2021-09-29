@@ -1,6 +1,11 @@
 <template>
   <div>
-    <create-test :formTestData="infoTest">
+    <create-test
+      v-if="step == 1"
+      :formTestData="infoTest"
+      @toNext="toNext"
+      @prevStep="prevStep"
+    >
       <template v-slot:header>
         <div class="d-flex justify-content-between">
           <div>
@@ -26,6 +31,9 @@
         <a class="mb-4" href="#"><u>Удалить тест</u></a>
       </template>
     </create-test>
+    <div v-else-if="step == 2" class="test">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur odio ullam assumenda inventore tempora esse ducimus alias velit non neque, impedit, maiores corporis repellat officia reprehenderit modi iste ipsa debitis.
+    </div>
   </div>
 </template>
 
@@ -44,6 +52,7 @@ export default {
   },
   data() {
     return {
+      step: 1,
       infoTest: {
         title: 'Тесты по HTML/CSS',
         technology: 'HTML/CSS',
@@ -54,6 +63,14 @@ export default {
         attempts: '1',
       },
     }
+  },
+  methods: {
+    toNext() {
+      this.step += 1
+    },
+    prevStep() {
+      this.step -= 1
+    },
   },
 }
 </script>

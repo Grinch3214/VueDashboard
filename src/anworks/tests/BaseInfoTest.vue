@@ -3,6 +3,8 @@
     <create-test
       v-if="step == 1"
       :formTestData="infoTest"
+      @toNext="toNext"
+      @prevStep="prevStep"
     >
       <template v-slot:header>
         <h1>Создание теста</h1>
@@ -14,20 +16,21 @@
         <span>Следующий шаг</span>
       </template>
     </create-test>
-    <div v-else-if="step == 2">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae tempore, nulla dolorum magnam illum doloremque soluta sit quas laboriosam. Odit dolores ad eos beatae harum iusto alias nemo voluptas numquam.
-    </div>
-    <button @click.prevent="prevStep">Prev</button>
-    <button @click.prevent="nextStep">Next</button>
+
+    <add-questions v-else-if="step == 2">
+
+    </add-questions>
   </div>
 </template>
 
 <script>
+import AddQuestions from './AddQuestions.vue'
 import CreateTest from './CreateTest.vue'
 
 export default {
   components: {
     CreateTest,
+    AddQuestions,
   },
   data() {
     return {
@@ -44,7 +47,7 @@ export default {
     }
   },
   methods: {
-    nextStep() {
+    toNext() {
       this.step += 1
     },
     prevStep() {

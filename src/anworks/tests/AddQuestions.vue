@@ -1,0 +1,246 @@
+<template>
+  <div class="row">
+    <div class="col-12 col-md-8 mb-2">
+      <div class="p-2 bg-white rounded shadow-sm h-100">
+
+        <div class="col-12 col-md-8 mb-2">
+          <p class="small mb-25">
+            Тема</p>
+          <b-form-select
+            v-model="selectedTechnology"
+            :options="optionsTechnology"
+          />
+        </div>
+
+        <div class="col-12 col-md-8 mb-2">
+          <p class="small mb-25">
+            Сложность по Блуму</p>
+          <bloom-buttons />
+        </div>
+
+        <div class="col-12 mb-2 col-md-4">
+          <p class="small mb-25">
+            Время на задание</p>
+          <b-form-select
+            v-model="selectedTimeQuestion"
+            :options="optionsTimeQuestion"
+          />
+        </div>
+
+        <div class="col-12 col-md-4 position-relative">
+          <b-button
+            v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+            variant="primary"
+            @click="isActive = !isActive"
+          >
+            Тип задания
+          </b-button>
+          <div
+            :class="{active: isActive}"
+            class="questions-box bg-white py-2 shadow position-absolute d-flex flex-column align-items-center"
+          >
+            <div class=" d-flex mt-2">
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Несколько ответов</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_1.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Один ответ</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_2.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Верно/неверно</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_3.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class=" d-flex mt-2">
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Соответствие</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_4.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Развёрнутый ответ</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_5.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Заполнить пропуски</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_6.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class=" d-flex mt-2">
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Выбор из списка</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_7.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Последовательность</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_8.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+
+              <div class="mx-2 text-center width-160">
+                <h5 class="text-nowrap">
+                  Числовой ответ</h5>
+                <p
+                  class="test-image"
+                  @click="isActive = !isActive"
+                >
+                  <img
+                    :src="require('@/assets/images/pages/tests/btn_9.svg')"
+                    alt="test"
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <upload-image />
+
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4 mb-2">
+      <div class="p-2 bg-white rounded shadow-sm h-100">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet iste dicta labore saepe pariatur tempore iusto atque. Ab deleniti totam natus eaque, aut quo iste, libero repellat eum quia ullam!
+      </div>
+    </div>
+  </div>
+
+</template>
+
+<script>
+import { BFormSelect, BButton } from 'bootstrap-vue'
+import BloomButtons from '@/anworks/components/BloomButtons.vue'
+import Ripple from 'vue-ripple-directive'
+import UploadImage from '../components/UploadImage.vue'
+
+export default {
+  components: {
+    BFormSelect,
+    BloomButtons,
+    BButton,
+    UploadImage,
+  },
+  directives: {
+    Ripple,
+  },
+  data() {
+    return {
+      isActive: false,
+      selectedTechnology: 'js',
+      optionsTechnology: [
+        { value: 'js', text: 'Основы JavaScript' }, { value: 'qa', text: 'Основы QA' }, { value: 'markup', text: 'Основы markup' },
+      ],
+      selectedTimeQuestion: '3min',
+      optionsTimeQuestion: [
+        { value: '3min', text: '3 минуты' }, { value: '5min', text: '5 минут' }, { value: '10min', text: '10 минут' },
+      ],
+    }
+  },
+}
+</script>
+
+<style lang="scss">
+  .test-image {
+    display: inline-block;
+    width: 118px;
+    height: 118px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 0px 10px rgba(130, 134, 139, 0.24);
+    }
+  }
+  .questions-box {
+    border-radius: 15px;
+    top: 0;
+    left: 190px;
+    transform: scale(0);
+    transition: .2s;
+  }
+  .questions-box.active {
+    transform: scale(1);
+    z-index: 1;
+  }
+  .width-160 {
+    min-width: 160px;
+  }
+</style>

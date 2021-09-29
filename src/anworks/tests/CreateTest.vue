@@ -103,6 +103,7 @@
             v-ripple.400="'rgba(113, 102, 240, 0.15)'"
             variant="outline-primary"
             type="reset"
+            @click="prevStep()"
           >
             Отмена
           </b-button>
@@ -145,15 +146,6 @@ export default {
   },
   data() {
     return {
-      // infoTest: {
-      //   title: '',
-      //   technology: '',
-      //   about: '',
-      //   time: '',
-      //   selected: null,
-      //   scope: '',
-      //   attempts: '',
-      // },
       options: [
         { value: null, text: 'Закрытые попытки отправляются автоматически' }, { value: 'open_try', text: 'Открытые попытки отправляются автоматически' },
       ],
@@ -162,6 +154,10 @@ export default {
   methods: {
     toNext() {
       console.log(this.formTestData)
+      this.$emit('toNext', this.step += 1)
+    },
+    prevStep() {
+      this.$emit('toNext', this.step -= 1)
     },
   },
 }
