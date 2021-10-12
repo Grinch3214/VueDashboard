@@ -3,64 +3,73 @@
 
     <input
       id="bloom_1"
+      v-model="bloomButtons.radio"
       type="radio"
-      value="lvl_1"
       name="bloom"
+      value="1"
       class="custom-bloom-btn"
     >
     <label for="bloom_1" />
 
     <input
       id="bloom_2"
+      v-model="bloomButtons.radio"
       type="radio"
-      value="lvl_2"
       name="bloom"
+      value="2"
       class="custom-bloom-btn"
     >
     <label for="bloom_2" />
 
     <input
       id="bloom_3"
+      v-model="bloomButtons.radio"
       type="radio"
-      value="lvl_3"
       name="bloom"
+      value="3"
       class="custom-bloom-btn"
     >
     <label for="bloom_3" />
 
     <input
       id="bloom_4"
+      v-model="bloomButtons.radio"
       type="radio"
-      value="lvl_4"
       name="bloom"
+      value="4"
       class="custom-bloom-btn"
-      checked
     >
     <label for="bloom_4" />
 
     <input
       id="bloom_5"
+      v-model="bloomButtons.radio"
       type="radio"
-      value="lvl_5"
       name="bloom"
+      value="5"
       class="custom-bloom-btn"
     >
     <label for="bloom_5" />
 
     <input
       id="bloom_6"
+      v-model="bloomButtons.radio"
       type="radio"
-      value="lvl_6"
       name="bloom"
+      value="6"
       class="custom-bloom-btn"
     >
     <label for="bloom_6" />
-
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    bloomButtons: {
+      radio: Object,
+    },
+  },
 }
 </script>
 

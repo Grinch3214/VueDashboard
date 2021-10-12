@@ -15,7 +15,7 @@
         <div class="col-12 col-md-8 mb-2">
           <p class="small mb-25">
             Сложность по Блуму</p>
-          <bloom-buttons />
+          <bloom-buttons :bloomButtons="radio" /> <!-- BLOOM BUTTONS @bloomTest="onTest"-->
         </div>
 
         <div class="col-12 mb-2 col-md-4">
@@ -27,7 +27,7 @@
           />
         </div>
 
-        <div class="col-12 col-md-4 position-relative">
+        <div class="col-12 col-md-4 position-relative mb-2">
           <b-button
             v-ripple.400="'rgba(255, 255, 255, 0.15)'"
             variant="primary"
@@ -173,38 +173,119 @@
           </div>
         </div>
 
-        <upload-image />
+        <div class="col-12 d-flex align-items-center">
+          <div class="col-8 pl-0">
+            <b-form-group
+              label="Вопрос"
+              label-for="questionTest"
+            >
+              <b-form-input
+                id="questionTest"
+                v-model="questionStatement"
+                placeholder="Выберите правильные утверждения"
+              />
+            </b-form-group>
+          </div>
+          <input
+            id="input_file"
+            ref="resetPreview"
+            class="input_file"
+            type="file"
+            @change="showFilePreview"
+          >
+          <label
+            for="input_file"
+            class="input-file-button col-1 mt-1"
+          ><feather-icon
+            icon="ImageIcon"
+            class="mr-25"
+            size="28"
+          />
+          </label>
+        </div>
+        <h5 class="col-12">
+          Тип задания: <span class="h4 pl-2">{{ optionsTechnology[0].text }}</span></h5>
+        <div
+          id="preview"
+          class="col-12 mb-1"
+        >
+          <img
+            v-if="image"
+            :src="image"
+          >
+          <button @click="clearPreview">
+            <feather-icon
+              icon="XIcon"
+              class="mr-25"
+              size="25"
+            />
+          </button>
+        </div>
 
+        <div class="col-12">
+          <types-repeat-form
+            :settings="{
+              defaultVariantSize: 2,
+              leftColumnTitle: 'Верный ответ',
+              rightColumnTitle: 'Варианты ответов',
+            }"
+            @addTest="addTest"
+          />
+        </div>
+        <div class="col-12 pl-0">
+          <b-button
+            v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+            variant="primary"
+            class="mt-3"
+            @click="addTest()"
+          >
+            Добавить вопрос
+          </b-button>
+        </div>
       </div>
     </div>
 
     <div class="col-12 col-md-4 mb-2">
       <div class="p-2 bg-white rounded shadow-sm h-100">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet iste dicta labore saepe pariatur tempore iusto atque. Ab deleniti totam natus eaque, aut quo iste, libero repellat eum quia ullam!
+        <h2>Добавленные вопросы</h2>
+        <p>Вопросов: {{ 2 }}</p>
+        <item-test />
       </div>
     </div>
+
   </div>
 
 </template>
 
 <script>
-import { BFormSelect, BButton } from 'bootstrap-vue'
+import {
+  BFormSelect, BButton, BFormGroup, BFormInput,
+} from 'bootstrap-vue'
 import BloomButtons from '@/anworks/components/BloomButtons.vue'
 import Ripple from 'vue-ripple-directive'
-import UploadImage from '../components/UploadImage.vue'
+import TypesRepeatForm from '../components/TypesRepeatForm.vue'
+import ItemTest from './ItemTest.vue'
 
 export default {
   components: {
     BFormSelect,
     BloomButtons,
     BButton,
-    UploadImage,
+    BFormGroup,
+    BFormInput,
+    TypesRepeatForm,
+    ItemTest,
   },
   directives: {
     Ripple,
   },
   data() {
     return {
+      radio: {
+        radio: '1',
+      },
+      questionStatement: '',
+      image: null,
       isActive: false,
       selectedTechnology: 'js',
       optionsTechnology: [
@@ -215,6 +296,25 @@ export default {
         { value: '3min', text: '3 минуты' }, { value: '5min', text: '5 минут' }, { value: '10min', text: '10 минут' },
       ],
     }
+  },
+  methods: {
+    showFilePreview(event) {
+      const files = event.target.files || event.dataTransfer.files
+      if (!files.length) return
+      this.image = URL.createObjectURL(files[0])
+    },
+    clearPreview() {
+      this.image = null
+      this.$refs.resetPreview.value = ''
+    },
+    addTest() {
+      console.log(this.image)
+      console.log(this.selectedTechnology)
+      console.log(this.selectedTimeQuestion)
+      console.log(this.radio)
+      console.log(this.questionStatement)
+      console.log(this.$emit('addTest', this.settings))
+    },
   },
 }
 </script>
@@ -229,6 +329,7 @@ export default {
       box-shadow: 0px 0px 10px rgba(130, 134, 139, 0.24);
     }
   }
+
   .questions-box {
     border-radius: 15px;
     top: 0;
@@ -236,11 +337,45 @@ export default {
     transform: scale(0);
     transition: .2s;
   }
+
   .questions-box.active {
     transform: scale(1);
     z-index: 1;
   }
+
   .width-160 {
     min-width: 160px;
   }
+
+  #preview {
+  position: relative;
+    max-width: 368px;
+    height: auto;
+    button {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: -40px;
+      background: transparent;
+      border: none;
+      outline: none;
+    }
+    img {
+        width: 100%;
+        border-radius: 15px;
+    }
+    img + button {
+      display: inline-block;
+    }
+}
+
+.input_file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.input-file-button {
+  cursor: pointer;
+}
 </style>
