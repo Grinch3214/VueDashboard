@@ -201,13 +201,14 @@ export default {
   methods: {
     toNext() {
       console.log(this.formTestData)
-      this.$refs.simpleRules.validate().then(success => {
-        if (success) {
-          // eslint-disable-next-line
-          console.log('form submitted!')
-          this.$emit('toNext', this.step += 1)
-        }
-      })
+      this.$emit('toNext', this.step += 1)
+      // this.$refs.simpleRules.validate().then(success => {
+      //   if (success) {
+      //     // eslint-disable-next-line
+      //     console.log('form submitted!')
+      //     this.$emit('toNext', this.step += 1)
+      //   }
+      // }) Что бы не заёбывал проверкой
     },
     prevStep() {
       this.$emit('toNext', this.step -= 1)

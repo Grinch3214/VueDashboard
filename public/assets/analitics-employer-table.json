@@ -1,0 +1,149 @@
+
+    {
+        "firstConversion": {
+            "registration": 872,
+            "authorization": 765
+        },
+
+        "resume": {
+            "personalInfo": 350,
+            "skill": 375,
+            "workExperience": 340,
+            "education": 487,
+            "location": 354,
+            "aboutMyself": 310
+        },
+        "technologyTests": {
+            "elementary": 230,
+            "intermediate": 654,
+            "advanced": 200
+        },
+
+        "foreignLanguageTests": {
+            "a1": 1276,
+            "a2": 836,
+            "b1": 283,
+            "b2": 5
+        },
+
+        "rating": {
+            "top10": 15,
+            "top20": 354,
+            "top30": 245,
+            "top40": 35,
+            "top50": 276,
+            "top60": 175,
+            "top70": 164,
+            "top80": 90,
+            "top90": 762
+        },
+
+        "renewalOfParticipation": {
+            "top10": 15,
+            "top20": 354,
+            "top30": 245,
+            "top40": 35,
+            "top50": 276,
+            "top60": 175,
+            "top70": 164,
+            "top80": 90,
+            "top90": 762
+        },
+
+        "numberOfInterviewsWithRecruiters": {
+            "one": 15,
+            "two": 354,
+            "three": 245,
+            "four": 35,
+            "five": 276
+        },
+
+        "numberOfInterviewsWithTechLeads": {
+            "one": 42,
+            "two": 754,
+            "three": 314,
+            "four": 987,
+            "five": 21
+        },
+
+        "hired": 1591,
+        
+        "directMarketing": {
+            "directTransitions": 780,
+            "loggedIntoTheChatViaSocialNetworks": 140,
+            "telegramChatBot": {
+                "activeUsersBot": 653,
+                "filledInPersonalData": 321,
+                "passedTheHardSkillsTest": 765,
+                "passedAForeignLanguageTest": 322
+            },
+            "telegramChannel": {
+                "postViews": 388,
+                "likes": 952
+            },
+            "email": {
+                "sentEmails": 8742,
+                "ctrLetters": "1.5%"
+            }
+        },
+
+        "traffic": {
+            "paidTraffic": {
+                "numberOfShows": 10000,
+                "ctrAds": "1.5%"
+            },
+            "viralTraffic": {
+                "people": 32,
+                "qrCodes": 22,
+                "events": 1000
+            }
+        },
+
+        "socialNetworks": {
+            "instagram": {
+                "instagram": 123,
+                "numberOfSubscribers": 25,
+                "likes": 365
+            },
+            "facebook": {
+                "facebook": 1,
+                "numberOfSubscribers": 0,
+                "likes": 2
+            },
+            "linkedin": {
+                "linkedin": 2690,
+                "numberOfSubscribers": 1365,
+                "likes": 10652
+            },
+            "youTube": {
+                "youTube": 690,
+                "numberOfSubscribers": 365,
+                "likes": 876
+            },
+            "tikTok": {
+                "tikTok": 1,
+                "numberOfSubscribers": 0,
+                "likes": 1
+            }
+        },
+
+        "organic": {
+            "seoTraffic": 407
+        },
+
+        "prTraffic": {
+            "articleViews": 400,
+            "averageCtrOfArticles": "1,25%"
+        },
+
+        "liedgen": {
+            "onlineApplicationPresentation": {
+                "numberOfApplications": 562,
+                "interestedIn": 265
+            },
+            "coldCalls": {
+                "numberOfPeopleCalled": 2576,
+                "interestedIn": 565
+            }
+        }
+    }

@@ -12,26 +12,67 @@
         />
       </label>
     </b-form-group>
-    <analitics-second-table />
+    <analitics-custom-table
+      :tabledata="employerTable"
+    />
   </div>
 </template>
 
 <script>
 import { BFormGroup } from 'bootstrap-vue'
 import flatPickr from 'vue-flatpickr-component'
-import AnaliticsSecondTable from '@/anworks/analitics/AnaliticsSecondTable.vue'
+import AnaliticsCustomTable from '@/anworks/analitics/AnaliticsCustomTable.vue'
+import axios from 'axios'
 
 export default {
   components: {
     flatPickr,
     BFormGroup,
-    AnaliticsSecondTable,
+    AnaliticsCustomTable,
   },
   data() {
     return {
+      employerTable: {
+        firstConversion: {},
+        resume: {},
+        technologyTests: {},
+        foreignLanguageTests: {},
+        rating: {},
+        renewalOfParticipation: {},
+        numberOfInterviewsWithRecruiters: {},
+        numberOfInterviewsWithTechLeads: {},
+        hired: {},
+
+        directMarketing: {
+          telegramChatBot: {},
+          telegramChannel: {},
+          email: {},
+        },
+
+        traffic: {
+          paidTraffic: {},
+          viralTraffic: {},
+        },
+
+        socialNetworks: {
+          instagram: {},
+          facebook: {},
+          linkedin: {},
+          youTube: {},
+          tikTok: {},
+        },
+
+        organic: {},
+        prTraffic: {},
+      },
       rangeDate: null,
       allowInput: true,
     }
+  },
+  created() {
+    axios
+      .get('/assets/analitics-employer-table.json')
+      .then(response => { this.employerTable = response.data })
   },
 }
 </script>

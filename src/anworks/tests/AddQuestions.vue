@@ -249,6 +249,23 @@
       <div class="p-2 bg-white rounded shadow-sm h-100">
         <h2>Добавленные вопросы</h2>
         <p>Вопросов: {{ 2 }}</p>
+        <div>
+          <b-form-input
+            id="searchTest"
+            placeholder="Поиск"
+          />
+        </div>
+        <div class="d-flex align-items-center my-2">
+          <p class="small mb-0 mr-2">
+            Сортировать:</p>
+          <b-form-select
+            v-model="selectedSort"
+            :options="sortOptions"
+            size="sm"
+          />
+        </div>
+        <h5 class="mb-2">
+          Основы {{ 'чего-то' }}</h5>
         <item-test />
       </div>
     </div>
@@ -281,6 +298,12 @@ export default {
   },
   data() {
     return {
+      selectedSort: null,
+      sortOptions: [
+        { value: null, text: '.....' },
+        { value: 'a', text: 'от сложных к простым' },
+        { value: 'b', text: 'от простых к сложным' },
+      ],
       radio: {
         radio: '1',
       },

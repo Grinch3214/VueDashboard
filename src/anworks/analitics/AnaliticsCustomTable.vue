@@ -62,43 +62,43 @@
             Прямые переходы
           </b-td>
           <b-td>Прямые переходы на https://an.works/</b-td>
-          <b-td>{{ anWorks }}</b-td>
+          <b-td>{{ tabledata.directMarketing.directTransitions }}</b-td>
           <b-td />
           <b-td variant="bg-green">
             Регистрации
           </b-td>
           <b-td
             variant="bg-green"
-          >400</b-td>
+          >{{ tabledata.firstConversion.registration }}</b-td>
           <b-td
             class="text-nowrap"
           >Личная инф.</b-td>
-          <b-td>350</b-td>
+          <b-td>{{ tabledata.resume.personalInfo }}</b-td>
           <b-td>Начальный уровень</b-td>
-          <b-td>230</b-td>
+          <b-td>{{ tabledata.technologyTests.elementary }}</b-td>
           <b-td>А1</b-td>
-          <b-td>230</b-td>
+          <b-td>{{ tabledata.foreignLanguageTests.a1 }}</b-td>
           <b-td
             variant="bg-blue"
             class="text-nowrap"
           >Топ 10</b-td>
           <b-td
             variant="bg-blue"
-          >230</b-td>
+          >{{ tabledata.rating.top10 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 10</b-td>
           <b-td
             variant="bg-orange"
-          >230</b-td>
+          >{{ tabledata.renewalOfParticipation.top10 }}</b-td>
           <b-td>1</b-td>
-          <b-td>140</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithRecruiters.one }}</b-td>
           <b-td>1</b-td>
-          <b-td>140</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithTechLeads.one }}</b-td>
           <b-td
             variant="bg-yellow"
-          >500</b-td>
+          >{{ tabledata.hired }}</b-td>
         </b-tr>
 
         <b-tr class="font-weight-bold text-dark">
@@ -106,40 +106,40 @@
             Чат на сайте
           </b-td>
           <b-td>Авторизовалось в чате через соцсети</b-td>
-          <b-td>{{ socialAuthorization }}</b-td>
+          <b-td>{{ tabledata.directMarketing.loggedIntoTheChatViaSocialNetworks }}</b-td>
           <b-td />
           <b-td variant="bg-green">
             Авторизации
           </b-td>
           <b-td
             variant="bg-green"
-          >400</b-td>
+          >{{ tabledata.firstConversion.authorization }}</b-td>
           <b-td
             class="text-nowrap"
           >Навыки</b-td>
-          <b-td>350</b-td>
+          <b-td>{{ tabledata.resume.skill }}</b-td>
           <b-td>Средний уровень</b-td>
-          <b-td>230</b-td>
+          <b-td>{{ tabledata.technologyTests.intermediate }}</b-td>
           <b-td>А2</b-td>
-          <b-td>230</b-td>
+          <b-td>{{ tabledata.foreignLanguageTests.a2 }}</b-td>
           <b-td
             variant="bg-blue"
             class="text-nowrap"
           >Топ 20</b-td>
           <b-td
             variant="bg-blue"
-          >123</b-td>
+          >{{ tabledata.rating.top20 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 20</b-td>
           <b-td
             variant="bg-orange"
-          >123</b-td>
+          >{{ tabledata.renewalOfParticipation.top20 }}</b-td>
           <b-td>2</b-td>
-          <b-td>150</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithRecruiters.two }}</b-td>
           <b-td>2</b-td>
-          <b-td>150</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithTechLeads.two }}</b-td>
           <b-td variant="bg-yellow" />
         </b-tr>
 
@@ -148,86 +148,86 @@
             Телеграм чат бот
           </b-td>
           <b-td>Активных пользователей бота</b-td>
-          <b-td>{{ activeUsersBot }}</b-td>
-          <b-td>{{ activeUsersBot + socialAuthorization + anWorks }}</b-td>
+          <b-td>{{ tabledata.directMarketing.telegramChatBot.activeUsersBot }}</b-td>
+          <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td
             class="text-nowrap"
           >Опыт работы</b-td>
-          <b-td>340</b-td>
+          <b-td>{{ tabledata.resume.workExperience }}</b-td>
           <b-td>Сложный уровень</b-td>
-          <b-td>150</b-td>
+          <b-td>{{ tabledata.technologyTests.advanced }}</b-td>
           <b-td>B1</b-td>
-          <b-td>150</b-td>
+          <b-td>{{ tabledata.foreignLanguageTests.b1 }}</b-td>
           <b-td
             variant="bg-blue"
             class="text-nowrap"
           >Топ 30</b-td>
           <b-td
             variant="bg-blue"
-          >132</b-td>
+          >{{ tabledata.rating.top30 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 30</b-td>
           <b-td
             variant="bg-orange"
-          >132</b-td>
+          >{{ tabledata.renewalOfParticipation.top30 }}</b-td>
           <b-td>3</b-td>
-          <b-td>123</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithRecruiters.three }}</b-td>
           <b-td>3</b-td>
-          <b-td>123</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithTechLeads.three }}</b-td>
           <b-td variant="bg-yellow" />
         </b-tr>
 
         <b-tr class="font-weight-bold text-dark">
           <b-td class="text-nowrap" />
           <b-td>Заполнили персональные данные</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.directMarketing.telegramChatBot.filledInPersonalData }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td
             class="text-nowrap"
           >Образование</b-td>
-          <b-td>330</b-td>
+          <b-td>{{ tabledata.resume.education }}</b-td>
           <b-td />
           <b-td />
           <b-td>B2</b-td>
-          <b-td>150</b-td>
+          <b-td>{{ tabledata.foreignLanguageTests.b2 }}</b-td>
           <b-td
             variant="bg-blue"
             class="text-nowrap"
           >Топ 40</b-td>
           <b-td
             variant="bg-blue"
-          >154</b-td>
+          >{{ tabledata.rating.top40 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 40</b-td>
           <b-td
             variant="bg-orange"
-          >154</b-td>
+          >{{ tabledata.renewalOfParticipation.top40 }}</b-td>
           <b-td>4</b-td>
-          <b-td>123</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithRecruiters.four }}</b-td>
           <b-td>4</b-td>
-          <b-td>123</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithTechLeads.four }}</b-td>
           <b-td variant="bg-yellow" />
         </b-tr>
 
         <b-tr class="font-weight-bold text-dark">
           <b-td class="text-nowrap" />
           <b-td>Прошли тест по Hard Skills</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.directMarketing.telegramChatBot.passedTheHardSkillsTest }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td
             class="text-nowrap"
           >Локация</b-td>
-          <b-td>320</b-td>
+          <b-td>{{ tabledata.resume.location }}</b-td>
           <b-td />
           <b-td />
           <b-td />
@@ -238,32 +238,32 @@
           >Топ 50</b-td>
           <b-td
             variant="bg-blue"
-          >123</b-td>
+          >{{ tabledata.rating.top50 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 50</b-td>
           <b-td
             variant="bg-orange"
-          >123</b-td>
+          >{{ tabledata.renewalOfParticipation.top50 }}</b-td>
           <b-td>5</b-td>
-          <b-td>123</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithRecruiters.five }}</b-td>
           <b-td>5</b-td>
-          <b-td>123</b-td>
+          <b-td>{{ tabledata.numberOfInterviewsWithTechLeads.five }}</b-td>
           <b-td variant="bg-yellow" />
         </b-tr>
 
         <b-tr class="font-weight-bold text-dark">
           <b-td class="text-nowrap" />
           <b-td>Прошли тест по иностранному языку</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.directMarketing.telegramChatBot.passedAForeignLanguageTest }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td
             class="text-nowrap"
           >О себе</b-td>
-          <b-td>310</b-td>
+          <b-td>{{ tabledata.resume.aboutMyself }}</b-td>
           <b-td />
           <b-td />
           <b-td />
@@ -274,48 +274,14 @@
           >Топ 60</b-td>
           <b-td
             variant="bg-blue"
-          >134</b-td>
+          >{{ tabledata.rating.top60 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 60</b-td>
           <b-td
             variant="bg-orange"
-          >134</b-td>
-          <b-td />
-          <b-td />
-          <b-td />
-          <b-td />
-          <b-td variant="bg-yellow" />
-        </b-tr>
-
-        <b-tr class="font-weight-bold text-dark">
-          <b-td
-            class="text-nowrap"
-          >Телеграм канал</b-td>
-          <b-td>Просмотры постов</b-td>
-          <b-td>125</b-td>
-          <b-td>120</b-td>
-          <b-td variant="bg-green" />
-          <b-td variant="bg-green" />
-          <b-td class="text-nowrap" />
-          <b-td />
-          <b-td />
-          <b-td />
-          <b-td />
-          <b-td />
-          <b-td
-            variant="bg-blue"
-            class="text-nowrap"
-          >Топ 70</b-td>
-          <b-td variant="bg-blue">
-            230</b-td>
-          <b-td
-            variant="bg-orange"
-            class="text-nowrap"
-          >Топ 70</b-td>
-          <b-td variant="bg-orange">
-            230</b-td>
+          >{{ tabledata.renewalOfParticipation.top60 }}</b-td>
           <b-td />
           <b-td />
           <b-td />
@@ -327,8 +293,8 @@
           <b-td class="text-nowrap">
             Телеграм канал</b-td>
           <b-td>Просмотры постов</b-td>
-          <b-td>125</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.directMarketing.telegramChannel.postViews }}</b-td>
+          <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -342,13 +308,13 @@
             class="text-nowrap"
           >Топ 70</b-td>
           <b-td variant="bg-blue">
-            230</b-td>
+            {{ tabledata.rating.top70 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 70</b-td>
           <b-td variant="bg-orange">
-            230</b-td>
+            {{ tabledata.renewalOfParticipation.top70 }}</b-td>
           <b-td />
           <b-td />
           <b-td />
@@ -359,7 +325,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td class="text-nowrap" />
           <b-td>Лайки</b-td>
-          <b-td>123</b-td>
+          <b-td>{{ tabledata.directMarketing.telegramChannel.likes }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -374,13 +340,13 @@
             class="text-nowrap"
           >Топ 80</b-td>
           <b-td variant="bg-blue">
-            123</b-td>
+            {{ tabledata.rating.top80 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 80</b-td>
           <b-td variant="bg-orange">
-            123</b-td>
+            {{ tabledata.renewalOfParticipation.top80 }}</b-td>
           <b-td />
           <b-td />
           <b-td />
@@ -392,7 +358,7 @@
           <b-td class="text-nowrap">
             Email</b-td>
           <b-td>Отправленые письма</b-td>
-          <b-td>1000</b-td>
+          <b-td>{{ tabledata.directMarketing.email.sentEmails }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -407,13 +373,13 @@
             class="text-nowrap"
           >Топ 90</b-td>
           <b-td variant="bg-blue">
-            134</b-td>
+            {{ tabledata.rating.top90 }}</b-td>
           <b-td
             variant="bg-orange"
             class="text-nowrap"
           >Топ 90</b-td>
           <b-td variant="bg-orange">
-            134</b-td>
+            {{ tabledata.renewalOfParticipation.top90 }}</b-td>
           <b-td />
           <b-td />
           <b-td />
@@ -424,7 +390,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td class="text-nowrap" />
           <b-td>CTR писем</b-td>
-          <b-td>1,5%</b-td>
+          <b-td>{{ tabledata.directMarketing.email.ctrLetters }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -462,7 +428,7 @@
           >Платный Трафик <br> <span class="text-muted">PPC google</span> </b-td>
           <b-td>Количество показов</b-td>
           <b-td class="text-nowrap">
-            10 000</b-td>
+            {{ tabledata.traffic.paidTraffic.numberOfShows }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -485,7 +451,7 @@
 
         <b-tr class="font-weight-bold text-dark">
           <b-td>CTR объявления</b-td>
-          <b-td>1,5%</b-td>
+          <b-td>{{ tabledata.traffic.paidTraffic.ctrAds }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -517,8 +483,8 @@
             <span class="text-muted d-block">QR коды с отслеживанием <br> через UTM метки</span>
           </b-td>
           <b-td>Люди</b-td>
-          <b-td>32</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.traffic.viralTraffic.people }}</b-td>
+          <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -541,7 +507,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td class="text-nowrap">
             QR коды</b-td>
-          <b-td>22</b-td>
+          <b-td>{{ tabledata.traffic.viralTraffic.qrCodes }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -565,7 +531,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td class="text-nowrap">
             Ивенты</b-td>
-          <b-td>1000</b-td>
+          <b-td>{{ tabledata.traffic.viralTraffic.events }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -600,8 +566,8 @@
           <b-td class="h4 font-weight-bolder">
             Instagram</b-td>
           <b-td />
-          <b-td>120</b-td>
-          <b-td>120</b-td>
+          <b-td />
+          <b-td>{{ tabledata.socialNetworks.instagram.instagram }}</b-td>
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -624,7 +590,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Количество подписчиков</b-td>
           <b-td>Всего</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.socialNetworks.instagram.numberOfSubscribers }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -648,7 +614,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Лайки</b-td>
           <b-td>От 5 до 500</b-td>
-          <b-td>125</b-td>
+          <b-td>{{ tabledata.socialNetworks.instagram.likes }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -673,8 +639,8 @@
           <b-td class="h4 font-weight-bolder">
             Facebook</b-td>
           <b-td />
-          <b-td>120</b-td>
-          <b-td>120</b-td>
+          <b-td />
+          <b-td>{{ tabledata.socialNetworks.facebook.facebook }}</b-td>
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -697,7 +663,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Количество подписчиков</b-td>
           <b-td>Всего</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.socialNetworks.facebook.numberOfSubscribers }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -721,7 +687,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Лайки</b-td>
           <b-td>От 5 до 500</b-td>
-          <b-td>125</b-td>
+          <b-td>{{ tabledata.socialNetworks.facebook.likes }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -746,8 +712,8 @@
           <b-td class="h4 font-weight-bolder">
             LinkedIn</b-td>
           <b-td />
-          <b-td>120</b-td>
-          <b-td>120</b-td>
+          <b-td />
+          <b-td>{{ tabledata.socialNetworks.linkedin.linkedin }}</b-td>
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -770,7 +736,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Количество подписчиков</b-td>
           <b-td>Всего</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.socialNetworks.linkedin.numberOfSubscribers }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -794,7 +760,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Лайки</b-td>
           <b-td>От 5 до 500</b-td>
-          <b-td>125</b-td>
+          <b-td>{{ tabledata.socialNetworks.linkedin.likes }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -819,8 +785,8 @@
           <b-td class="h4 font-weight-bolder">
             YouTube</b-td>
           <b-td />
-          <b-td>120</b-td>
-          <b-td>120</b-td>
+          <b-td />
+          <b-td>{{ tabledata.socialNetworks.youTube.youTube }}</b-td>
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -843,7 +809,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Количество подписчиков</b-td>
           <b-td>Всего</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.socialNetworks.youTube.numberOfSubscribers }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -867,7 +833,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Лайки</b-td>
           <b-td>От 5 до 500</b-td>
-          <b-td>125</b-td>
+          <b-td>{{ tabledata.socialNetworks.youTube.likes }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -892,8 +858,8 @@
           <b-td class="h4 font-weight-bolder">
             TikTok</b-td>
           <b-td />
-          <b-td>120</b-td>
-          <b-td>120</b-td>
+          <b-td />
+          <b-td>{{ tabledata.socialNetworks.tikTok.tikTok }}</b-td>
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -916,7 +882,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Количество подписчиков</b-td>
           <b-td>Всего</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.socialNetworks.tikTok.numberOfSubscribers }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -940,7 +906,7 @@
         <b-tr class="font-weight-bold text-dark">
           <b-td>Лайки</b-td>
           <b-td>От 5 до 500</b-td>
-          <b-td>125</b-td>
+          <b-td>{{ tabledata.socialNetworks.tikTok.likes }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -975,7 +941,7 @@
           <b-td>SEO трафик</b-td>
           <b-td />
           <b-td />
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.organic.seoTraffic }}</b-td>
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -1036,7 +1002,7 @@
             Просмотры статей</b-td>
           <b-td class="text-nowrap">
             от 5 до 120</b-td>
-          <b-td>120</b-td>
+          <b-td>{{ tabledata.prTraffic.articleViews }}</b-td>
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
           <b-td class="text-nowrap" />
@@ -1060,7 +1026,7 @@
           <b-td />
           <b-td class="text-nowrap">
             Средний CTR  статей</b-td>
-          <b-td>1,25%</b-td>
+          <b-td>{{ tabledata.prTraffic.averageCtrOfArticles }}</b-td>
           <b-td />
           <b-td variant="bg-green" />
           <b-td variant="bg-green" />
@@ -1080,7 +1046,7 @@
           <b-td />
           <b-td variant="bg-yellow" />
         </b-tr>
-
+        <slot name="footerTable" />
       </b-tbody>
     </b-table-simple>
   </div>
@@ -1100,16 +1066,16 @@ export default {
     BTd,
     BTbody,
   },
-  // data: () => ({
-  //   anWorks: 150,
-  //   socialAuthorization: 170,
-  //   activeUsersBot: 520,
-  // }),
+  props: {
+    tabledata: {
+      type: Object,
+      default() {
+        return {}
+      },
+    },
+  },
   data() {
     return {
-      anWorks: 150,
-      socialAuthorization: 170,
-      activeUsersBot: 520,
       stickyHeader: true,
     }
   },
