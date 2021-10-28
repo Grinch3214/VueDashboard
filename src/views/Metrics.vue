@@ -230,7 +230,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/metrics-users-page.json')
+    this.$http.get('/assets/examlpesJson/metrics-users-page.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

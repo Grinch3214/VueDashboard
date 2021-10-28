@@ -192,7 +192,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/verification-employer-table.json')
+    this.$http.get('/assets/examlpesJson/verification-employer-table.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

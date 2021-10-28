@@ -279,7 +279,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/recruiter-users.json')
+    this.$http.get('/assets/examlpesJson/recruiter-users.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

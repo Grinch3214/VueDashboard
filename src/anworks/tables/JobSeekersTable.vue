@@ -366,7 +366,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/job-seekers-users.json')
+    this.$http.get('/assets/examlpesJson/job-seekers-users.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

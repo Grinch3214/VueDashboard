@@ -316,7 +316,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/moderation-know.json')
+    this.$http.get('/assets/examlpesJson/moderation-know.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import FlexFilter from '@/anworks/FlexFilter.vue'
+import FlexFilter from '@/anworks/filters/FlexFilter.vue'
 import CommunicationChannel from '@/anworks/tables/СommunicationСhannel.vue'
 
 export default {

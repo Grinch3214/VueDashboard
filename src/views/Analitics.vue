@@ -71,7 +71,7 @@ export default {
   },
   created() {
     axios
-      .get('/assets/analitics-employer-table.json')
+      .get('/assets/examlpesJson/analitics-employer-table.json')
       .then(response => { this.employerTable = response.data })
   },
 }

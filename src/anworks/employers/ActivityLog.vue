@@ -73,10 +73,10 @@ export default {
   },
 
   created() {
-    this.$http.get('/assets/activity-log.json')
+    this.$http.get('/assets/examlpesJson/activity-log.json')
       .then(res => { this.items = res.data })
 
-    this.$http.get('/assets/activity-log.json')
+    this.$http.get('/assets/examlpesJson/activity-log.json')
       .then(res => { this.totalRows = res.data.length })
   },
 }

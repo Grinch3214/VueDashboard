@@ -222,13 +222,6 @@ export default {
     model: {},
     items: [{}],
   }),
-  created() {
-    this.$http.get('/assets/job-seekers-users.json')
-      .then(res => { this.users = res.data })
-      .then(() => { this.model = this.users.find(o => o.id === +this.$route.query.id) })
-      // eslint-disable-next-line no-alert
-      .then(() => (this.model.fullName))
-  },
 }
 </script>
 

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import FiltersComponent from '@/anworks/FiltersComponent.vue'
+import FiltersComponent from '@/anworks/filters/FiltersComponent.vue'
 import JobSeekersTable from '@/anworks/tables/JobSeekersTable.vue'
 
 export default {

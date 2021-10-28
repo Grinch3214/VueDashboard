@@ -1,14 +1,13 @@
 <template>
   <div class="pb-1 border-bottom">
-    <p class=" h6 mt-1">Навыки
-    </p>
     <b-form-group>
       <v-select
-        v-model="mainSkill"
+        v-model="selected"
         multiple
         :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
         label="title"
-        :options="skillOption"
+        :options="options"
+        @input="$emit('input', selected)"
       />
     </b-form-group>
   </div>
@@ -23,11 +22,23 @@ export default {
     BFormGroup,
     vSelect,
   },
-
+  props: {
+    value: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+    options: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+  },
   data() {
     return {
-      mainSkill: { title: 'Java' },
-      skillOption: [{ title: 'JavaScript' }, { title: 'HTML' }, { title: 'CSS' }, { title: 'Java' }, { title: 'C++' }, { title: 'Pyton' }, { title: 'PHP' }],
+      selected: JSON.parse(JSON.stringify(this.value)),
     }
   },
 }

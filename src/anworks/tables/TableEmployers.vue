@@ -288,7 +288,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/employers-users.json')
+    this.$http.get('/assets/examlpesJson/employers-users.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import FiltersComponentComplaint from '@/anworks/FiltersComponentComplaint.vue'
+import FiltersComponentComplaint from '@/anworks/filters/FiltersComponentComplaint.vue'
 import TableComplaint from '@/anworks/tables/TableComplaint.vue'
 // import { BCard, BCardText, BLink } from 'bootstrap-vue'
 

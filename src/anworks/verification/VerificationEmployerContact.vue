@@ -188,7 +188,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/verification-employer-contact.json')
+    this.$http.get('/assets/examlpesJson/verification-employer-contact.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

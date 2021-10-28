@@ -2,7 +2,7 @@
   <div>
     <b-card>
       <p class="h4">Профиль работодателя</p>
-      <avatar-selector />
+      <avatar-preview />
       <div class="row align-items-center mt-2 mb-2">
         <div class="col-sm-12 col-md-3 h5">
           Дата регистрации:
@@ -187,12 +187,11 @@ import vSelect from 'vue-select'
 import VueSlider from 'vue-slider-component'
 import store from '@/store/index'
 import Ripple from 'vue-ripple-directive'
-import AvatarSelector from '../components/AvatarSelector.vue'
+import AvatarPreview from '../components/AvatarPreview.vue'
 
 export default {
   components: {
     BCard,
-    AvatarSelector,
     BFormGroup,
     BFormInput,
     BFormSelect,
@@ -200,6 +199,7 @@ export default {
     VueSlider,
     BFormTextarea,
     BButton,
+    AvatarPreview,
   },
   directives: {
     Ripple,

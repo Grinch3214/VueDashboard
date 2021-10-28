@@ -269,7 +269,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/example-users.json')
+    this.$http.get('/assets/examlpesJson/example-users.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

@@ -5,7 +5,7 @@
         Профиль соискателя</p>
       <p class="h5">
         {{ profileInfo.fullName }}</p>
-      <avatar-selector />
+      <avatar-preview />
       <div class="row align-items-center mt-2 mb-2">
         <div class="col-sm-12 col-md-3 h5">
           Дата регистрации:
@@ -307,13 +307,13 @@ import flatPickr from 'vue-flatpickr-component'
 import { ref } from '@vue/composition-api'
 import vSelect from 'vue-select'
 import Ripple from 'vue-ripple-directive'
-import AvatarSelector from '../components/AvatarSelector.vue'
 import AddLanguageComponent from '../components/AddLanguageComponent.vue'
+import AvatarPreview from '../components/AvatarPreview.vue'
 
 export default {
   components: {
     BCard,
-    AvatarSelector,
+    AvatarPreview,
     BFormGroup,
     BFormInput,
     BFormSelect,

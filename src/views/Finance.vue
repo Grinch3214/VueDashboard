@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import FiltersComponentFinance from '@/anworks/FiltersComponentFinance.vue'
+import FiltersComponentFinance from '@/anworks/filters/FiltersComponentFinance.vue'
 import OsvTableFinance from '@/anworks/finance/OsvTableFinance.vue'
 
 export default {

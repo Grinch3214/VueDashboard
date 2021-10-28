@@ -275,7 +275,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/complaints.json')
+    this.$http.get('/assets/examlpesJson/complaints.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

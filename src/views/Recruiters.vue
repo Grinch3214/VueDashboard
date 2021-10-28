@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import FiltersComponentForRecruiters from '@/anworks/FiltersComponentForRecruiters.vue'
+import FiltersComponentForRecruiters from '@/anworks/filters/FiltersComponentForRecruiters.vue'
 import TableRecruiters from '@/anworks/tables/TableRecruiters.vue'
 
 export default {

@@ -1,6 +1,6 @@
 <template>
   <div class="card bg-white p-2">
-    <avatar-selector />
+    <avatar-preview />
     <cards-name-login />
     <table-for-admins />
 
@@ -62,37 +62,22 @@ import {
   BButton, BModal, VBModal, BCardText,
 } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
-import AvatarSelector from '@/anworks/components/AvatarSelector.vue'
 import CardsNameLogin from '@/anworks/components/CardsNameLogin.vue'
 import TableForAdmins from '@/anworks/tables/TableForAdmins.vue'
+import AvatarPreview from '@/anworks/components/AvatarPreview.vue'
 
 export default {
   components: {
-    AvatarSelector,
     CardsNameLogin,
     TableForAdmins,
     BButton,
     BModal,
     BCardText,
+    AvatarPreview,
   },
   directives: {
     'b-modal': VBModal,
     Ripple,
   },
-  data: () => ({
-    users: [],
-    model: {},
-  }),
-  created() {
-    this.$http.get('/assets/example-users.json')
-      .then(res => { this.users = res.data })
-      .then(() => { this.model = this.users.find(o => o.id === +this.$route.query.id) })
-      // eslint-disable-next-line no-alert
-      .then(() => alert(this.model.fullName))
-  },
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

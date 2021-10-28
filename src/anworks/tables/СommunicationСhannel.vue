@@ -251,7 +251,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/channel-users.json')
+    this.$http.get('/assets/examlpesJson/channel-users.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

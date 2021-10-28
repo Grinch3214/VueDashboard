@@ -254,7 +254,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/history-of-osvfinance.json')
+    this.$http.get('/assets/examlpesJson/history-of-osvfinance.json')
       .then(res => { this.rows = res.data })
   },
   methods: {

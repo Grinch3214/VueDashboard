@@ -33,7 +33,7 @@
     />
     <div class="pl-2 pr-2 mt-2 d-flex justify-content-between align-items-center flex-wrap">
       <p class="text-black-50">
-        Действий <span>5 из 47</span></p>
+        Действий <span>{{ perPage }} из {{ totalRows }}</span></p>
       <b-pagination
         v-model="currentPage"
         :total-rows="totalRows"
@@ -64,6 +64,7 @@
 import {
   BTable, BPagination,
 } from 'bootstrap-vue'
+import axios from 'axios'
 
 export default {
   components: {
@@ -73,32 +74,9 @@ export default {
   data() {
     return {
       currentPage: 1,
-      perPage: 3,
-      totalRows: 1,
+      perPage: 4,
       fields: ['Действие', 'Время', 'Дата', 'IP'],
-      items: [
-        {
-          Действие: 'Заблокировать работодателя', Время: '16:49', Дата: '21.06.2021', IP: '192.168.1.1',
-        },
-        {
-          Действие: 'Верификация сосикателя', Время: '16:49', Дата: '21.06.2021', IP: '192.168.1.1',
-        },
-        {
-          Действие: 'Вход', Время: '16:49', Дата: '21.06.2021', IP: '192.168.1.1',
-        },
-        {
-          Действие: 'Вход', Время: '16:49', Дата: '21.06.2021', IP: '192.168.1.1',
-        },
-        {
-          Действие: 'Верификация сосикателя', Время: '16:49', Дата: '21.06.2021', IP: '192.168.1.1',
-        },
-        {
-          Действие: 'Заблокировать 3 работодателя', Время: '16:49', Дата: '21.06.2021', IP: '192.168.1.1',
-        },
-        {
-          Действие: 'Вход', Время: '16:49', Дата: '21.06.2021', IP: '192.168.1.1',
-        },
-      ],
+      items: [],
       tableVariants: [
         'none',
         'primary',
@@ -124,9 +102,15 @@ export default {
       noCollapse: false,
     }
   },
-  mounted() {
-    // Set the initial number of items
-    this.totalRows = this.items.length
+  computed: {
+    totalRows() {
+      return this.items.length
+    },
+  },
+  created() {
+    axios
+      .get('/assets/examlpesJson/active-history-for-admin.json')
+      .then(response => { this.items = response.data })
   },
 }
 </script>

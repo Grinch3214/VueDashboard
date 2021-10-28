@@ -15,10 +15,21 @@
     >
 
       <filters-save-main />
+      <p class=" h6 mt-1">Основной навык
+      </p>
+      <filters-select-badge
+        v-model="mainSkill"
+        :options="skillOption"
+        @input="giveMeArray"
+      />
 
-      <filters-skills />
-
-      <filters-language />
+      <p class=" h6 mt-1">Языки
+      </p>
+      <filters-select-badge
+        v-model="language"
+        :options="languageOption"
+        @input="giveMeArray"
+      />
 
       <filters-payment />
 
@@ -62,8 +73,7 @@
 import { BButton } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import FiltersSaveMain from './filtersComponents/FiltersSaveMain.vue'
-import FiltersSkills from './filtersComponents/FiltersSkills.vue'
-import FiltersLanguage from './filtersComponents/FiltersLanguage.vue'
+import FiltersSelectBadge from './filtersComponents/FiltersSelectBadge.vue'
 import FiltersPayment from './filtersComponents/FiltersPayment.vue'
 import FiltersBusyness from './filtersComponents/FiltersBusyness.vue'
 import FiltersCountry from './filtersComponents/FiltersCountry.vue'
@@ -78,8 +88,7 @@ import FiltersChannelAttraction from './filtersComponents/FiltersChannelAttracti
 export default {
   components: {
     FiltersSaveMain,
-    FiltersSkills,
-    FiltersLanguage,
+    FiltersSelectBadge,
     FiltersPayment,
     FiltersBusyness,
     FiltersCountry,
@@ -98,7 +107,21 @@ export default {
   data() {
     return {
       isActive: false,
+      mainSkill: [{ title: 'Java' }],
+      skillOption: [{ title: 'JavaScript' }, { title: 'HTML' }, { title: 'CSS' }, { title: 'Java' }, { title: 'C++' }, { title: 'Pyton' }, { title: 'PHP' }],
+
+      language: [{ title: 'Английский' }],
+      languageOption: [{ title: 'Английский' }, { title: 'Русский' }, { title: 'Украинский' }, { title: 'Немецкий' }],
     }
+  },
+  methods: {
+    // onInputSelect(data) {
+    //   console.log(data)
+    // },
+    giveMeArray() {
+      console.log(this.mainSkill)
+      console.log(this.language)
+    },
   },
 }
 </script>

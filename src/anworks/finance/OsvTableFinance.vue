@@ -240,7 +240,7 @@ export default {
     },
   },
   created() {
-    this.$http.get('/assets/finance-osv.json')
+    this.$http.get('/assets/examlpesJson/finance-osv.json')
       .then(res => { this.rows = res.data })
   },
   methods: {
