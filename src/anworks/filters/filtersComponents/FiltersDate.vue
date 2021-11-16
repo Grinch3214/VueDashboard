@@ -7,11 +7,12 @@
     >
       <cleave
         id="date"
-        v-model="form.date"
+        v-model="form"
         class="form-control"
         :raw="false"
         :options="date"
-        placeholder="YYYY-MM-DD"
+        placeholder="DD.MM.YYYY"
+        @input="$emit('input', form)"
       />
     </b-form-group>
   </div>
@@ -28,15 +29,24 @@ export default {
     BFormGroup,
     Cleave,
   },
+  props: {
+    value: {
+      type: String,
+      default() {
+        return []
+      },
+    },
+  },
   data() {
     return {
-      form: {
-        date: null,
-      },
+      form: JSON.parse(JSON.stringify(this.value)),
+      // form: {
+      //   date: null,
+      // },
       date: {
         date: true,
-        delimiter: '-',
-        datePattern: ['Y', 'm', 'd'],
+        delimiter: '.',
+        datePattern: ['d', 'm', 'Y'],
       },
     }
   },

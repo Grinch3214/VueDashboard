@@ -1,13 +1,12 @@
 <template>
-  <div class="mt-1 pb-1 border-bottom">
-    <p class="h6 mt-1 mb-3">Заработная плата: от {{ payment[0] }} до {{ payment[1] }}$
-    </p>
+  <div>
     <vue-slider
-      v-model="payment"
+      v-model="slider"
       :direction="direction"
       :min="min"
       :max="max"
       class="mb-2"
+      @change="$emit('change', slider)"
     />
   </div>
 </template>
@@ -20,12 +19,33 @@ export default {
   components: {
     VueSlider,
   },
+  model: {
+    event: 'change',
+  },
+  props: {
+    value: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+    min: {
+      type: Number,
+      default() {
+        return []
+      },
+    },
+    max: {
+      type: Number,
+      default() {
+        return []
+      },
+    },
+  },
 
   data() {
     return {
-      payment: [200, 350],
-      min: 0,
-      max: 2000,
+      slider: JSON.parse(JSON.stringify(this.value)),
       dir: 'ltr',
     }
   },

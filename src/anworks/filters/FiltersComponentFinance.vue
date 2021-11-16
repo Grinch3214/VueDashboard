@@ -1,8 +1,12 @@
 <template>
-  <div class="col-xl-4">
+  <div
+    :class="{active: isActive}"
+    class="col-xl-4 custom-filters"
+  >
 
     <div
       class="admins pointer arrow-static"
+      :class="{active: isActive}"
       @click="isActive = !isActive"
     >
       <p class="text-uppercase pl-1">Фильтры
@@ -16,13 +20,55 @@
 
       <filters-save-main />
 
-      <filters-employers-name />
+      <p class="h6 mt-1">Название работодателя
+      </p>
+      <filters-select-badge
+        v-model="emploerName"
+        class="border-bottom pb-1"
+        placeholder="Работодатель"
+        :options="emploerNameOption"
+        @input="onInputSelect"
+      />
 
-      <filters-country-for-employer />
+      <p class="h6 mt-1">
+        Страна найма:
+      </p>
+      <filters-select
+        v-model="country"
+        class="pb-2"
+        :options="countryOptions"
+        @input="onInputSelect"
+      />
+      <p class="h6 mt-1">
+        Город найма:
+      </p>
+      <filters-select-badge
+        v-model="city"
+        class="pb-1 border-bottom"
+        placeholder="Город"
+        :options="cityOption"
+        @input="onInputSelect"
+      />
 
-      <filters-number-of-staff />
+      <p class="h6 mt-1 mb-3">Количество персонала: от {{ numberStaff[0] }} до {{ numberStaff[1] }}
+      </p>
+      <filters-range-component
+        v-model="numberStaff"
+        class="pb-1 border-bottom"
+        :min="min"
+        :max="max"
+        @change="onInputSelect"
+      />
 
-      <filters-rest-of-money />
+      <p class="h6 mt-1 mb-3">Количество персонала: от {{ balance[0] }} до {{ balance[1] }}
+      </p>
+      <filters-range-component
+        v-model="balance"
+        class="pb-1 border-bottom"
+        :min="minBalance"
+        :max="maxBalance"
+        @change="onInputSelect"
+      />
 
       <div class="text-center pt-2 pb-3">
         <b-button
@@ -47,19 +93,17 @@
 import { BButton } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import FiltersSaveMain from './filtersComponents/FiltersSaveMain.vue'
-import FiltersEmployersName from './filtersComponents/FiltersEmployersName.vue'
-import FiltersCountryForEmployer from './filtersComponents/FiltersCountryForEmployer.vue'
-import FiltersNumberOfStaff from './filtersComponents/FiltersNumberOfStaff.vue'
-import FiltersRestOfMoney from './filtersComponents/FiltersRestOfMoney.vue'
+import FiltersSelectBadge from './filtersComponents/FiltersSelectBadge.vue'
+import FiltersSelect from './filtersComponents/FiltersSelect.vue'
+import FiltersRangeComponent from './filtersComponents/FiltersRangeComponent.vue'
 
 export default {
   components: {
     FiltersSaveMain,
     BButton,
-    FiltersEmployersName,
-    FiltersCountryForEmployer,
-    FiltersNumberOfStaff,
-    FiltersRestOfMoney,
+    FiltersSelectBadge,
+    FiltersSelect,
+    FiltersRangeComponent,
   },
   directives: {
     Ripple,
@@ -67,33 +111,29 @@ export default {
   data() {
     return {
       isActive: false,
+
+      emploerName: [],
+      emploerNameOption: [{ title: 'Epam' }, { title: 'SoftServe' }, { title: 'GlobalLogic' }, { title: 'Luxoft Ukraine' }, { title: 'Ciklum' }, { title: 'NIX' }],
+
+      country: 'UA',
+      countryOptions: [{ value: 'UA', text: 'Украина' }, { value: 'RU', text: 'Россия' }],
+
+      city: [],
+      cityOption: [{ title: 'Харьков' }, { title: 'Киев' }, { title: 'Львов' }, { title: 'Одесса' }, { title: 'Днепр' }, { title: 'Запорожье' }, { title: 'Кривой Рог' }, { title: 'Николаев' }, { title: 'Мариуполь' }, { title: 'Винница' }, { title: 'Херсон' }, { title: 'Чернигов' }, { title: 'Полтава' }, { title: 'Чекассы' }, { title: 'Хмельницкий' }, { title: 'Черновцы' }, { title: 'Житомир' }, { title: 'Сумы' }, { title: 'Ровно' }, { title: 'Ивано-Франковск' }, { title: 'Тернополь' }, { title: 'Луцк' }, { title: 'Ужгород' }],
+
+      numberStaff: [10, 350],
+      min: 0,
+      max: 1000,
+
+      balance: [100, 400],
+      minBalance: 0,
+      maxBalance: 1000,
     }
+  },
+  methods: {
+    onInputSelect(data) {
+      console.log(data)
+    },
   },
 }
 </script>
-
-<style lang="scss">
-  .arrow-static {
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 11px;
-      right: 10px;
-      width: 12px;
-      height: 12px;
-      border-bottom: 2px solid #fff;
-      border-right: 2px solid #fff;
-      transform: rotate(45deg);
-    }
-  }
-  .toggle__filters {
-    display: block;
-  }
-  .toggle__filters.active {
-    display: none;
-  }
-  .pointer{
-    cursor: pointer;
-  }
-</style>

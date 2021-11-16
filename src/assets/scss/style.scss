@@ -66,3 +66,48 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 .b-table-sticky-header {
   max-height: 500px;
 }
+
+// filters animation
+
+.arrow-static {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    transition: all .3s;
+  }
+}
+.arrow-static.active {
+  &::before {
+    transform: rotate(225deg);
+    top: 18px;
+  }
+}
+.toggle__filters {
+  // display: block;
+  transform: scale(1);
+  transform-origin: top;
+  opacity: 1;
+  transition: all .3s;
+}
+.toggle__filters.active {
+  // display: none;
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+.custom-filters {
+  height: 100%;
+  transition: all .3s;
+  &.active {
+    height: 55px;
+  }
+}

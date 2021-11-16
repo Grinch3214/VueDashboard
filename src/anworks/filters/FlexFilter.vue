@@ -1,8 +1,12 @@
 <template>
-  <div>
+  <div
+    :class="{active: isActive}"
+    class="custom-filters"
+  >
 
     <div
       class="admins pointer arrow-static"
+      :class="{active: isActive}"
       @click="isActive = !isActive"
     >
       <p class="text-uppercase pl-1">Фильтры
@@ -117,29 +121,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-  .arrow-static {
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 11px;
-      right: 10px;
-      width: 12px;
-      height: 12px;
-      border-bottom: 2px solid #fff;
-      border-right: 2px solid #fff;
-      transform: rotate(45deg);
-    }
-  }
-  .toggle__filters {
-    display: block;
-  }
-  .toggle__filters.active {
-    display: none;
-  }
-  .pointer{
-    cursor: pointer;
-  }
-</style>

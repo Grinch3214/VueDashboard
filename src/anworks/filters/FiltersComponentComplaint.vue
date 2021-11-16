@@ -1,8 +1,12 @@
 <template>
-  <div class="col-xl-4">
+  <div
+    :class="{active: isActive}"
+    class="col-xl-4 custom-filters"
+  >
 
     <div
       class="admins pointer arrow-static"
+      :class="{active: isActive}"
       @click="isActive = !isActive"
     >
       <p class="text-uppercase pl-1">Фильтры
@@ -26,7 +30,10 @@
 
       <filters-status-complaint />
 
-      <filters-date />
+      <filters-date
+        v-model="form.date"
+        @input="onInputSelect"
+      />
 
       <div class="text-center pb-3 mt-2">
         <b-button
@@ -69,33 +76,15 @@ export default {
   data() {
     return {
       isActive: false,
+      form: {
+        date: null,
+      },
     }
+  },
+  methods: {
+    onInputSelect(data) {
+      console.log(data)
+    },
   },
 }
 </script>
-
-<style lang="scss">
-  .arrow-static {
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 11px;
-      right: 10px;
-      width: 12px;
-      height: 12px;
-      border-bottom: 2px solid #fff;
-      border-right: 2px solid #fff;
-      transform: rotate(45deg);
-    }
-  }
-  .toggle__filters {
-    display: block;
-  }
-  .toggle__filters.active {
-    display: none;
-  }
-  .pointer{
-    cursor: pointer;
-  }
-</style>

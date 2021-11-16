@@ -5,7 +5,7 @@
     <b-form-group>
       <v-select
         v-model="emploer"
-        placeholder="Работодатель"
+        placeholder=""
         multiple
         :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
         label="title"

@@ -1,11 +1,12 @@
 <template>
-  <div class="pb-1 border-bottom">
+  <div>
     <b-form-group>
       <v-select
         v-model="selected"
         multiple
         :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
         label="title"
+        :placeholder="placeholder"
         :options="options"
         @input="$emit('input', selected)"
       />
@@ -31,6 +32,12 @@ export default {
     },
     options: {
       type: Array,
+      default() {
+        return []
+      },
+    },
+    placeholder: {
+      type: String,
       default() {
         return []
       },
