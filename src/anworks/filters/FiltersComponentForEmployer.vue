@@ -20,10 +20,10 @@
 
       <filters-save-main />
 
-      <p class="h6 mt-1 mb-3">Количество персонала: от {{ numberStaff[0] }} до {{ numberStaff[1] }}
+      <p class="h6 mt-1 mb-3">Количество персонала: от {{ formData.numberStaff[0] }} до {{ formData.numberStaff[1] }}
       </p>
       <filters-range-component
-        v-model="numberStaff"
+        v-model="formData.numberStaff"
         class="pb-1 border-bottom"
         :min="min"
         :max="max"
@@ -34,19 +34,19 @@
         Страна найма:
       </p>
       <filters-select
-        v-model="country"
+        v-model="formData.country"
         class="pb-2 border-bottom"
-        :options="countryOptions"
+        :options="formDataOptions.countryOptions"
         @input="onInputSelect"
       />
       <p class="h6 mt-1">
         Город найма:
       </p>
       <filters-select-badge
-        v-model="city"
+        v-model="formData.city"
         class="pb-1 border-bottom"
-        :options="cityOption"
-        :placeholder="cityPlaceholder"
+        :options="formDataOptions.cityOption"
+        placeholder="Город"
         @input="onInputSelect"
       />
 
@@ -54,18 +54,18 @@
         Статус
       </p>
       <filters-check-box
-        v-model="ratingStatus"
+        v-model="formData.ratingStatus"
         class="pb-1 border-bottom"
-        :options="ratingStatusOption"
+        :options="formDataOptions.ratingStatusOption"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1 mb-2">
         Активность</p>
       <filters-radio-button
-        v-model="activity"
+        v-model="formData.activity"
         class="pb-1 border-bottom"
-        :options="activityOptions"
+        :options="formDataOptions.activityOptions"
         @input="onInputSelect"
       />
 
@@ -74,9 +74,9 @@
           Год основания
         </p>
         <filters-select
-          v-model="startYear"
+          v-model="formData.startYear"
           class="col-4 pl-0"
-          :options="startYearOptions"
+          :options="formDataOptions.startYearOptions"
           @input="onInputSelect"
         />
       </div>
@@ -84,10 +84,10 @@
       <p class="h6 mt-1">Канал привлечения
       </p>
       <filters-select-badge
-        v-model="attraction"
+        v-model="formData.attraction"
         class="mb-3 pb-1"
-        :options="attractionOption"
-        :placeholder="attractionPlaceholder"
+        :options="formDataOptions.attractionOption"
+        placeholder="Способ привлечения"
         @input="onInputSelect"
       />
 
@@ -95,13 +95,13 @@
         <b-button
           v-ripple.400="'rgba(113, 102, 240, 0.15)'"
           variant="outline-primary"
-          type="reset"
+          @click="formDataSendToServer"
         >
           <feather-icon
             icon="PieChartIcon"
             class="mr-50"
           />
-          <span class="align-middle">Очистить всё</span>
+          <span class="align-middle">Применить фильтры</span>
         </b-button>
       </div>
 
@@ -113,6 +113,7 @@
 <script>
 import { BButton } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
+import axios from 'axios'
 import FiltersSaveMain from './filtersComponents/FiltersSaveMain.vue'
 import FiltersRangeComponent from './filtersComponents/FiltersRangeComponent.vue'
 import FiltersSelect from './filtersComponents/FiltersSelect.vue'
@@ -137,42 +138,44 @@ export default {
     return {
       isActive: false,
 
-      numberStaff: [10, 350],
+      formData: {
+        country: 'UA',
+        city: [],
+        ratingStatus: ['waiting', 'rating'],
+        activity: 'activity-true',
+        startYear: '2019',
+        attraction: [],
+        numberStaff: [10, 350],
+      },
+
+      formDataOptions: {
+        countryOptions: [],
+        cityOption: [],
+        ratingStatusOption: [],
+        activityOptions: [],
+        startYearOptions: [],
+        attractionOption: [],
+      },
+
       min: 0,
       max: 1000,
-
-      country: 'UA',
-      countryOptions: [{ value: 'UA', text: 'Украина' }, { value: 'RU', text: 'Россия' }],
-
-      city: [],
-      cityOption: [{ title: 'Харьков' }, { title: 'Киев' }, { title: 'Львов' }, { title: 'Одесса' }, { title: 'Днепр' }, { title: 'Запорожье' }, { title: 'Кривой Рог' }, { title: 'Николаев' }, { title: 'Мариуполь' }, { title: 'Винница' }, { title: 'Херсон' }, { title: 'Чернигов' }, { title: 'Полтава' }, { title: 'Чекассы' }, { title: 'Хмельницкий' }, { title: 'Черновцы' }, { title: 'Житомир' }, { title: 'Сумы' }, { title: 'Ровно' }, { title: 'Ивано-Франковск' }, { title: 'Тернополь' }, { title: 'Луцк' }, { title: 'Ужгород' }],
-      cityPlaceholder: 'Город',
-
-      ratingStatus: ['waiting', 'rating'],
-      ratingStatusOption: [
-        { item: 'waiting', name: 'В списке ожидания' },
-        { item: 'rating', name: 'В рейтинге' },
-        { item: 'create', name: 'Создан' },
-        { item: 'neutral', name: 'Нейтрален' },
-      ],
-
-      activity: 'activity-true',
-      activityOptions: [
-        { item: 'activity-true', name: 'Активен' },
-        { item: 'activity-false', name: 'Заблокирован' },
-      ],
-
-      startYear: '2019',
-      startYearOptions: [{ value: '2000', text: '2000' }, { value: '2001', text: '2001' }, { value: '2002', text: '2002' }, { value: '2003', text: '2003' }, { value: '2005', text: '2005' }, { value: '2006', text: '2006' }, { value: '2007', text: '2007' }, { value: '2008', text: '2008' }, { value: '2009', text: '2009' }, { value: '2010', text: '2010' }, { value: '2011', text: '2011' }, { value: '2012', text: '2012' }, { value: '2013', text: '2013' }, { value: '2014', text: '2014' }, { value: '2015', text: '2015' }, { value: '2016', text: '2016' }, { value: '2017', text: '2017' }, { value: '2018', text: '2018' }, { value: '2019', text: '2019' }, { value: '2020', text: '2020' }, { value: '2021', text: '2021' }],
-
-      attraction: [],
-      attractionOption: [{ title: 'Instagram' }, { title: 'Google' }, { title: 'Linkedin' }, { title: 'An.Works' }, { title: 'Telegram' }],
-      attractionPlaceholder: 'Способ привлечения',
     }
+  },
+  created() {
+    axios
+      .get('/assets/examlpesJson/employer-filter.json')
+      .then(response => { this.formDataOptions = response.data })
   },
   methods: {
     onInputSelect(data) {
       console.log(data)
+    },
+    formDataSendToServer() {
+      console.log(this.formData)
+      // return axios.post('http://jsonplaceholder.typicode.com/users/1/posts', {
+      //   formData: this.formData,
+      // }).then(response => console.log(response))
+      //   .catch(error => console.log(error))
     },
   },
 }

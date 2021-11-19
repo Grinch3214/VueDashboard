@@ -23,46 +23,46 @@
       <p class="h6 mt-1">Основной навык
       </p>
       <filters-select-badge
-        v-model="mainSkill"
+        v-model="formData.mainSkill"
         class="pb-1 border-bottom"
-        :options="skillOption"
-        :placeholder="skillPlaceholder"
+        :options="formDataOptions.skillOption"
+        placeholder="Навык"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1 mb-2">
         Уровень</p>
       <filters-radio-button
-        v-model="level"
+        v-model="formData.level"
         class="pb-1 border-bottom"
-        :options="levelOptions"
+        :options="formDataOptions.levelOptions"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1">Заявленные навыки
       </p>
       <filters-select-badge
-        v-model="extraSkill"
+        v-model="formData.extraSkill"
         class="pb-1 border-bottom"
-        :options="extraSkillOptions"
-        :placeholder="extraPlaceholder"
+        :options="formDataOptions.extraSkillOptions"
+        placeholder="Дополнительные навыки"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1">Языки
       </p>
       <filters-select-badge
-        v-model="language"
+        v-model="formData.language"
         class="pb-1 border-bottom"
-        :options="languageOption"
-        :placeholder="languagePlaceholder"
+        :options="formDataOptions.languageOption"
+        placeholder="Иностранные языки"
         @input="onInputSelect"
       />
 
-      <p class="h6 mt-1 mb-3">Заработная плата: от {{ payment[0] }} до {{ payment[1] }}$
+      <p class="h6 mt-1 mb-3">Заработная плата: от {{ formData.payment[0] }} до {{ formData.payment[1] }}$
       </p>
       <filters-range-component
-        v-model="payment"
+        v-model="formData.payment"
         class="pb-1 border-bottom"
         :min="min"
         :max="max"
@@ -73,9 +73,9 @@
         Вид занятости
       </p>
       <filters-check-box
-        v-model="busyness"
+        v-model="formData.busyness"
         class="pb-1 border-bottom"
-        :options="busynessOption"
+        :options="formDataOptions.busynessOption"
         @input="onInputSelect"
       />
 
@@ -85,30 +85,30 @@
         Страна
       </p>
       <filters-select
-        v-model="country"
-        :options="countryOptions"
+        v-model="formData.country"
+        :options="formDataOptions.countryOptions"
         @input="onInputSelect"
       />
       <p class="h6 mt-1">
         Город
       </p>
       <filters-select-badge
-        v-model="city"
-        :options="cityOption"
-        :placeholder="cityPlaceholder"
+        v-model="formData.city"
+        :options="formDataOptions.cityOption"
+        placeholder="Город"
         @input="onInputSelect"
       />
       <filters-check-box
-        v-model="checkCity"
+        v-model="formData.checkCity"
         class="pb-1 border-bottom"
-        :options="checkCityOption"
+        :options="formDataOptions.checkCityOption"
         @input="onInputSelect"
       />
 
       <p class="h6 mb-3 mt-1">
-        Опыт работы в IT, от {{ itSkill[0] }} до {{ itSkill[1] }} месяцев</p>
+        Опыт работы в IT, от {{ formData.itSkill[0] }} до {{ formData.itSkill[1] }} месяцев</p>
       <filters-range-component
-        v-model="itSkill"
+        v-model="formData.itSkill"
         class="pb-1 border-bottom"
         :min="minimum"
         :max="maximum"
@@ -118,34 +118,34 @@
       <p class="h6 mt-1 mb-2">
         Высшее образование</p>
       <filters-radio-button
-        v-model="education"
+        v-model="formData.education"
         class="pb-1 border-bottom"
-        :options="educationOptions"
+        :options="formDataOptions.educationOptions"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1 mb-2">
         Дополнительное образование</p>
       <filters-radio-button
-        v-model="secondEducation"
+        v-model="formData.secondEducation"
         class="pb-1 border-bottom"
-        :options="secondEducationOptions"
+        :options="formDataOptions.secondEducationOptions"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1 mb-2">
         Пол</p>
       <filters-radio-button
-        v-model="sex"
+        v-model="formData.sex"
         class="pb-1 border-bottom"
-        :options="sexOptions"
+        :options="formDataOptions.sexOptions"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1 mb-3">
-        Возраст, лет от {{ age[0] }} до {{ age[1] }}</p>
+        Возраст, лет от {{ formData.age[0] }} до {{ formData.age[1] }}</p>
       <filters-range-component
-        v-model="age"
+        v-model="formData.age"
         class="pb-1 border-bottom"
         :min="minAge"
         :max="maxAge"
@@ -155,9 +155,9 @@
       <p class="h6 mt-1 mb-2">
         Активность</p>
       <filters-radio-button
-        v-model="activity"
+        v-model="formData.activity"
         class="pb-1 border-bottom"
-        :options="activityOptions"
+        :options="formDataOptions.activityOptions"
         @input="onInputSelect"
       />
 
@@ -165,33 +165,33 @@
         Статус
       </p>
       <filters-check-box
-        v-model="ratingStatus"
+        v-model="formData.ratingStatus"
         class="pb-1 border-bottom"
-        :options="ratingStatusOption"
+        :options="formDataOptions.ratingStatusOption"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1">Канал привлечения
       </p>
       <filters-select-badge
-        v-model="attraction"
+        v-model="formData.attraction"
         class="mb-3 pb-1"
-        :options="attractionOption"
-        :placeholder="attractionPlaceholder"
+        :options="formDataOptions.attractionOption"
+        placeholder="Способ привлечения"
         @input="onInputSelect"
       />
-
       <div class="text-center pb-3">
         <b-button
           v-ripple.400="'rgba(113, 102, 240, 0.15)'"
           variant="outline-primary"
+          @click="formDataTest()"
         >
           <feather-icon
             icon="PieChartIcon"
             class="mr-50"
           />
-          <span class="align-middle">Очистить всё</span>
-        </b-button>
+          <span class="align-middle">Применить фильтры</span>
+        </b-button> <!--Очистить всё -->
       </div>
 
     </div>
@@ -201,6 +201,7 @@
 
 <script>
 import { BButton } from 'bootstrap-vue'
+import axios from 'axios'
 import Ripple from 'vue-ripple-directive'
 import FiltersSaveMain from './filtersComponents/FiltersSaveMain.vue'
 import FiltersSelectBadge from './filtersComponents/FiltersSelectBadge.vue'
@@ -225,95 +226,69 @@ export default {
   data() {
     return {
       isActive: false,
-      mainSkill: [],
-      skillOption: [{ title: 'JavaScript' }, { title: 'HTML' }, { title: 'CSS' }, { title: 'Java' }, { title: 'C++' }, { title: 'Pyton' }, { title: 'PHP' }],
-      skillPlaceholder: 'Навык',
 
-      language: [],
-      languageOption: [{ title: 'Английский' }, { title: 'Русский' }, { title: 'Украинский' }, { title: 'Немецкий' }],
-      languagePlaceholder: 'Иностранные языки',
+      formData: {
+        mainSkill: [],
+        language: [],
+        extraSkill: [],
+        payment: [200, 350],
+        itSkill: [1, 12],
+        level: 'middle',
+        busyness: ['fullTime'],
+        education: 'education-true',
+        secondEducation: 'second-education-true',
+        activity: 'activity-true',
+        sex: 'sex-true',
+        age: [18, 30],
+        ratingStatus: ['rating'],
+        attraction: [],
+        country: 'UA',
+        city: [],
+        checkCity: ['true'],
+      },
 
-      extraSkill: [],
-      extraSkillOptions: [{ title: 'Vue' }, { title: 'React' }, { title: 'Angular' }, { title: 'JQuery' }, { title: 'Bootstrap' }],
-      extraPlaceholder: 'Дополнительные навыки',
+      formDataOptions: {
+        skillOption: [],
+        languageOption: [],
+        extraSkillOptions: [],
+        levelOptions: [],
+        busynessOption: [],
+        educationOptions: [],
+        secondEducationOptions: [],
+        sexOptions: [],
+        activityOptions: [],
+        ratingStatusOption: [],
+        attractionOption: [],
+        cityOption: [],
+        countryOptions: [],
+        checkCityOption: [],
+      },
 
-      payment: [200, 350],
       min: 0,
       max: 2000,
 
-      itSkill: [1, 12],
       minimum: 0,
       maximum: 36,
 
-      level: 'middle',
-      levelOptions: [
-        { item: 'middle', name: 'Middle' },
-        { item: 'junior', name: 'Junior' },
-        { item: 'trainee', name: 'Trainee' },
-      ],
-
-      busyness: ['fullTime', 'internship'],
-      busynessOption: [
-        { item: 'fullTime', name: 'Полная' },
-        { item: 'undertime', name: 'Неполная' },
-        { item: 'remoteWork', name: 'Удалённая работа' },
-        { item: 'internship', name: 'Стажировка' },
-      ],
-
-      education: 'education-true',
-      educationOptions: [
-        { item: 'education-true', name: 'Есть' },
-        { item: 'education-false', name: 'Нет' },
-      ],
-
-      secondEducation: 'second-education-true',
-      secondEducationOptions: [
-        { item: 'second-education-true', name: 'Есть' },
-        { item: 'second-education-false', name: 'Нет' },
-      ],
-
-      activity: 'activity-true',
-      activityOptions: [
-        { item: 'activity-true', name: 'Активен' },
-        { item: 'activity-false', name: 'Заблокирован' },
-      ],
-
-      sex: 'sex-true',
-      sexOptions: [
-        { item: 'sex-true', name: 'Мужской' },
-        { item: 'sex-false', name: 'Женский' },
-      ],
-
-      age: [18, 30],
       minAge: 18,
       maxAge: 99,
-
-      ratingStatus: ['waiting', 'rating'],
-      ratingStatusOption: [
-        { item: 'waiting', name: 'В списке ожидания' },
-        { item: 'rating', name: 'В рейтинге' },
-        { item: 'create', name: 'Создан' },
-        { item: 'neutral', name: 'Нейтрален' },
-      ],
-
-      attraction: [],
-      attractionOption: [{ title: 'Instagram' }, { title: 'Google' }, { title: 'Linkedin' }, { title: 'An.Works' }, { title: 'Telegram' }],
-      attractionPlaceholder: 'Способ привлечения',
-
-      country: 'UA',
-      countryOptions: [{ value: 'UA', text: 'Украина' }, { value: 'RU', text: 'Россия' }],
-
-      city: [],
-      cityOption: [{ title: 'Харьков' }, { title: 'Киев' }, { title: 'Львов' }, { title: 'Одесса' }, { title: 'Днепр' }, { title: 'Запорожье' }, { title: 'Кривой Рог' }, { title: 'Николаев' }, { title: 'Мариуполь' }, { title: 'Винница' }, { title: 'Херсон' }, { title: 'Чернигов' }, { title: 'Полтава' }, { title: 'Чекассы' }, { title: 'Хмельницкий' }, { title: 'Черновцы' }, { title: 'Житомир' }, { title: 'Сумы' }, { title: 'Ровно' }, { title: 'Ивано-Франковск' }, { title: 'Тернополь' }, { title: 'Луцк' }, { title: 'Ужгород' }],
-      cityPlaceholder: 'Город',
-
-      checkCity: ['true'],
-      checkCityOption: [{ item: 'true', name: 'Готов к переезду' }],
     }
+  },
+  created() {
+    axios
+      .get('/assets/examlpesJson/job-seekers-filter.json')
+      .then(response => { this.formDataOptions = response.data })
   },
   methods: {
     onInputSelect(data) {
       console.log(data)
+    },
+    formDataTest() {
+      console.log(this.formData)
+      // return axios.post('https://ptsv2.com/t/orusa-1637250134/post', {
+      //   formData: this.formData,
+      // }).then(response => console.log(response))
+      //   .catch(error => console.log(error))
     },
   },
 }

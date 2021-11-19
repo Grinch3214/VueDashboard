@@ -42,20 +42,14 @@
         />
       </div>
 
-      <filters-activity>
-        <template v-slot:radioButtons>
-          <p class="h6 mt-1 mb-2">
-            Пользователь</p>
-        </template>
-        <template v-slot:radioButtons-1>
-          <span>
-            Работодатель</span>
-        </template>
-        <template v-slot:radioButtons-2>
-          <span>
-            Соискатель</span>
-        </template>
-      </filters-activity>
+      <p class="h6 mt-1 mb-2">
+        Пользователь</p>
+      <filters-radio-button
+        v-model="users"
+        class="pb-1"
+        :options="usersOptions"
+        @input="onInputSelect"
+      />
 
       <div class="text-center pb-3 mt-2">
         <b-button
@@ -79,14 +73,14 @@
 <script>
 import { BButton, BFormSelect, BFormInput } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
-import FiltersActivity from './filtersComponents/FiltersActivity.vue'
+import FiltersRadioButton from './filtersComponents/FiltersRadioButton.vue'
 
 export default {
   components: {
     BButton,
-    FiltersActivity,
     BFormSelect,
     BFormInput,
+    FiltersRadioButton,
   },
   directives: {
     Ripple,
@@ -117,7 +111,18 @@ export default {
         { text: '>=' },
         { text: 'LIKE %%' },
       ],
+
+      users: 'employer',
+      usersOptions: [
+        { item: 'employer', name: 'Работодатель' },
+        { item: 'job-seeker', name: 'Соискатель' },
+      ],
     }
+  },
+  methods: {
+    onInputSelect(data) {
+      console.log(data)
+    },
   },
 }
 </script>

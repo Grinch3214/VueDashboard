@@ -1,0 +1,109 @@
+{
+    "skillOption": [
+        {"title": "JavaScript"},
+        {"title": "HTML"},
+        {"title": "CSS"}
+    ],
+
+    "languageOption": [
+        {"title": "Английский"},
+        {"title": "Русский"},
+        {"title": "Украинский"},
+        {"title": "Немецкий"},
+        {"title": "Китайский"},
+        {"title": "Польский"}
+    ],
+
+    "extraSkillOptions": [
+        {"title": "Vue"},
+        {"title": "React"},
+        {"title": "Angular"},
+        {"title": "JQuery"},
+        {"title": "Bootstrap"},
+        {"title": "Vuetify"}
+    ],
+
+    "levelOptions": [
+        { "item": "middle", "name": "Middle" },
+        { "item": "junior", "name": "Junior" },
+        { "item": "trainee", "name": "Trainee" }
+    ],
+
+    "busynessOption": [
+        { "item": "fullTime", "name": "Полная" },
+        { "item": "undertime", "name": "Неполная" },
+        { "item": "remoteWork", "name": "Удалённая работа" },
+        { "item": "internship", "name": "Стажировка" }
+    ],
+
+    "educationOptions": [
+        { "item": "education-true", "name": "Есть" },
+        { "item": "education-false", "name": "Нет" }
+    ],
+
+    "secondEducationOptions": [
+        { "item": "second-education-true", "name": "Есть" },
+        { "item": "second-education-false", "name": "Нет" }
+    ],
+
+    "activityOptions": [
+        { "item": "activity-true", "name": "Активен" },
+        { "item": "activity-false", "name": "Заблокирован" }
+    ],
+
+    "sexOptions": [
+        { "item": "sex-true", "name": "Мужской" },
+        { "item": "sex-false", "name": "Женский" }
+    ],
+
+    "ratingStatusOption": [
+        { "item": "waiting", "name": "В списке ожидания" },
+        { "item": "rating", "name": "В рейтинге" },
+        { "item": "create", "name": "Создан" },
+        { "item": "neutral", "name": "Нейтрален" }
+    ],
+
+    "attractionOption": [
+        {"title": "Instagram"},
+        {"title": "Google"},
+        {"title": "Linkedin"},
+        {"title": "An.Works"},
+        {"title": "Telegram"},
+        {"title": "DOU"}
+    ],
+
+    "cityOption": [
+        {"title": "Харьков"},
+        {"title": "Киев"},
+        {"title": "Львов"},
+        {"title": "Одесса"},
+        {"title": "Днепр"},
+        {"title": "Запорожье"},
+        {"title": "Кривой Рог"},
+        {"title": "Николаев"},
+        {"title": "Мариуполь"},
+        {"title": "Винница"},
+        {"title": "Херсон"},
+        {"title": "Чернигов"},
+        {"title": "Полтава"},
+        {"title": "Чекассы"},
+        {"title": "Хмельницкий"},
+        {"title": "Черновцы"},
+        {"title": "Житомир"},
+        {"title": "Сумы"},
+        {"title": "Ровно"},
+        {"title": "Ивано-Франковск"},
+        {"title": "Тернополь"},
+        {"title": "Луцк"},
+        {"title": "Ужгород"}
+    ],
+
+    "countryOptions": [
+        { "value": "UA", "text": "Украина" },
+        { "value": "RU", "text": "Россия" }
+    ],
+
+    "checkCityOption": [
+        { "item": "true", "name": "Готов к переезду" }
+    ]
+}

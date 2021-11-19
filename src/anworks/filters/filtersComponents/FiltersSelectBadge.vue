@@ -1,6 +1,8 @@
 <template>
   <div>
+
     <b-form-group>
+
       <v-select
         v-model="selected"
         multiple
@@ -10,6 +12,7 @@
         :options="options"
         @input="$emit('input', selected)"
       />
+
     </b-form-group>
   </div>
 </template>

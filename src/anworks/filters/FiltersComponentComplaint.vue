@@ -22,13 +22,33 @@
 
       <p class=" h6 mt-1">От кого
       </p>
-      <filters-company />
+      <filters-select-badge
+        v-model="company"
+        class="pb-1 border-bottom"
+        :options="companyOptions"
+        placeholder="Введите имя, компанию или ID"
+        @input="onInputSelect"
+      />
 
       <p class=" h6 mt-1">Кому
       </p>
-      <filters-company />
+      <filters-select-badge
+        v-model="companyWhom"
+        class="pb-1 border-bottom"
+        :options="companyWhomOptions"
+        placeholder="Введите имя, компанию или ID"
+        @input="onInputSelect"
+      />
 
-      <filters-status-complaint />
+      <p class="h6 my-1">
+        Статус
+      </p>
+      <filters-check-box
+        v-model="ratingStatus"
+        class="pb-1 border-bottom"
+        :options="ratingStatusOption"
+        @input="onInputSelect"
+      />
 
       <filters-date
         v-model="form.date"
@@ -58,17 +78,17 @@
 import { BButton } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import FiltersSaveMain from './filtersComponents/FiltersSaveMain.vue'
-import FiltersCompany from './filtersComponents/FiltersCompany.vue'
-import FiltersStatusComplaint from './filtersComponents/FiltersStatusComplaint.vue'
 import FiltersDate from './filtersComponents/FiltersDate.vue'
+import FiltersSelectBadge from './filtersComponents/FiltersSelectBadge.vue'
+import FiltersCheckBox from './filtersComponents/FiltersCheckBox.vue'
 
 export default {
   components: {
     BButton,
     FiltersSaveMain,
-    FiltersCompany,
-    FiltersStatusComplaint,
     FiltersDate,
+    FiltersSelectBadge,
+    FiltersCheckBox,
   },
   directives: {
     Ripple,
@@ -79,6 +99,19 @@ export default {
       form: {
         date: null,
       },
+
+      company: [],
+      companyOptions: [{ title: 'Epam' }, { title: 'NIX' }, { title: 'SoftServe' }, { title: 'GlobalLogic' }, { title: 'Luxoft Ukraine' }],
+
+      companyWhom: [],
+      companyWhomOptions: [{ title: 'Epam' }, { title: 'NIX' }, { title: 'SoftServe' }, { title: 'GlobalLogic' }, { title: 'Luxoft Ukraine' }],
+
+      ratingStatus: ['consideration'],
+      ratingStatusOption: [
+        { item: 'waiting', name: 'Ожидает' },
+        { item: 'consideration', name: 'На рассмотрении' },
+        { item: 'approval', name: 'Рассмотрена' },
+      ],
     }
   },
   methods: {
