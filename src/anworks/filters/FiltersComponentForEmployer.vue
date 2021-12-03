@@ -1,21 +1,17 @@
 <template>
   <div
-    :class="{active: isActive}"
-    class="col-xl-4 custom-filters"
+    class="col-xl-4"
   >
 
     <div
-      class="admins pointer arrow-static"
-      :class="{active: isActive}"
-      @click="isActive = !isActive"
+      class="admins"
     >
       <p class="text-uppercase pl-1">Фильтры
       </p>
     </div>
 
     <div
-      class="card pl-1 pr-1 toggle__filters"
-      :class="{active: isActive}"
+      class="card pl-1 pr-1"
     >
 
       <filters-save-main />
@@ -172,7 +168,7 @@ export default {
     },
     formDataSendToServer() {
       console.log(this.formData)
-      // return axios.post('http://jsonplaceholder.typicode.com/users/1/posts', {
+      // return axios.post('https://webhook.site/edb1ff5d-393a-4501-a25e-a86c6dc5eb45', {
       //   formData: this.formData,
       // }).then(response => console.log(response))
       //   .catch(error => console.log(error))

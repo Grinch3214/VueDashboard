@@ -1,0 +1,41 @@
+{
+    "emploerNameOption": [
+        { "title": "Epam" }, 
+        { "title": "SoftServe" }, 
+        { "title": "GlobalLogic" }, 
+        { "title": "Luxoft Ukraine" }, 
+        { "title": "Ciklum" }, 
+        { "title": "NIX" }
+    ],
+
+    "countryOptions": [
+        { "value": "UA", "text": "Украина" },
+        { "value": "RU", "text": "Россия" }
+    ],
+
+    "cityOption": [
+        {"title": "Харьков"},
+        {"title": "Киев"},
+        {"title": "Львов"},
+        {"title": "Одесса"},
+        {"title": "Днепр"},
+        {"title": "Запорожье"},
+        {"title": "Кривой Рог"},
+        {"title": "Николаев"},
+        {"title": "Мариуполь"},
+        {"title": "Винница"},
+        {"title": "Херсон"},
+        {"title": "Чернигов"},
+        {"title": "Полтава"},
+        {"title": "Чекассы"},
+        {"title": "Хмельницкий"},
+        {"title": "Черновцы"},
+        {"title": "Житомир"},
+        {"title": "Сумы"},
+        {"title": "Ровно"},
+        {"title": "Ивано-Франковск"},
+        {"title": "Тернополь"},
+        {"title": "Луцк"},
+        {"title": "Ужгород"}
+    ]
+}

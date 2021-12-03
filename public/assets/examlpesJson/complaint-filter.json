@@ -1,0 +1,23 @@
+{
+    "companyOptions": [
+        { "title": "Epam" }, 
+        { "title": "NIX" }, 
+        { "title": "SoftServe" }, 
+        { "title": "GlobalLogic" }, 
+        { "title": "Luxoft Ukraine" }
+    ],
+
+    "companyWhomOptions": [
+        { "title": "Epam" }, 
+        { "title": "NIX" }, 
+        { "title": "SoftServe" }, 
+        { "title": "GlobalLogic" }, 
+        { "title": "Luxoft Ukraine" }
+    ],
+
+    "ratingStatusOption": [
+        { "item": "waiting", "name": "Ожидает" },
+        { "item": "consideration", "name": "На рассмотрении" },
+        { "item": "approval", "name": "Рассмотрена" }
+    ]
+}

@@ -21,68 +21,9 @@
             />
             <span class="d-none d-sm-inline">Основная информация</span>
           </template>
-          <b-card-text>
-            <p class="h4 mt-2">
-              Мария Иванова</p>
-            <b-avatar
-              rounded="sm"
-              variant="light-primary"
-              size="104px"
-              :src="require('@/assets/images/portrait/small/avatar-s-20.jpg')"
-            />
 
-            <info-job-seeker-user />
+          <info-job-seeker-user />
 
-            <!-- submit and reset -->
-            <div class="mt-2 mt-lg-5 d-flex justify-content-sm-between justify-content-center flex-wrap col-lg-9 pl-0">
-              <div class="mb-1">
-                <b-button
-                  v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                  type="submit"
-                  variant="primary"
-                  class="mr-1"
-                >
-                  Сохранить
-                </b-button>
-                <b-button
-                  v-ripple.400="'rgba(186, 191, 199, 0.15)'"
-                  type="reset"
-                  variant="outline-primary"
-                >
-                  Отмена
-                </b-button>
-              </div>
-              <div>
-                <b-button
-                  v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-                  v-b-modal.modal-danger
-                  type="submit"
-                  variant="danger"
-                  class="mr-1"
-                >
-                  Удалить соискателя
-                </b-button>
-                <b-modal
-                  id="modal-danger"
-                  ok-variant="danger"
-                  modal-class="modal-danger"
-                  centered
-                  ok-title="Да, уверен"
-                  cancel-title="Отмена"
-                  cancel-variant="outline-primary"
-                >
-                  <b-card-text class="h3 text-center">
-                    <feather-icon
-                      icon="AlertCircleIcon"
-                      size="70"
-                      class="text-warning d-block mx-auto"
-                    />
-                    Вы уверены, что хотите удалить соискателя?
-                  </b-card-text>
-                </b-modal>
-              </div>
-            </div>
-          </b-card-text>
         </b-tab>
 
         <b-tab>
@@ -95,14 +36,7 @@
           </template>
           <b-card-text>
 
-            <skill-work>
-              <template v-slot:companeSkill>
-                <p>В сфере IT</p>
-              </template>
-              <template v-slot:FreelanceSkill>
-                <p>Фриланс</p>
-              </template>
-            </skill-work>
+            <skill-work />
 
           </b-card-text>
         </b-tab>
@@ -186,9 +120,8 @@
 
 <script>
 import {
-  BButton, BModal, VBModal, BCardText, BTab, BTabs, BAvatar,
+  BCardText, BTab, BTabs,
 } from 'bootstrap-vue'
-import Ripple from 'vue-ripple-directive'
 import InfoJobSeekerUser from '@/anworks/jobSeekers/InfoJobSeekerUser.vue'
 import SkillWork from '@/anworks/jobSeekers/SkillWork.vue'
 import EducationUser from '@/anworks/jobSeekers/EducationUser.vue'
@@ -199,12 +132,9 @@ import TestingPageUser from '@/anworks/jobSeekers/TestingPageUser.vue'
 
 export default {
   components: {
-    BButton,
-    BModal,
     BCardText,
     BTab,
     BTabs,
-    BAvatar,
     InfoJobSeekerUser,
     SkillWork,
     EducationUser,
@@ -212,10 +142,6 @@ export default {
     LocationUser,
     AboutUser,
     TestingPageUser,
-  },
-  directives: {
-    'b-modal': VBModal,
-    Ripple,
   },
   data: () => ({
     users: [],

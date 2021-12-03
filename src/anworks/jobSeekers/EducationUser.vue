@@ -14,7 +14,7 @@
         </b-col>
         <b-col lg="7">
           <b-form-select
-            v-model="country"
+            v-model="formData.country"
             :options="countryOptions"
             size="md"
             class="mt-1"
@@ -27,7 +27,7 @@
         </b-col>
         <b-col lg="7">
           <b-form-select
-            v-model="city"
+            v-model="formData.city"
             :options="cityOptions"
             size="md"
             class="mt-1"
@@ -43,7 +43,7 @@
           class="mt-1"
         >
           <b-form-select
-            v-model="institute"
+            v-model="formData.institute"
             :options="instituteOptions"
             size="md"
           />
@@ -58,7 +58,7 @@
           class="mt-1"
         >
           <b-form-select
-            v-model="specialty"
+            v-model="formData.specialty"
             :options="specialtyOptions"
             size="md"
           />
@@ -73,7 +73,7 @@
           class="mt-1"
         >
           <b-form-select
-            v-model="degree"
+            v-model="formData.degree"
             :options="degreeOptions"
             size="md"
           />
@@ -88,25 +88,25 @@
           class="row align-items-center ml-0 mb-1"
         >
           <b-form-select
-            v-model="month"
+            v-model="formData.month"
             :options="monthOptions"
             size="md"
             class="mt-1 col-3 mr-1"
           />
           <b-form-select
-            v-model="date"
+            v-model="formData.date"
             :options="dateOptions"
             size="md"
             class="mt-1 col-2 mr-50"
           /> _
           <b-form-select
-            v-model="month"
+            v-model="formData.toMonth"
             :options="monthOptions"
             size="md"
             class="mt-1 col-3 mr-1 ml-50"
           />
           <b-form-select
-            v-model="date"
+            v-model="formData.toDate"
             :options="dateOptions"
             size="md"
             class="mt-1 col-2"
@@ -118,7 +118,7 @@
           class="mt-1"
         >
           <b-form-checkbox
-            v-model="studyNow"
+            v-model="formData.studyNow"
             value="studyNow"
           >
             Еще учусь
@@ -134,6 +134,7 @@
             type=""
             variant="primary"
             class="mr-1"
+            @click="sendTo"
           >
             Сохранить изменения
           </b-button>
@@ -164,56 +165,65 @@ export default {
   },
   data() {
     return {
-      selected: ['B', 'C'],
-      studyNow: 'studyNow',
 
-      country: null,
+      formData: {
+        studyNow: 'studyNow',
+        country: 'UA',
+        city: 'Lviv',
+        institute: 'Karazin',
+        specialty: 'developer',
+        degree: 'baclagan',
+        month: 'Oct.',
+        toMonth: 'Dec.',
+        date: '2020',
+        toDate: '2020',
+      },
+
       countryOptions: [
-        { value: null, text: 'Украина' },
-        { text: 'Россия' },
+        { value: 'UA', text: 'Украина' },
+        { value: 'RU', text: 'Россия' },
       ],
 
-      city: null,
       cityOptions: [
-        { value: null, text: 'Киев' },
-        { text: 'Харьков' },
-        { text: 'Одесса' },
-        { text: 'Львов' },
-        { text: 'Полтава' },
-        { text: 'Кривой Рог' },
+        { value: 'Kiev', text: 'Киев' },
+        { value: 'Kharkiv', text: 'Харьков' },
+        { value: 'Odesa', text: 'Одесса' },
+        { value: 'Lviv', text: 'Львов' },
+        { value: 'Poltava', text: 'Полтава' },
+        { value: 'KrivoyRog', text: 'Кривой Рог' },
       ],
 
-      institute: null,
       instituteOptions: [
-        { value: null, text: 'ХНУ им.Каразина' },
-        { text: 'ХНУВС' },
-        { text: 'ХИРЭ' },
-        { text: 'ХНУВС' },
-        { text: 'ХИРЭ' },
-        { text: 'ХНУВС' },
+        { value: 'Karazin', text: 'ХНУ им.Каразина' },
+        { value: 'ХНУВС', text: 'ХНУВС' },
+        { value: 'ХИРЭ', text: 'ХИРЭ' },
+        { value: 'ХНУВС', text: 'ХНУВС' },
+        { value: 'ХИРЭ', text: 'ХИРЭ' },
+        { value: 'ХНУВС', text: 'ХНУВС' },
       ],
 
-      specialty: null,
       specialtyOptions: [
-        { value: null, text: 'Программист' },
-        { text: 'Строитель' },
+        { value: 'developer', text: 'Программист' },
+        { value: 'build-man', text: 'Строитель' },
       ],
 
-      degree: null,
       degreeOptions: [
-        { value: null, text: 'Магистр' }, { text: 'Бакалавр' }, { text: 'Специалист' },
+        { value: 'magistr', text: 'Магистр' }, { value: 'baclagan', text: 'Бакалавр' }, { value: 'specialist', text: 'Специалист' },
       ],
 
-      month: null,
       monthOptions: [
-        { value: null, text: 'Январь' }, { text: 'Февраль' }, { text: 'Март' }, { text: 'Апрель' }, { text: 'Май' }, { text: 'Июнь' }, { text: 'Июль' }, { text: 'Август' }, { text: 'Сентрябрь' }, { text: 'Октябрь' }, { text: 'Ноябрь' }, { text: 'Декабрь' },
+        { value: 'Jan.', text: 'Январь' }, { value: 'Feb.', text: 'Февраль' }, { value: 'Mar.', text: 'Март' }, { value: 'Apr.', text: 'Апрель' }, { value: 'May', text: 'Май' }, { value: 'June', text: 'Июнь' }, { value: 'July', text: 'Июль' }, { value: 'Aug.', text: 'Август' }, { value: 'Sept.', text: 'Сентрябрь' }, { value: 'Oct.', text: 'Октябрь' }, { value: 'Nov.', text: 'Ноябрь' }, { value: 'Dec.', text: 'Декабрь' },
       ],
 
-      date: null,
       dateOptions: [
-        { text: 2020 }, { text: 2006 }, { text: 2007 }, { text: 2008 }, { text: 2009 }, { text: 2010 }, { text: 2011 }, { text: 2012 }, { text: 2013 }, { text: 2014 }, { text: 2015 }, { text: 2016 }, { text: 2017 }, { text: 2018 }, { text: 2019 }, { text: 2020 }, { text: 2021 },
+        { value: '2005', text: 2005 }, { value: '2006', text: 2006 }, { value: '2007', text: 2007 }, { value: '2008', text: 2008 }, { value: '2009', text: 2009 }, { value: '2010', text: 2010 }, { value: '2011', text: 2011 }, { value: '2012', text: 2012 }, { value: '2013', text: 2013 }, { value: '2014', text: 2014 }, { value: '2015', text: 2015 }, { value: '2016', text: 2016 }, { value: '2017', text: 2017 }, { value: '2018', text: 2018 }, { value: '2019', text: 2019 }, { value: '2020', text: 2020 }, { value: '2021', text: 2021 },
       ],
     }
+  },
+  methods: {
+    sendTo() {
+      console.log(this.formData)
+    },
   },
 }
 </script>

@@ -12,19 +12,19 @@
           sm="12"
           class="d-flex mb-4"
         > <b-form-checkbox
-            v-model="selected"
+            v-model="workSkill.selected"
             value="A"
             class="mr-1"
           >
-            <slot name="companeSkill" />
+            В сфере IT
           </b-form-checkbox>
           <b-form-checkbox
-            v-model="selected"
+            v-model="workSkill.selected"
             value="B"
           >
-            <slot name="FreelanceSkill" />
+            Фриланс
           </b-form-checkbox>
-        </b-col> <!-- Чекбоксы -->
+        </b-col>
 
         <b-col lg="3">
           <p class="h5 mb-1">
@@ -65,7 +65,7 @@
         <b-col lg="7">
           <b-form-group>
             <v-select
-              v-model="secondSkill"
+              v-model="workSkill.secondSkill"
               multiple
               :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
               label="title"
@@ -80,7 +80,7 @@
         </b-col>
         <b-col lg="7">
           <b-form-select
-            v-model="country"
+            v-model="workSkill.country"
             :options="countryOptions"
             size="md"
             class="mt-1"
@@ -93,7 +93,7 @@
         </b-col>
         <b-col lg="7">
           <b-form-select
-            v-model="city"
+            v-model="workSkill.city"
             :options="cityOptions"
             size="md"
             class="mt-1"
@@ -128,25 +128,25 @@
           class="row align-items-center ml-0 mb-1"
         >
           <b-form-select
-            v-model="month"
+            v-model="workSkill.month"
             :options="monthOptions"
             size="md"
             class="mt-1 col-3 mr-1"
           />
           <b-form-select
-            v-model="date"
+            v-model="workSkill.date"
             :options="dateOptions"
             size="md"
             class="mt-1 col-2 mr-50"
           /> _
           <b-form-select
-            v-model="month"
+            v-model="workSkill.toMonth"
             :options="monthOptions"
             size="md"
             class="mt-1 col-3 mr-1 ml-50"
           />
           <b-form-select
-            v-model="date"
+            v-model="workSkill.toDate"
             :options="dateOptions"
             size="md"
             class="mt-1 col-2"
@@ -158,7 +158,7 @@
           class="mt-1"
         >
           <b-form-checkbox
-            v-model="workNow"
+            v-model="workSkill.workNow"
             value="workNow"
           >
             Работаю сейчас
@@ -172,7 +172,7 @@
         <b-col lg="9">
           <b-form-textarea
             id="textarea-plaintext"
-            :value="text"
+            :value="workSkill.text"
             rows="4"
             class="mt-1"
           />
@@ -188,6 +188,7 @@
             type=""
             variant="primary"
             class="mr-1"
+            @click="sendToServer"
           >
             Сохранить изменения
           </b-button>
@@ -231,38 +232,29 @@ export default {
   },
   data() {
     return {
-      selected: ['B', 'C'],
-      workNow: 'workNow',
-
-      country: null,
       countryOptions: [
-        { value: null, text: 'Украина' },
-        { text: 'Россия' },
+        { value: 'UA', text: 'Украина' },
+        { value: 'RU', text: 'Россия' },
       ],
 
-      city: null,
       cityOptions: [
-        { value: null, text: 'Киев' },
-        { text: 'Харьков' },
-        { text: 'Одесса' },
-        { text: 'Львов' },
-        { text: 'Полтава' },
-        { text: 'Кривой Рог' },
+        { value: 'Kiev', text: 'Киев' },
+        { value: 'Kharkiv', text: 'Харьков' },
+        { value: 'Odesa', text: 'Одесса' },
+        { value: 'Lviv', text: 'Львов' },
+        { value: 'Poltava', text: 'Полтава' },
+        { value: 'KrivoyRog', text: 'Кривой Рог' },
       ],
 
-      secondSkill: [{ title: 'Node.js' }],
       secondSkillOption: [{ title: 'Angular' }, { title: 'Vue.js' }, { title: 'React' }, { title: 'jQuery' }, { title: 'Backbone.js' }, { title: 'Node.js' }, { title: 'Ember.js' }, { title: 'Meteor' }, { title: 'Polymer' }],
 
-      month: null,
       monthOptions: [
-        { value: null, text: 'Январь' }, { text: 'Февраль' }, { text: 'Март' }, { text: 'Апрель' }, { text: 'Май' }, { text: 'Июнь' }, { text: 'Июль' }, { text: 'Август' }, { text: 'Сентрябрь' }, { text: 'Октябрь' }, { text: 'Ноябрь' }, { text: 'Декабрь' },
+        { value: 'Jan.', text: 'Январь' }, { value: 'Feb.', text: 'Февраль' }, { value: 'Mar.', text: 'Март' }, { value: 'Apr.', text: 'Апрель' }, { value: 'May', text: 'Май' }, { value: 'June', text: 'Июнь' }, { value: 'July', text: 'Июль' }, { value: 'Aug.', text: 'Август' }, { value: 'Sept.', text: 'Сентрябрь' }, { value: 'Oct.', text: 'Октябрь' }, { value: 'Nov.', text: 'Ноябрь' }, { value: 'Dec.', text: 'Декабрь' },
       ],
 
-      date: null,
       dateOptions: [
-        { text: 2005 }, { text: 2006 }, { text: 2007 }, { text: 2008 }, { text: 2009 }, { text: 2010 }, { text: 2011 }, { text: 2012 }, { text: 2013 }, { text: 2014 }, { text: 2015 }, { text: 2016 }, { text: 2017 }, { text: 2018 }, { text: 2019 }, { text: 2020 }, { text: 2021 },
+        { value: '2005', text: 2005 }, { value: '2006', text: 2006 }, { value: '2007', text: 2007 }, { value: '2008', text: 2008 }, { value: '2009', text: 2009 }, { value: '2010', text: 2010 }, { value: '2011', text: 2011 }, { value: '2012', text: 2012 }, { value: '2013', text: 2013 }, { value: '2014', text: 2014 }, { value: '2015', text: 2015 }, { value: '2016', text: 2016 }, { value: '2017', text: 2017 }, { value: '2018', text: 2018 }, { value: '2019', text: 2019 }, { value: '2020', text: 2020 }, { value: '2021', text: 2021 },
       ],
-      text: 'EPAM Systems — американская ИТ-компания, основанная в 1993 году. Крупнейший мировой производитель заказного программного обеспечения, специалист по консалтингу, резидент Белорусского парка высоких технологий. Штаб-квартира компании расположена в Ньютауне, штат Пенсильвания, а её отделения представлены более чем в 30 странах мира',
     }
   },
   setup() {
@@ -270,10 +262,25 @@ export default {
       position: 'castomermail@mail.com',
       mainSkill: 'castomer.com',
       companyStart: '2004',
+      selected: 'A',
+      secondSkill: [{ title: 'Node.js' }],
+      country: 'UA',
+      city: 'Kharkiv',
+      month: 'Oct.',
+      toMonth: 'Feb.',
+      date: '2020',
+      toDate: '2021',
+      workNow: 'workNow',
+      text: 'EPAM Systems — американская ИТ-компания, основанная в 1993 году. Крупнейший мировой производитель заказного программного обеспечения, специалист по консалтингу, резидент Белорусского парка высоких технологий. Штаб-квартира компании расположена в Ньютауне, штат Пенсильвания, а её отделения представлены более чем в 30 странах мира',
     })
     return {
       workSkill,
     }
+  },
+  methods: {
+    sendToServer() {
+      console.log(this.workSkill)
+    },
   },
 }
 </script>

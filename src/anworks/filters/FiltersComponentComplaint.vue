@@ -1,21 +1,17 @@
 <template>
   <div
-    :class="{active: isActive}"
-    class="col-xl-4 custom-filters"
+    class="col-xl-4"
   >
 
     <div
-      class="admins pointer arrow-static"
-      :class="{active: isActive}"
-      @click="isActive = !isActive"
+      class="admins"
     >
       <p class="text-uppercase pl-1">Фильтры
       </p>
     </div>
 
     <div
-      class="card pl-1 pr-1 toggle__filters"
-      :class="{active: isActive}"
+      class="card pl-1 pr-1"
     >
 
       <filters-save-main />
@@ -23,9 +19,9 @@
       <p class=" h6 mt-1">От кого
       </p>
       <filters-select-badge
-        v-model="company"
+        v-model="formData.company"
         class="pb-1 border-bottom"
-        :options="companyOptions"
+        :options="formDataOptions.companyOptions"
         placeholder="Введите имя, компанию или ID"
         @input="onInputSelect"
       />
@@ -33,9 +29,9 @@
       <p class=" h6 mt-1">Кому
       </p>
       <filters-select-badge
-        v-model="companyWhom"
+        v-model="formData.companyWhom"
         class="pb-1 border-bottom"
-        :options="companyWhomOptions"
+        :options="formDataOptions.companyWhomOptions"
         placeholder="Введите имя, компанию или ID"
         @input="onInputSelect"
       />
@@ -44,14 +40,14 @@
         Статус
       </p>
       <filters-check-box
-        v-model="ratingStatus"
+        v-model="formData.ratingStatus"
         class="pb-1 border-bottom"
-        :options="ratingStatusOption"
+        :options="formDataOptions.ratingStatusOption"
         @input="onInputSelect"
       />
 
       <filters-date
-        v-model="form.date"
+        v-model="formData.form.date"
         @input="onInputSelect"
       />
 
@@ -59,13 +55,13 @@
         <b-button
           v-ripple.400="'rgba(113, 102, 240, 0.15)'"
           variant="outline-primary"
-          type="reset"
+          @click="formDataSendToServer"
         >
           <feather-icon
             icon="PieChartIcon"
             class="mr-50"
           />
-          <span class="align-middle">Очистить всё</span>
+          <span class="align-middle">Применить фильтры</span>
         </b-button>
       </div>
 
@@ -77,6 +73,7 @@
 <script>
 import { BButton } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
+import axios from 'axios'
 import FiltersSaveMain from './filtersComponents/FiltersSaveMain.vue'
 import FiltersDate from './filtersComponents/FiltersDate.vue'
 import FiltersSelectBadge from './filtersComponents/FiltersSelectBadge.vue'
@@ -96,27 +93,38 @@ export default {
   data() {
     return {
       isActive: false,
-      form: {
-        date: null,
+
+      formData: {
+        company: [],
+        companyWhom: [],
+        ratingStatus: ['consideration'],
+        form: {
+          date: null,
+        },
       },
 
-      company: [],
-      companyOptions: [{ title: 'Epam' }, { title: 'NIX' }, { title: 'SoftServe' }, { title: 'GlobalLogic' }, { title: 'Luxoft Ukraine' }],
-
-      companyWhom: [],
-      companyWhomOptions: [{ title: 'Epam' }, { title: 'NIX' }, { title: 'SoftServe' }, { title: 'GlobalLogic' }, { title: 'Luxoft Ukraine' }],
-
-      ratingStatus: ['consideration'],
-      ratingStatusOption: [
-        { item: 'waiting', name: 'Ожидает' },
-        { item: 'consideration', name: 'На рассмотрении' },
-        { item: 'approval', name: 'Рассмотрена' },
-      ],
+      formDataOptions: {
+        companyOptions: [],
+        companyWhomOptions: [],
+        ratingStatusOption: [],
+      },
     }
+  },
+  created() {
+    axios
+      .get('/assets/examlpesJson/complaint-filter.json')
+      .then(response => { this.formDataOptions = response.data })
   },
   methods: {
     onInputSelect(data) {
       console.log(data)
+    },
+    formDataSendToServer() {
+      console.log(this.formData)
+      // return axios.post('https://webhook.site/edb1ff5d-393a-4501-a25e-a86c6dc5eb45', {
+      //   formData: this.formData,
+      // }).then(response => console.log(response))
+      //   .catch(error => console.log(error))
     },
   },
 }

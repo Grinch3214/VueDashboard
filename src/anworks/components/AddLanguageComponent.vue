@@ -2,20 +2,20 @@
   <div>
     <div
       v-for="(field, index) in fields"
-      :id="field.id"
-      :key="index"
+      :id="'f-'+field.id"
+      :key="field.id"
       class="row"
     >
       <div class="col-12 col-md-5 mb-1">
         <b-form-select
-          v-model="selectedLang[index]"
+          v-model="selectedLang[field.id]"
           :options="langOptions"
         />
       </div>
 
       <div class="col-10 col-md-5 mb-1">
         <b-form-select
-          v-model="selectedSkill[index]"
+          v-model="selectedSkill[field.id]"
           :options="skillOptions"
         />
       </div>
@@ -25,7 +25,7 @@
           v-ripple.400="'rgba(40, 199, 111, 0.15)'"
           variant="flat-secondary"
           class="btn-icon rounded-circle"
-          @click="RemoveField(index)"
+          @click="removeField(index)"
         >
           <feather-icon
             icon="TrashIcon"
@@ -41,7 +41,7 @@
         v-ripple.400="'rgba(40, 199, 111, 0.15)'"
         variant="flat-secondary"
         class="btn-icon rounded-circle"
-        @click="AddField"
+        @click="addField"
       >
         <feather-icon
           icon="PlusIcon"
@@ -65,14 +65,27 @@ export default {
   directives: {
     Ripple,
   },
+  props: {
+    selectedLang: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+    selectedSkill: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+  },
   data() {
     return {
       fields: [{
-        id: 1,
+        id: 0,
       }],
-      nextTodoId: 2,
 
-      selectedLang: ['0'],
+      // selectedLang: [],
       langOptions: [
         { value: '0', text: 'English' },
         { value: 'a', text: 'German' },
@@ -81,7 +94,7 @@ export default {
         { value: 'd', text: 'Russian' },
       ],
 
-      selectedSkill: ['a1'],
+      // selectedSkill: [],
       skillOptions: [
         { value: 'a1', text: 'Elementary' },
         { value: 'a2', text: 'Pre-Intermediate' },
@@ -92,16 +105,13 @@ export default {
     }
   },
   methods: {
-    AddField() {
+    addField() {
       this.fields.push({
-        id: this.nextTodoId += this.nextTodoId,
+        id: this.fields.length,
       })
     },
-    RemoveField(index) {
-      this.selectedLang.splice(index, 1)
-      this.selectedSkill.splice(index, 1)
+    removeField(index) {
       this.fields.splice(index, 1)
-      // console.log(index)
     },
   },
 }

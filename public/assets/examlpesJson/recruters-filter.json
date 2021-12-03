@@ -1,0 +1,15 @@
+{
+    "activityOptions": [
+        { "item": "activity-true", "name": "Активен" },
+        { "item": "activity-false", "name": "Заблокирован" }
+    ],
+
+    "emploerNameOption": [
+        { "title": "Epam" }, 
+        { "title": "SoftServe" }, 
+        { "title": "GlobalLogic" }, 
+        { "title": "Luxoft Ukraine" }, 
+        { "title": "Ciklum" }, 
+        { "title": "NIX" }
+    ]
+}

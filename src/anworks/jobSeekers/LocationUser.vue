@@ -151,6 +151,7 @@
             <v-select
               v-model="badEmployer"
               multiple
+              append-to-body
               :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
               label="title"
               :options="badEmployerOption"

@@ -14,7 +14,7 @@
         </b-col>
         <b-col lg="7">
           <b-form-select
-            v-model="positionUser"
+            v-model="formData.positionUser"
             :options="positionUserOptions"
             size="md"
             class="mt-1"
@@ -27,7 +27,7 @@
         </b-col>
         <b-col lg="7">
           <b-form-select
-            v-model="levelUser"
+            v-model="formData.levelUser"
             :options="levelUserOptions"
             size="md"
             class="mt-1"
@@ -40,7 +40,7 @@
         </b-col>
         <b-col lg="7">
           <b-form-select
-            v-model="mainSkillUser"
+            v-model="formData.mainSkillUser"
             :options="mainSkillUserOptions"
             size="md"
             class="mt-1"
@@ -53,7 +53,7 @@
         </b-col>
         <b-col lg="7">
           <v-select
-            v-model="secondSkill"
+            v-model="formData.secondSkill"
             multiple
             :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
             label="title"
@@ -70,7 +70,10 @@
           lg="7"
           class="pt-1"
         >
-          <add-language-component />
+          <add-language-component
+            :selected-lang="formData.selectedLang"
+            :selected-skill="formData.selectedSkill"
+          />
         </b-col>
 
         <b-col
@@ -82,6 +85,7 @@
             type="submit"
             variant="primary"
             class="mr-1"
+            @click="sendToServer"
           >
             Сохранить изменения
           </b-button>
@@ -115,41 +119,51 @@ export default {
   },
   data() {
     return {
+      formData: {
+        positionUser: 'developer',
+        levelUser: 'trainee',
+        mainSkillUser: 'HTML',
+        secondSkill: [{ title: 'Vue.js' }, { title: 'jQuery' }],
+        selectedLang: [],
+        selectedSkill: [],
+      },
 
-      positionUser: null,
       positionUserOptions: [
-        { value: null, text: 'Developer' },
-        { text: 'Project Manager' },
-        { text: 'Software Architect' },
-        { text: 'Team Lead' },
-        { text: 'Tech Lead' },
-        { text: 'Sales Managers' },
-        { text: 'HR' },
+        { value: 'developer', text: 'Developer' },
+        { value: 'PM', text: 'Project Manager' },
+        { value: 'SA', text: 'Software Architect' },
+        { value: 'TeamL', text: 'Team Lead' },
+        { value: 'TechL', text: 'Tech Lead' },
+        { value: 'SM', text: 'Sales Managers' },
+        { value: 'HR', text: 'HR' },
       ],
 
-      levelUser: null,
       levelUserOptions: [
-        { value: null, text: 'Junior' },
-        { text: 'Trainee' },
-        { text: 'Middle' },
-        { text: 'Senior' },
+        { value: 'trainee', text: 'Trainee' },
+        { value: 'junior', text: 'Junior' },
+        { value: 'middle', text: 'Middle' },
+        { value: 'senior', text: 'Senior' },
       ],
 
-      mainSkillUser: null,
       mainSkillUserOptions: [
-        { value: null, text: 'JavaScript' },
-        { text: 'HTML' },
-        { text: 'CSS' },
-        { text: 'Java' },
-        { text: 'C++' },
-        { text: 'Pyton' },
-        { text: 'PHP' },
+        { value: 'JavaScript', text: 'JavaScript' },
+        { value: 'HTML', text: 'HTML' },
+        { value: 'CSS', text: 'CSS' },
+        { value: 'Java', text: 'Java' },
+        { value: 'C++', text: 'C++' },
+        { value: 'Pyton', text: 'Pyton' },
+        { value: 'PHP', text: 'PHP' },
       ],
 
       secondSkill: [{ title: 'Vue.js' }, { title: 'jQuery' }],
       secondSkillOption: [{ title: 'Angular' }, { title: 'Vue.js' }, { title: 'React' }, { title: 'jQuery' }, { title: 'Backbone.js' }, { title: 'Node.js' }, { title: 'Ember.js' }, { title: 'Meteor' }, { title: 'Polymer' }],
 
     }
+  },
+  methods: {
+    sendToServer() {
+      console.log(this.formData)
+    },
   },
 }
 </script>

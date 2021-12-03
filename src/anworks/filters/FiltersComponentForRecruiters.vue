@@ -1,39 +1,29 @@
 <template>
-  <div
-    :class="{active: isActive}"
-    class="col-xl-4 custom-filters"
-  >
+  <div class="col-xl-4">
 
-    <div
-      class="admins pointer arrow-static"
-      :class="{active: isActive}"
-      @click="isActive = !isActive"
-    >
+    <div class="admins">
       <p class="text-uppercase pl-1">Фильтры
       </p>
     </div>
 
-    <div
-      class="card p-1 toggle__filters"
-      :class="{active: isActive}"
-    >
+    <div class="card p-1">
 
       <p class="h6 mt-1 mb-2">
         Активность</p>
       <filters-radio-button
-        v-model="activity"
+        v-model="formData.activity"
         class="pb-1 border-bottom"
-        :options="activityOptions"
+        :options="formDataOptions.activityOptions"
         @input="onInputSelect"
       />
 
       <p class="h6 mt-1">Название работодателя
       </p>
       <filters-select-badge
-        v-model="emploerName"
+        v-model="formData.emploerName"
         class="mb-3 pb-1"
-        :options="emploerNameOption"
-        :placeholder="placeholderValue"
+        :options="formDataOptions.emploerNameOption"
+        placeholder="Работодатель"
         @input="onInputSelect"
       />
 
@@ -41,13 +31,13 @@
         <b-button
           v-ripple.400="'rgba(113, 102, 240, 0.15)'"
           variant="outline-primary"
-          type="reset"
+          @click="formDataSendToServer"
         >
           <feather-icon
             icon="PieChartIcon"
             class="mr-50"
           />
-          <span class="align-middle">Очистить всё</span>
+          <span class="align-middle">Применить фильтры</span>
         </b-button>
       </div>
 
@@ -58,6 +48,7 @@
 
 <script>
 import { BButton } from 'bootstrap-vue'
+import axios from 'axios'
 import Ripple from 'vue-ripple-directive'
 import FiltersRadioButton from './filtersComponents/FiltersRadioButton.vue'
 import FiltersSelectBadge from './filtersComponents/FiltersSelectBadge.vue'
@@ -75,21 +66,28 @@ export default {
     return {
       isActive: false,
 
-      activity: 'activity-true',
-      activityOptions: [
-        { item: 'activity-true', name: 'Активен' },
-        { item: 'activity-false', name: 'Заблокирован' },
-      ],
+      formData: {
+        activity: 'activity-true',
+        emploerName: [],
+      },
 
-      emploerName: [],
-      emploerNameOption: [{ title: 'Epam' }, { title: 'SoftServe' }, { title: 'GlobalLogic' }, { title: 'Luxoft Ukraine' }, { title: 'Ciklum' }, { title: 'NIX' }],
-
-      placeholderValue: 'Работодатель',
+      formDataOptions: {
+        activityOptions: [],
+        emploerNameOption: [],
+      },
     }
+  },
+  created() {
+    axios
+      .get('/assets/examlpesJson/recruters-filter.json')
+      .then(response => { this.formDataOptions = response.data })
   },
   methods: {
     onInputSelect(data) {
       console.log(data)
+    },
+    formDataSendToServer() {
+      console.log(this.formData)
     },
   },
 }

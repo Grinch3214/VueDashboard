@@ -1,41 +1,33 @@
 <template>
-  <div
-    :class="{active: isActive}"
-    class="custom-filters"
-  >
+  <div>
 
-    <div
-      class="admins pointer arrow-static"
-      :class="{active: isActive}"
-      @click="isActive = !isActive"
-    >
+    <div class="admins">
       <p class="text-uppercase pl-1">Фильтры
       </p>
     </div>
 
-    <div
-      class="card p-1 toggle__filters"
-      :class="{active: isActive}"
-    >
+    <div class="card p-1">
       <div>
         <h5 class="mt-1">
           Расширенный поиск:</h5>
         <b-form-select
-          v-model="selected"
+          v-model="formData.selected"
           :options="options"
           size="md"
           class="mt-1"
+          @change="formDataSendToServer"
         />
 
         <b-form-select
-          v-model="selectOperators"
+          v-model="formData.selectOperators"
           :options="operator"
           size="md"
           class="mt-1"
+          @change="formDataSendToServer"
         />
 
         <b-form-input
-          id="helperInput"
+          v-model="formData.helperInput"
           placeholder="Поиск"
           size="md"
           class="mt-1"
@@ -45,7 +37,7 @@
       <p class="h6 mt-1 mb-2">
         Пользователь</p>
       <filters-radio-button
-        v-model="users"
+        v-model="formData.users"
         class="pb-1"
         :options="usersOptions"
         @input="onInputSelect"
@@ -55,13 +47,13 @@
         <b-button
           v-ripple.400="'rgba(113, 102, 240, 0.15)'"
           variant="outline-primary"
-          type="reset"
+          @click="formDataSendToServer"
         >
           <feather-icon
             icon="PieChartIcon"
             class="mr-50"
           />
-          <span class="align-middle">Очистить всё</span>
+          <span class="align-middle">Применить фильтры</span>
         </b-button>
       </div>
 
@@ -89,30 +81,32 @@ export default {
     return {
       isActive: false,
 
-      checkFilter: ['A'],
+      formData: {
+        selected: 'name',
+        selectOperators: '=',
+        helperInput: '',
+        users: 'employer',
+      },
 
-      selected: null,
       options: [
-        { text: 'Имя' },
-        { text: 'Дата регистрации' },
-        { text: 'Дата рождения' },
-        { text: 'Роль' },
-        { text: 'Статус' },
-        { text: 'IP' },
+        { value: 'name', text: 'Имя' },
+        { value: 'date_register', text: 'Дата регистрации' },
+        { value: 'birthday', text: 'Дата рождения' },
+        { value: 'role', text: 'Роль' },
+        { value: 'status', text: 'Статус' },
+        { value: 'IP', text: 'IP' },
       ],
 
-      selectOperators: null,
       operator: [
-        { text: '=' },
-        { text: '!=' },
-        { text: '<' },
-        { text: '>' },
-        { text: '<=' },
-        { text: '>=' },
-        { text: 'LIKE %%' },
+        { value: '=', text: '=' },
+        { value: '!=', text: '!=' },
+        { value: '<', text: '<' },
+        { value: '>', text: '>' },
+        { value: '<=', text: '<=' },
+        { value: '>=', text: '>=' },
+        { value: 'LIKE %%', text: 'LIKE %%' },
       ],
 
-      users: 'employer',
       usersOptions: [
         { item: 'employer', name: 'Работодатель' },
         { item: 'job-seeker', name: 'Соискатель' },
@@ -122,6 +116,9 @@ export default {
   methods: {
     onInputSelect(data) {
       console.log(data)
+    },
+    formDataSendToServer() {
+      console.log(this.formData)
     },
   },
 }

@@ -1,21 +1,17 @@
 <template>
   <div
-    :class="{active: isActive}"
-    class="col-xl-4 custom-filters"
+    class="col-xl-4"
   >
 
     <div
-      :class="{active: isActive}"
-      class="admins pointer arrow-static"
-      @click="isActive = !isActive"
+      class="admins"
     >
       <p class="text-uppercase pointer pl-1">Фильтры
       </p>
     </div>
 
     <div
-      class="card pl-1 pr-1 toggle__filters"
-      :class="{active: isActive}"
+      class="card pl-1 pr-1"
     >
 
       <filters-save-main />
